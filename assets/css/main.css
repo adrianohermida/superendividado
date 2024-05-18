@@ -2203,3 +2203,9 @@ section {
   font-size: 13px;
   color: var(--color-secondary);
 }
+/* Ajuste específico para a seção de mídia */
+#testimonials .swiper-slide img {
+  height: 200px; /* Ajuste a altura conforme necessário */
+  width: auto;
+  object-fit: cover; /* Mantém a proporção da imagem */
+}
