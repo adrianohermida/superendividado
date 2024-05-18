@@ -146,6 +146,64 @@
       </div>
     </section><!-- End Why Choose Us Section -->
     
+<!-- ======= Midia Section ======= -->
+<section id="testimonials" class="testimonials">
+  <div class="container" data-aos="fade-up">
+
+    <style>
+      .testimonials .swiper-slide img {
+        height: 200px; /* Ajuste a altura conforme necessário */
+        width: auto;
+        object-fit: cover; /* Mantém a proporção da imagem */
+      }
+    </style>
+
+    <div class="section-header">
+      <h2>Na Mídia</h2>
+    </div>
+
+    <div class="clients-slider swiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper align-items-center">
+        <div class="swiper-slide"><img src="assets/img/midia/midia-1.jpeg" class="img-fluid" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/midia/midia-2.jpeg" class="img-fluid" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/midia/midia-3.jpeg" class="img-fluid" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/midia/midia-4.jpeg" class="img-fluid" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/midia/midia-5.jpeg" class="img-fluid" alt=""></div>
+        <div class="swiper-slide"><img src="assets/img/midia/midia-6.jpeg" class="img-fluid" alt=""></div>       
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+</section><!-- End Midia Section -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.1.0/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+    },
+  });
+</script>
+
+        
 <!-- ======= Our Services Section ======= -->
 <section id="services-list" class="services-list">
   <div class="container" data-aos="fade-up">
@@ -317,7 +375,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Testimonials</h2>
+          <h2>Depoimentos</h2>
 
         </div>
 
