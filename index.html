@@ -145,13 +145,12 @@
     
       </div>
     </section><!-- End Why Choose Us Section -->
-    
-<!-- ======= Midia Section ======= -->
+    <!-- ======= Midia Section ======= -->
 <section id="testimonials" class="testimonials">
   <div class="container" data-aos="fade-up">
 
     <style>
-      .testimonials .swiper-slide img {
+      #testimonials .swiper-slide img {
         height: 200px; /* Ajuste a altura conforme necessário */
         width: auto;
         object-fit: cover; /* Mantém a proporção da imagem */
@@ -179,29 +178,32 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.1.0/swiper-bundle.min.js"></script>
 <script>
-  var swiper = new Swiper('.swiper', {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 20,
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper('#testimonials .swiper', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        el: '#testimonials .swiper-pagination',
+        clickable: true,
       },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 30,
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
       },
-      1024: {
-        slidesPerView: 4,
-        spaceBetween: 40,
-      },
-    },
+    });
   });
 </script>
+
 
         
 <!-- ======= Our Services Section ======= -->
