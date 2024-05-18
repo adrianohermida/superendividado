@@ -145,13 +145,12 @@
     
       </div>
     </section><!-- End Why Choose Us Section -->
-    
-<!-- ======= Midia Section ======= -->
+    <!-- ======= Midia Section ======= -->
 <section id="testimonials" class="testimonials">
   <div class="container" data-aos="fade-up">
 
     <style>
-      #testimonials .swiper-slide img {
+      .testimonials .swiper-slide img {
         height: 200px; /* Ajuste a altura conforme necessário */
         width: auto;
         object-fit: cover; /* Mantém a proporção da imagem */
@@ -180,41 +179,30 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.1.0/swiper-bundle.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    new Swiper('.clients-slider', {
-      speed: 400,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
-      slidesPerView: 'auto',
+    var swiper = new Swiper('.clients-slider', {
+      slidesPerView: 1,
+      spaceBetween: 10,
       pagination: {
         el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true
+        clickable: true,
       },
       breakpoints: {
-        320: {
-          slidesPerView: 2,
-          spaceBetween: 20
-        },
-        480: {
-          slidesPerView: 3,
-          spaceBetween: 20
-        },
         640: {
-          slidesPerView: 4,
-          spaceBetween: 20
+          slidesPerView: 2,
+          spaceBetween: 20,
         },
-        992: {
-          slidesPerView: 6,
-          spaceBetween: 20
-        }
-      }
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+      },
     });
   });
 </script>
-
 
 
         
