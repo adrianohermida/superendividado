@@ -2216,6 +2216,7 @@ section {
   position: relative;
   background: #fff;
   border-radius: 6px;
+  margin-bottom: 30px;
 }
 
 .testimonials .testimonial-item .profile {
@@ -2245,16 +2246,17 @@ section {
   margin: 0;
 }
 
-.testimonials .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
+@media (max-width: 768px) {
+  .testimonials .row {
+    display: none;
+  }
+  .testimonials .swiper-container {
+    display: block;
+  }
 }
 
-.testimonials .swiper-button-next,
-.testimonials .swiper-button-prev {
-  color: #000;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #000 !important;
+@media (min-width: 769px) {
+  .testimonials .swiper-container {
+    display: none;
+  }
 }

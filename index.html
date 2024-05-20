@@ -36,6 +36,67 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+   <!-- CSS Personalizado -->
+   <style>
+    /* Custom styles for the testimonials section */
+    .testimonials {
+      padding: 60px 0;
+      background: #f7f8fa;
+      text-align: center;
+    }
+
+    .testimonials .testimonial-item {
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      position: relative;
+      background: #fff;
+      border-radius: 6px;
+      margin-bottom: 30px;
+    }
+
+    .testimonials .testimonial-item .profile {
+      margin-top: 20px;
+    }
+
+    .testimonials .testimonial-item .profile img {
+      width: 90px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .testimonials .testimonial-item h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .testimonials .testimonial-item h4 {
+      font-size: 14px;
+      color: #999;
+      margin-bottom: 15px;
+    }
+
+    .testimonials .testimonial-item p {
+      font-style: italic;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .testimonials .row {
+        display: none;
+      }
+      .testimonials .swiper-container {
+        display: block;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .testimonials .swiper-container {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body class="page-index">
@@ -384,7 +445,58 @@
       <h2>Depoimentos</h2>
     </div>
 
-    <div class="swiper-container slides-3" data-aos="fade-up" data-aos-delay="100">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="testimonial-item">
+          <div class="stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p>
+            O Dr Adriano foi incrível na negociação com meus credores. Eles não apenas aliviaram meu estresse, como também conseguiram condições de pagamento que eu posso cumprir sem sacrificar a faculdade do meu filho. Sou muito grato e recomendo seus serviços.
+          </p>
+          <div class="profile mt-auto">
+            <img src="assets/img/testimonials/testimonials-1.png" class="testimonial-img" alt="">
+            <h3>Maria Clara</h3>
+            <h4>60 anos, Santos (SP)</h4>
+          </div>
+        </div>
+      </div><!-- End testimonial item -->
+
+      <div class="col-lg-4">
+        <div class="testimonial-item">
+          <div class="stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p>
+            Fui vítima de falso acordo, paguei 2900,00 de uma dívida de 60 mil, depois de 6 meses descobri que meu nome continuava sujo e não sabia o que fazer pois o banco não reconhecia o acordo. O escritório Hermida Maia agiu rapidamente, e na audiência fizemos acordo direto com banco pagando R$1.200. Estou muito grato pelo profissionalismo e agilidade deles.
+          </p>
+          <div class="profile mt-auto">
+            <img src="assets/img/testimonials/testimonials-2.png" class="testimonial-img" alt="">
+            <h3>Roberto Murilo</h3>
+            <h4>33 anos, Porto Alegre (RS)</h4>
+          </div>
+        </div>
+      </div><!-- End testimonial item -->
+
+      <div class="col-lg-4">
+        <div class="testimonial-item">
+          <div class="stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+          </div>
+          <p>
+            O Dr Adriano Maia revisou meu desconto do consignado e encontrou várias cláusulas abusivas que eu havia ignorado. Paguei o dobro do consignado sem perceber, eu não sabia mais quando iria acabar aquela dívida. Conseguimos a suspensão dessa cobrança abusiva e no final recebi o dobro do que paguei. Deus abençoe vocês.
+          </p>
+          <div class="profile mt-auto">
+            <img src="assets/img/testimonials/testimonials-3.png" class="testimonial-img" alt="">
+            <h3>Carlos Eduardo</h3>
+            <h4>55 anos, Cascavel (PR)</h4>
+          </div>
+        </div>
+      </div><!-- End testimonial item -->
+    </div>
+
+    <!-- Versão responsiva com Swiper -->
+    <div class="swiper-container slides-3">
       <div class="swiper-wrapper">
 
         <div class="swiper-slide">
@@ -439,12 +551,13 @@
       <div class="swiper-pagination"></div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
-    </div>
+    </div><!-- End swiper-container -->
 
   </div>
 </section><!-- End Testimonials Section -->
 
 </main><!-- End #main -->
+
 
     <!-- ======= Recent Blog Posts Section ======= -->
     <section id="recent-posts" class="recent-posts">
@@ -586,23 +699,25 @@
   </footer><!-- End Footer --><!-- End Footer -->
   
   <div id="preloader"></div>
-
+  
 <!-- Swiper JS -->
 <script src="vendor/swiper/swiper-bundle.min.js"></script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    var swiper = new Swiper('.swiper-container', {
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
+    if (window.innerWidth <= 768) {
+      var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    }
   });
 </script>
 
