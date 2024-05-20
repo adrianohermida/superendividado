@@ -39,6 +39,60 @@
 
  <!-- CSS Personalizado -->
  <style>
+  /* Custom styles for the header */
+.header .logo img {
+  max-height: 50px; /* Adjust the height as needed */
+}
+
+@media (max-width: 768px) {
+  .header .logo img {
+    max-height: 40px; /* Adjust the height for smaller screens */
+  }
+
+  .header .navbar {
+    display: none;
+  }
+
+  .header .mobile-nav-toggle {
+    display: block;
+  }
+
+  .header .navbar-mobile {
+    display: block;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 999;
+    padding: 10px;
+  }
+
+  .header .navbar-mobile ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header .navbar-mobile ul li {
+    margin: 10px 0;
+  }
+
+  .header .navbar-mobile ul li a {
+    color: #333;
+  }
+}
+
+@media (min-width: 769px) {
+  .header .navbar {
+    display: block;
+  }
+
+  .header .mobile-nav-toggle {
+    display: none;
+  }
+}
+
 /* Custom styles for the testimonials section */
 .testimonials {
   padding: 60px 0;
@@ -162,32 +216,32 @@
 
 <body class="page-index">
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+<!-- ======= Header ======= -->
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="d-flex align-items-center">Hermida Maia Advocacia</h1>
-      </a>
+    <a href="index.html" class="logo d-flex align-items-center">
+      <img src="assets/img/logo.png" alt="Hermida Maia Advocacia" class="img-fluid">
+    </a>
 
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+    <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="#hero" class="active">Inicio</a></li>
-          <li><a href="#why-us">Sobre nós</a></li>
-          <li><a href="#services-list">Serviços</a></li>
-          <li><a href="https://hermidamaia.jusbrasil.com.br/publicacoes">Blog</a></li>
-          <li><a href="https://hmdesk.freshdesk.com/support/tickets/new">Contato</a></li>
-          <li><a href="https://hmdesk.freshdesk.com/support/login">Login</a></li>
-        </ul>
-      </nav><!-- .navbar -->
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a href="#hero" class="active">Início</a></li>
+        <li><a href="#why-us">Sobre nós</a></li>
+        <li><a href="#services-list">Serviços</a></li>
+        <li><a href="https://hermidamaia.jusbrasil.com.br/publicacoes">Blog</a></li>
+        <li><a href="https://hmdesk.freshdesk.com/support/tickets/new">Contato</a></li>
+        <li><a href="https://hmdesk.freshdesk.com/support/login">Login</a></li>
+      </ul>
+    </nav><!-- .navbar -->
 
-    </div>
-  </header><!-- End Header -->
+  </div>
+</header><!-- End Header -->
+
+
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center">
