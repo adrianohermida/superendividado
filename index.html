@@ -26,9 +26,6 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
 
-  <!-- Swiper CSS -->
-<link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css">
-
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
@@ -378,7 +375,7 @@
   </div>
 
 </section><!-- End Features Section -->
-</section><!-- End Features Section -->
+
 <!-- ======= Testimonials Section ======= -->
 <section id="testimonials" class="testimonials">
   <div class="container" data-aos="fade-up">
@@ -387,7 +384,7 @@
       <h2>Depoimentos</h2>
     </div>
 
-    <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
+    <div class="swiper-container slides-3" data-aos="fade-up" data-aos-delay="100">
       <div class="swiper-wrapper">
 
         <div class="swiper-slide">
@@ -448,8 +445,6 @@
 </section><!-- End Testimonials Section -->
 
 </main><!-- End #main -->
-
-
 
     <!-- ======= Recent Blog Posts Section ======= -->
     <section id="recent-posts" class="recent-posts">
@@ -592,12 +587,12 @@
   
   <div id="preloader"></div>
 
-  <!-- Swiper JS -->
+<!-- Swiper JS -->
 <script src="vendor/swiper/swiper-bundle.min.js"></script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    var swiper = new Swiper('.swiper', {
+    var swiper = new Swiper('.swiper-container', {
       loop: true,
       pagination: {
         el: '.swiper-pagination',
@@ -610,6 +605,7 @@
     });
   });
 </script>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
