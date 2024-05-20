@@ -38,8 +38,7 @@
   ======================================================== -->
 
  <!-- CSS Personalizado -->
-<!-- CSS Personalizado -->
-<style>
+ <style>
   /* Custom styles for the testimonials section */
   .testimonials {
     padding: 60px 0;
@@ -99,56 +98,63 @@
       display: none;
     }
   }
-
-  /* Custom styles for the media section */
-  .media-section {
-    padding: 60px 0;
-    background: #fff;
-    text-align: center;
-  }
-
-  .media-section .media-item {
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    background: #fff;
-    border-radius: 6px;
-    margin-bottom: 30px;
-  }
-
-  .media-section .media-item img {
-    width: 100%;
-    height: 120px; /* Definir altura fixa */
-    object-fit: cover; /* Para manter a proporção da imagem */
-    border-radius: 6px;
-  }
-
-  .swiper-container {
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
-  .swiper-slide {
-    background-position: center;
-    background-size: cover;
-  }
-
-  @media (max-width: 768px) {
-    .media-section .row {
-      display: none;
-    }
-    .media-section .swiper-container {
-      display: block;
-    }
-  }
-
-  @media (min-width: 769px) {
-    .media-section .swiper-container {
-      display: none;
-    }
-  }
 </style>
 
+    <!-- CSS Personalizado -->
+    <style>
+      /* Custom styles for the media section */
+      @media (max-width: 768px) {
+      .testimonials .row {
+        display: none;
+      }
+      .testimonials .swiper-container {
+        display: block;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .testimonials .swiper-container {
+        display: none;
+      }
+    }
+
+/* Custom styles for the media section */
+.media-section {
+  padding: 60px 0;
+  background: #fff;
+  text-align: center;
+}
+
+.media-section .media-item {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  background: #fff;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+.media-section .media-item img {
+  width: 100%;
+  height: 120px; /* Definir altura fixa */
+  object-fit: cover; /* Para manter a proporção da imagem */
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .media-section .row {
+    display: none;
+  }
+  .media-section .swiper-container {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .media-section .swiper-container {
+    display: none;
+  }
+}
+    </style>
 
 </head>
 
