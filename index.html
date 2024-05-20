@@ -40,7 +40,7 @@
  <!-- CSS Personalizado -->
  <style>
   /* Custom styles for the testimonials section */
-  /* Custom styles for the testimonials section */
+/* Custom styles for the testimonials section */
 .testimonials {
   padding: 60px 0;
   background: #f7f8fa;
@@ -85,21 +85,6 @@
   margin: 0;
 }
 
-@media (max-width: 768px) {
-  .testimonials .row {
-    display: none;
-  }
-  .testimonials .swiper-container {
-    display: block;
-  }
-}
-
-@media (min-width: 769px) {
-  .testimonials .swiper-container {
-    display: none;
-  }
-}
-
 /* Custom styles for the media section */
 .media-section {
   padding: 60px 0;
@@ -122,13 +107,45 @@
   border-radius: 6px;
 }
 
-.swiper-container {
+/* Swiper custom styles for the testimonial section */
+.testimonials-swiper .swiper-container {
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
-.swiper-slide {
+.testimonials-swiper .swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .testimonials .row {
+    display: none;
+  }
+  .testimonials-swiper .swiper-container {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .testimonials-swiper .swiper-container {
+    display: block; /* Mostrar o swiper-container na versão desktop também */
+  }
+
+  .testimonials-swiper .swiper-slide {
+    width: 33.33%; /* Mostrar até 3 itens na versão desktop */
+  }
+}
+
+/* Swiper custom styles for the media section */
+.media-swiper .swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.media-swiper .swiper-slide {
   background-position: center;
   background-size: cover;
 }
@@ -137,17 +154,17 @@
   .media-section .row {
     display: none;
   }
-  .media-section .swiper-container {
+  .media-swiper .swiper-container {
     display: block;
   }
 }
 
 @media (min-width: 769px) {
-  .media-section .swiper-container {
+  .media-swiper .swiper-container {
     display: block; /* Mostrar o swiper-container na versão desktop também */
   }
 
-  .swiper-slide {
+  .media-swiper .swiper-slide {
     width: 33.33%; /* Mostrar até 3 itens na versão desktop */
   }
 }
@@ -255,51 +272,52 @@
       </div>
     </section><!-- End Why Choose Us Section -->
 
-      <!-- ======= Midia Section ======= -->
-      <section id="midia" class="media-section">
-        <div class="container" data-aos="fade-up">
-          <div class="section-header">
-            <h2>Na Mídia</h2>
-          </div>
-          <div class="swiper-container media-slider">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="media-item">
-                  <img src="assets/img/midia/midia-1.jpg" class="img-fluid" alt="Mídia 1">
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="media-item">
-                  <img src="assets/img/midia/midia-2.jpg" class="img-fluid" alt="Mídia 2">
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="media-item">
-                  <img src="assets/img/midia/midia-3.jpg" class="img-fluid" alt="Mídia 3">
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="media-item">
-                  <img src="assets/img/midia/midia-4.jpg" class="img-fluid" alt="Mídia 4">
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="media-item">
-                  <img src="assets/img/midia/midia-5.jpg" class="img-fluid" alt="Mídia 5">
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="media-item">
-                  <img src="assets/img/midia/midia-6.jpg" class="img-fluid" alt="Mídia 6">
-                </div>
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+<!-- ======= Midia Section ======= -->
+<section id="midia" class="media-section">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header">
+      <h2>Na Mídia</h2>
+    </div>
+    <div class="swiper-container media-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="media-item">
+            <img src="assets/img/midia/midia-1.jpg" class="img-fluid" alt="Mídia 1">
           </div>
         </div>
-      </section><!-- End Midia Section -->
+        <div class="swiper-slide">
+          <div class="media-item">
+            <img src="assets/img/midia/midia-2.jpg" class="img-fluid" alt="Mídia 2">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="media-item">
+            <img src="assets/img/midia/midia-3.jpg" class="img-fluid" alt="Mídia 3">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="media-item">
+            <img src="assets/img/midia/midia-4.jpg" class="img-fluid" alt="Mídia 4">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="media-item">
+            <img src="assets/img/midia/midia-5.jpg" class="img-fluid" alt="Mídia 5">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="media-item">
+            <img src="assets/img/midia/midia-6.jpg" class="img-fluid" alt="Mídia 6">
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</section><!-- End Midia Section -->
+
 
 <!-- ======= Our Services Section ======= -->
 <section id="services-list" class="services-list">
@@ -471,60 +489,66 @@
 <!-- ======= Testimonials Section ======= -->
 <section id="testimonials" class="testimonials">
   <div class="container" data-aos="fade-up">
-
     <div class="section-header">
       <h2>Depoimentos</h2>
     </div>
+    <div class="swiper-container testimonials-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              O Dr Adriano foi incrível na negociação com meus credores. Eles não apenas aliviaram meu estresse, como também conseguiram condições de pagamento que eu posso cumprir sem sacrificar a faculdade do meu filho. Sou muito grato e recomendo seus serviços.
+            </p>
+            <div class="profile mt-auto">
+              <img src="assets/img/testimonials/testimonials-1.png" class="testimonial-img" alt="">
+              <h3>Maria Clara</h3>
+              <h4>60 anos, Santos (SP)</h4>
+            </div>
+          </div>
+        </div><!-- End testimonial item -->
 
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="testimonial-item">
-          <div class="stars">
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              Fui vítima de falso acordo, paguei 2900,00 de uma dívida de 60 mil, depois de 6 meses descobri que meu nome continuava sujo e não sabia o que fazer pois o banco não reconhecia o acordo. O escritório Hermida Maia agiu rapidamente, e na audiência fizemos acordo direto com banco pagando R$1.200. Estou muito grato pelo profissionalismo e agilidade deles.
+            </p>
+            <div class="profile mt-auto">
+              <img src="assets/img/testimonials/testimonials-2.png" class="testimonial-img" alt="">
+              <h3>Roberto Murilo</h3>
+              <h4>33 anos, Porto Alegre (RS)</h4>
+            </div>
           </div>
-          <p>
-            O Dr Adriano foi incrível na negociação com meus credores. Eles não apenas aliviaram meu estresse, como também conseguiram condições de pagamento que eu posso cumprir sem sacrificar a faculdade do meu filho. Sou muito grato e recomendo seus serviços.
-          </p>
-          <div class="profile mt-auto">
-            <img src="assets/img/testimonials/testimonials-1.png" class="testimonial-img" alt="">
-            <h3>Maria Clara</h3>
-            <h4>60 anos, Santos (SP)</h4>
-          </div>
-        </div>
-      </div><!-- End testimonial item -->
+        </div><!-- End testimonial item -->
 
-      <div class="col-lg-4">
-        <div class="testimonial-item">
-          <div class="stars">
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              O Dr Adriano Maia revisou meu desconto do consignado e encontrou várias cláusulas abusivas que eu havia ignorado. Paguei o dobro do consignado sem perceber, eu não sabia mais quando iria acabar aquela dívida.Conseguimos a suspensão dessa cobrança aburda e no final recebi o dobro do que paguei. Deus abençoe vocês.
+            </p>
+            <div class="profile mt-auto">
+              <img src="assets/img/testimonials/testimonials-3.png" class="testimonial-img" alt="">
+              <h3>Carlos Eduardo</h3>
+              <h4>55 anos, Cascavel (PR)</h4>
+            </div>
           </div>
-          <p>
-            Fui vítima de falso acordo, paguei 2900,00 de uma dívida de 60 mil, depois de 6 meses descobri que meu nome continuava sujo e não sabia o que fazer pois o banco não reconhecia o acordo. O escritório Hermida Maia agiu rapidamente, e na audiência fizemos acordo direto com banco pagando R$1.200. Estou muito grato pelo profissionalismo e agilidade deles.
-          </p>
-          <div class="profile mt-auto">
-            <img src="assets/img/testimonials/testimonials-2.png" class="testimonial-img" alt="">
-            <h3>Roberto Murilo</h3>
-            <h4>33 anos, Porto Alegre (RS)</h4>
-          </div>
-        </div>
-      </div><!-- End testimonial item -->
-
-      <div class="col-lg-4">
-        <div class="testimonial-item">
-          <div class="stars">
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-          </div>
-          <p>
-            O Dr Adriano Maia revisou meu desconto do consignado e encontrou várias cláusulas abusivas que eu havia ignorado. Paguei o dobro do consignado sem perceber, eu não sabia mais quando iria acabar aquela dívida. Conseguimos a suspensão dessa cobrança abusiva e no final recebi o dobro do que paguei. Deus abençoe vocês.
-          </p>
-          <div class="profile mt-auto">
-            <img src="assets/img/testimonials/testimonials-3.png" class="testimonial-img" alt="">
-            <h3>Carlos Eduardo</h3>
-            <h4>55 anos, Cascavel (PR)</h4>
-          </div>
-        </div>
-      </div><!-- End testimonial item -->
+        </div><!-- End testimonial item -->
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
+  </div>
+</section><!-- End Testimonials Section -->
+
 
     <!-- Versão responsiva com Swiper -->
     <div class="swiper-container slides-3">
@@ -731,11 +755,10 @@
   
   <div id="preloader"></div>
   
-<!-- Swiper JS -->
-<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- Swiper Initialization -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var swiper = new Swiper('.media-slider', {
+    var mediaSwiper = new Swiper('.media-swiper', {
       slidesPerView: 1,
       spaceBetween: 10,
       pagination: {
@@ -755,12 +778,42 @@
           slidesPerView: 3,
           spaceBetween: 30,
         },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+    });
+
+    var testimonialsSwiper = new Swiper('.testimonials-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
       },
     });
   });
 </script>
 
-</script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
