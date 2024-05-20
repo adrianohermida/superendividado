@@ -100,6 +100,45 @@
   }
 </style>
 
+  <!-- CSS Personalizado -->
+  <style>
+    /* Custom styles for the media section */
+    .media-section {
+      padding: 60px 0;
+      background: #fff;
+      text-align: center;
+    }
+
+    .media-section .media-item {
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      background: #fff;
+      border-radius: 6px;
+      margin-bottom: 30px;
+    }
+
+    .media-section .media-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .media-section .row {
+        display: none;
+      }
+      .media-section .swiper-container {
+        display: block;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .media-section .swiper-container {
+        display: none;
+      }
+    }
+  </style>
+
 </head>
 
 <body class="page-index">
@@ -122,7 +161,7 @@
           <li><a href="index.html" class="active">Inicio</a></li>
           <li><a href="about.html">Sobre nós</a></li>
           <li><a href="services.html">Serviços</a></li>
-          <li><a href="portfolio.html">Blog</a></li>
+          <li><a href="https://hermidamaia.jusbrasil.com.br/publicacoes">Blog</a></li>
           <li><a href="contact.html">Contato</a></li>
           <li><a href="https://hmdesk.freshdesk.com/support/login">Login</a></li>
         </ul>
@@ -212,45 +251,101 @@
 
 
 <!-- ======= Midia Section ======= -->
-<section id="testimonials" class="testimonials">
+<section id="midia" class="media-section">
   <div class="container" data-aos="fade-up">
-
-    <style>
-      .testimonials .swiper-slide img {
-        height: 200px; /* Ajuste a altura conforme necessário */
-        width: auto;
-        object-fit: cover; /* Mantém a proporção da imagem */
-      }
-    </style>
 
     <div class="section-header">
       <h2>Na Mídia</h2>
     </div>
 
-    <div class="clients-slider swiper" data-aos="fade-up" data-aos-delay="100">
-      <div class="swiper-wrapper align-items-center">
-        <div class="swiper-slide"><img src="assets/img/midia/midia-1.jpeg" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/midia/midia-2.jpeg" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/midia/midia-3.jpeg" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/midia/midia-4.jpeg" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/midia/midia-5.jpeg" class="img-fluid" alt=""></div>
-        <div class="swiper-slide"><img src="assets/img/midia/midia-6.jpeg" class="img-fluid" alt=""></div>       
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="media-item">
+          <img src="assets/img/midia/midia-1.jpeg" class="img-fluid" alt="">
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="media-item">
+          <img src="assets/img/midia/midia-2.jpeg" class="img-fluid" alt="">
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="media-item">
+          <img src="assets/img/midia/midia-3.jpeg" class="img-fluid" alt="">
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="media-item">
+          <img src="assets/img/midia/midia-4.jpeg" class="img-fluid" alt="">
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="media-item">
+          <img src="assets/img/midia/midia-5.jpeg" class="img-fluid" alt="">
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="media-item">
+          <img src="assets/img/midia/midia-6.jpeg" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- Versão responsiva com Swiper -->
+    <div class="swiper-container media-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="media-item">
+            <img src="assets/img/midia/midia-1.jpeg" class="img-fluid" alt="">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="media-item">
+            <img src="assets/img/midia/midia-2.jpeg" class="img-fluid" alt="">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="media-item">
+            <img src="assets/img/midia/midia-3.jpeg" class="img-fluid" alt="">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="media-item">
+            <img src="assets/img/midia/midia-4.jpeg" class="img-fluid" alt="">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="media-item">
+            <img src="assets/img/midia/midia-5.jpeg" class="img-fluid" alt="">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="media-item">
+            <img src="assets/img/midia/midia-6.jpeg" class="img-fluid" alt="">
+          </div>
+        </div>
       </div>
       <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
 
   </div>
 </section><!-- End Midia Section -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.1.0/swiper-bundle.min.js"></script>
+<script src="vendor/swiper/swiper-bundle.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var swiper = new Swiper('.clients-slider', {
+    var swiper = new Swiper('.media-slider', {
       slidesPerView: 1,
       spaceBetween: 10,
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
       breakpoints: {
         640: {
@@ -269,9 +364,6 @@
     });
   });
 </script>
-
-
-
         
 <!-- ======= Our Services Section ======= -->
 <section id="services-list" class="services-list">
