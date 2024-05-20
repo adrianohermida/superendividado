@@ -39,63 +39,6 @@
 
  <!-- CSS Personalizado -->
  <style>
-/* Custom styles for the header */
-.header .logo-img {
-  height: 50px; /* Define a fixed height */
-  width: 50px; /* Define a fixed width to maintain the 1:1 ratio */
-  object-fit: cover; /* Ensure the image covers the box and maintains its aspect ratio */
-}
-
-@media (max-width: 768px) {
-  .header .logo-img {
-    height: 40px; /* Adjust the height for smaller screens */
-    width: 40px; /* Adjust the width for smaller screens */
-  }
-
-  .header .navbar {
-    display: none;
-  }
-
-  .header .mobile-nav-toggle {
-    display: block;
-  }
-
-  .header .navbar-mobile {
-    display: block;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background: #fff;
-    z-index: 999;
-    padding: 10px;
-  }
-
-  .header .navbar-mobile ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .header .navbar-mobile ul li {
-    margin: 10px 0;
-  }
-
-  .header .navbar-mobile ul li a {
-    color: #333;
-  }
-}
-
-@media (min-width: 769px) {
-  .header .navbar {
-    display: block;
-  }
-
-  .header .mobile-nav-toggle {
-    display: none;
-  }
-}
-
 /* Custom styles for the testimonials section */
 .testimonials {
   padding: 60px 0;
@@ -217,14 +160,14 @@
 
 </head>
 
-<body class="page-index">
-
-  <!-- ======= Header ======= -->
-<header id="header" class="header d-flex align-items-center fixed-top">
+ <!-- ======= Header ======= -->
+ <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
     <a href="index.html" class="logo d-flex align-items-center">
-      <img src="assets/img/logo.png" alt="Hermida Maia Advocacia" class="logo-img">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="d-flex align-items-center">Hermida Maia Advocacia</h1>
     </a>
 
     <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -232,7 +175,7 @@
 
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a href="#hero" class="active">Início</a></li>
+        <li><a href="#hero" class="active">Inicio</a></li>
         <li><a href="#why-us">Sobre nós</a></li>
         <li><a href="#services-list">Serviços</a></li>
         <li><a href="https://hermidamaia.jusbrasil.com.br/publicacoes">Blog</a></li>
