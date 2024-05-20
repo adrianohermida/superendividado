@@ -165,15 +165,17 @@
     height: auto;
   }
 }
-.l .logo-img {
-      width: auto;
+.logo-img {
+      max-height: 40px; /* Defina a altura máxima */
+      max-width: 40px;  /* Defina a largura máxima */
+      object-fit: contain; /* Mantenha a proporção */
     }
     @media (min-width: 768px) {
       .logo-img {
-        height: auto
+        max-height: 80px; /* Aumenta a altura máxima para dispositivos maiores */
+        max-width: 80px;  /* Aumenta a largura máxima para dispositivos maiores */
       }
     }
-
 
 <body class="page-index">
 
