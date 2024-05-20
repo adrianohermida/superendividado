@@ -39,7 +39,6 @@
 
  <!-- CSS Personalizado -->
  <style>
-  /* Custom styles for the testimonials section */
 /* Custom styles for the testimonials section */
 .testimonials {
   padding: 60px 0;
@@ -85,6 +84,25 @@
   margin: 0;
 }
 
+@media (max-width: 768px) {
+  .testimonials .row {
+    display: none;
+  }
+  .testimonials-swiper .swiper-container {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .testimonials-swiper .swiper-container {
+    display: block; /* Mostrar o swiper-container na versão desktop também */
+  }
+
+  .testimonials-swiper .swiper-slide {
+    width: 33.33%; /* Mostrar até 3 itens na versão desktop */
+  }
+}
+
 /* Custom styles for the media section */
 .media-section {
   padding: 60px 0;
@@ -107,38 +125,6 @@
   border-radius: 6px;
 }
 
-/* Swiper custom styles for the testimonial section */
-.testimonials-swiper .swiper-container {
-  width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.testimonials-swiper .swiper-slide {
-  background-position: center;
-  background-size: cover;
-}
-
-@media (max-width: 768px) {
-  .testimonials .row {
-    display: none;
-  }
-  .testimonials-swiper .swiper-container {
-    display: block;
-  }
-}
-
-@media (min-width: 769px) {
-  .testimonials-swiper .swiper-container {
-    display: block; /* Mostrar o swiper-container na versão desktop também */
-  }
-
-  .testimonials-swiper .swiper-slide {
-    width: 33.33%; /* Mostrar até 3 itens na versão desktop */
-  }
-}
-
-/* Swiper custom styles for the media section */
 .media-swiper .swiper-container {
   width: 100%;
   padding-top: 50px;
@@ -282,32 +268,32 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="media-item">
-            <img src="assets/img/midia/midia-1.jpg" class="img-fluid" alt="Mídia 1">
+            <img src="assets/img/midia/midia-1.jpeg" class="img-fluid" alt="Mídia 1">
           </div>
         </div>
         <div class="swiper-slide">
           <div class="media-item">
-            <img src="assets/img/midia/midia-2.jpg" class="img-fluid" alt="Mídia 2">
+            <img src="assets/img/midia/midia-2.jpeg" class="img-fluid" alt="Mídia 2">
           </div>
         </div>
         <div class="swiper-slide">
           <div class="media-item">
-            <img src="assets/img/midia/midia-3.jpg" class="img-fluid" alt="Mídia 3">
+            <img src="assets/img/midia/midia-3.jpeg" class="img-fluid" alt="Mídia 3">
           </div>
         </div>
         <div class="swiper-slide">
           <div class="media-item">
-            <img src="assets/img/midia/midia-4.jpg" class="img-fluid" alt="Mídia 4">
+            <img src="assets/img/midia/midia-4.jpeg" class="img-fluid" alt="Mídia 4">
           </div>
         </div>
         <div class="swiper-slide">
           <div class="media-item">
-            <img src="assets/img/midia/midia-5.jpg" class="img-fluid" alt="Mídia 5">
+            <img src="assets/img/midia/midia-5.jpeg" class="img-fluid" alt="Mídia 5">
           </div>
         </div>
         <div class="swiper-slide">
           <div class="media-item">
-            <img src="assets/img/midia/midia-6.jpg" class="img-fluid" alt="Mídia 6">
+            <img src="assets/img/midia/midia-6.jpeg" class="img-fluid" alt="Mídia 6">
           </div>
         </div>
       </div>
@@ -317,7 +303,6 @@
     </div>
   </div>
 </section><!-- End Midia Section -->
-
 
 <!-- ======= Our Services Section ======= -->
 <section id="services-list" class="services-list">
@@ -548,6 +533,7 @@
     </div>
   </div>
 </section><!-- End Testimonials Section -->
+
 
 
     <!-- Versão responsiva com Swiper -->
@@ -813,7 +799,6 @@
     });
   });
 </script>
-
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
