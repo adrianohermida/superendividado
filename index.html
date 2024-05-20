@@ -39,14 +39,17 @@
 
  <!-- CSS Personalizado -->
  <style>
-  /* Custom styles for the header */
-.header .logo img {
-  max-height: 50px; /* Adjust the height as needed */
+/* Custom styles for the header */
+.header .logo-img {
+  height: 50px; /* Define a fixed height */
+  width: 50px; /* Define a fixed width to maintain the 1:1 ratio */
+  object-fit: cover; /* Ensure the image covers the box and maintains its aspect ratio */
 }
 
 @media (max-width: 768px) {
-  .header .logo img {
-    max-height: 40px; /* Adjust the height for smaller screens */
+  .header .logo-img {
+    height: 40px; /* Adjust the height for smaller screens */
+    width: 40px; /* Adjust the width for smaller screens */
   }
 
   .header .navbar {
@@ -216,12 +219,12 @@
 
 <body class="page-index">
 
-<!-- ======= Header ======= -->
+  <!-- ======= Header ======= -->
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
     <a href="index.html" class="logo d-flex align-items-center">
-      <img src="assets/img/logo.svg" alt="Hermida Maia Advocacia" class="img-fluid">
+      <img src="assets/img/logo.png" alt="Hermida Maia Advocacia" class="logo-img">
     </a>
 
     <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -240,8 +243,6 @@
 
   </div>
 </header><!-- End Header -->
-
-
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center">
