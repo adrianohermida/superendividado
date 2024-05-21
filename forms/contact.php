@@ -28,7 +28,7 @@ $contact->subject = $_POST['subject'];
 $contact->smtp = array(
   'host' => 'smtp.gmail.com',
   'username' => 'atendimento@hermidamaia.adv.br',
-  'password' => 'Oabam8894$180514Jg$',
+  'password' => '180514Jg$',
   'port' => '587'
 );
 */
