@@ -37,7 +37,7 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-  <script src="https://www.google.com/recaptcha/api.js?render=6LdhTmoiAAAAADWbd-gc0mspOZh8CzBxGsSC7N4D"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
 
@@ -120,7 +120,7 @@
 
       <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
 
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form" data-recaptcha-site-key="6LdhTmoiAAAAADWbd-gc0mspOZh8CzBxGsSC7N4D">
+        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
           <div class="row">
             <div class="col-md-6 form-group">
               <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" required>
@@ -134,6 +134,9 @@
           </div>
           <div class="form-group mt-3">
             <textarea class="form-control" name="message" rows="5" placeholder="Mensagem" required></textarea>
+          </div>
+          <div class="form-group mt-3">
+            <div class="g-recaptcha" data-sitekey="6LdhTmoiAAAAADWbd-gc0mspOZh8CzBxGsSC7N4D"></div>
           </div>
           <div class="my-3">
             <div class="loading">Enviando...</div>

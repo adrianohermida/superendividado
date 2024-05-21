@@ -39,6 +39,14 @@ $contact->add_message($_POST['message'], 'Message', 10);
 
 $contact->recaptcha_secret_key = '6LdhTmoiAAAAAInBVw42JbCwfd0XxFSv9dybp9tx';
 
+$recaptcha_response = $_POST['recaptcha-response'];
+$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$contact->recaptcha_secret_key}&response={$recaptcha_response}");
+$responseKeys = json_decode($response, true);
+
+if(intval($responseKeys["success"]) !== 1) {
+  die('Please complete the reCAPTCHA');
+}
+
 if ($_POST['privacy'] != 'accept') {
   die('Please, accept our terms of service and privacy policy');
 }
