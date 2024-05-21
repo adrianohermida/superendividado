@@ -44,11 +44,11 @@ $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?s
 $responseKeys = json_decode($response, true);
 
 if(intval($responseKeys["success"]) !== 1) {
-  die('Please complete the reCAPTCHA');
+  die('Por favor preencha o reCAPTCHA');
 }
 
 if ($_POST['privacy'] != 'accept') {
-  die('Please, accept our terms of service and privacy policy');
+  die('Por favor, aceite nossos termos de serviço e política de privacidade');
 }
 
 $contact->honeypot = $_POST['first_name'];
