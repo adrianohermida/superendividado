@@ -111,9 +111,7 @@
   .testimonials-swiper .swiper-slide {
     width: 33.33%; /* Mostrar até 3 itens na versão desktop */
   }
-}
-
-/* Custom styles for the media section */
+}/* Custom styles for the media section */
 .media-section {
   padding: 60px 0;
   background: #fff;
@@ -145,6 +143,11 @@
 }
 
 @media (min-width: 769px) {
+  .media-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .media-section .swiper-container {
     display: none;
   }
@@ -303,7 +306,7 @@
       </div>
       <div class="col-lg-4 col-md-6">
         <div class="media-item">
-          <img src="assets/img/midia/midia-4.jpg" class="img-fluid" alt="">
+          <img src="assets/img/midia/midia-4.jpeg" class="img-fluid" alt="">
         </div>
       </div>
       <div class="col-lg-4 col-md-6">
@@ -323,7 +326,7 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="media-item">
-            <img src="assets/img/midia/midia-1.jpg" class="img-fluid" alt="">
+            <img src="assets/img/midia/midia-1.jpeg" class="img-fluid" alt="">
           </div>
         </div>
         <div class="swiper-slide">
@@ -338,17 +341,17 @@
         </div>
         <div class="swiper-slide">
           <div class="media-item">
-            <img src="assets/img/midia/midia-4.jpg" class="img-fluid" alt="">
+            <img src="assets/img/midia/midia-4.jpeg" class="img-fluid" alt="">
           </div>
         </div>
         <div class="swiper-slide">
           <div class="media-item">
-            <img src="assets/img/midia/midia-5.jpg" class="img-fluid" alt="">
+            <img src="assets/img/midia/midia-5.jpeg" class="img-fluid" alt="">
           </div>
         </div>
         <div class="swiper-slide">
           <div class="media-item">
-            <img src="assets/img/midia/midia-6.jpg" class="img-fluid" alt="">
+            <img src="assets/img/midia/midia-6.jeg" class="img-fluid" alt="">
           </div>
         </div>
       </div>
@@ -359,6 +362,7 @@
 
   </div>
 </section><!-- End Midia Section -->
+
 
 
 <!-- ======= Our Services Section ======= -->
@@ -793,7 +797,7 @@
   
   <div id="preloader"></div>
   
-  <!-- Swiper Initialization -->
+  <!-- Swiper Initialization Media-->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var mediaSwiper = new Swiper('.media-slider', {
@@ -809,11 +813,11 @@
         },
         breakpoints: {
           640: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 20,
           },
           768: {
-            slidesPerView: 3,
+            slidesPerView: 1,
             spaceBetween: 30,
           },
           1024: {
@@ -824,6 +828,7 @@
       });
     });
   </script>
+  
 
   <!-- Swiper Initialization Testimonials -->
 
