@@ -7,7 +7,7 @@
 */
 
 // Replace contact@example.com with your real receiving email address
-$receiving_email_address = 'atendimento@hermidamaia.adv.br';
+$receiving_email_address = 'sac@hermidamaia.adv.br';
 
 if (file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php')) {
   include($php_email_form);
@@ -23,15 +23,14 @@ $contact->from_name = $_POST['name'];
 $contact->from_email = $_POST['email'];
 $contact->subject = $_POST['subject'];
 
-// Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-/*
+// Use SMTP to send emails. You need to enter your correct SMTP credentials
 $contact->smtp = array(
   'host' => 'smtp.gmail.com',
-  'username' => 'atendimento@hermidamaia.adv.br',
-  'password' => '180514Jg$',
-  'port' => '587'
+  'username' => 'atendimento@hermidamaia.adv.br', // Substitua pelo seu email Gmail
+  'password' => '180514Jg$', // Substitua pela sua senha Gmail ou senha de app
+  'port' => '587', // Porta SMTP para TLS
+  'encryption' => 'tls' // Método de criptografia
 );
-*/
 
 $contact->add_message($_POST['name'], 'From');
 $contact->add_message($_POST['email'], 'Email');
@@ -44,15 +43,22 @@ $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?s
 $responseKeys = json_decode($response, true);
 
 if(intval($responseKeys["success"]) !== 1) {
-  die('Por favor preencha o reCAPTCHA');
+  die('Please complete the reCAPTCHA');
 }
 
 if ($_POST['privacy'] != 'accept') {
-  die('Por favor, aceite nossos termos de serviço e política de privacidade');
+  die('Please, accept our terms of service and privacy policy');
 }
 
 $contact->honeypot = $_POST['first_name'];
 $contact->add_attachment('resume', 20, array('pdf', 'doc', 'docx', 'rtf'));
+
+// Log de depuração
+if (!$contact->send()) {
+  error_log('Email não enviado. Erro: ' . $contact->error);
+} else {
+  error_log('Email enviado com sucesso.');
+}
 
 echo $contact->send();
 ?>
