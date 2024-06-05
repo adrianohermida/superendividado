@@ -334,6 +334,84 @@
 
 <!-- End Rights Section -->
 
+<!-- Debt Simulation Section -->
+<!-- Debt Simulation Section -->
+<section id="debt-simulation" class="debt-simulation">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header">
+      <h2>Simulação de Parcelamento de Dívidas</h2>
+      <p>Insira suas informações e veja como a Lei do Superendividamento pode ajudar você a reorganizar suas finanças.</p>
+      <p>Os dados inseridos são temporários e serão perdidos ao recarregar a página ou fechar o navegador. Você pode solicitar um resumo do plano por e-mail.</p>
+    </div>
+    <form id="debtForm" action="assets/vendor/sheet/send_email.php" method="POST">
+      <div id="participants" class="mb-4">
+        <h3>Participantes</h3>
+        <div class="row gy-4 participant">
+          <div class="col-lg-4">
+            <label for="participantName1">Nome:</label>
+            <input type="text" id="participantName1" name="participantName1" class="form-control" required>
+          </div>
+          <div class="col-lg-4">
+            <label for="participantIncome1">Renda Mensal:</label>
+            <input type="number" id="participantIncome1" name="participantIncome1" class="form-control" required>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary mt-3" onclick="addParticipant()">Adicionar Outro Participante</button>
+      <div class="mt-4">
+        <label for="percentage">Percentual da Renda para Pagamento (%):</label>
+        <input type="number" id="percentage" name="percentage" class="form-control" min="30" max="100" required>
+      </div>
+      <div id="debts" class="mt-4">
+        <h3>Detalhamento das Dívidas</h3>
+        <div class="row gy-4 debt">
+          <div class="col-lg-4">
+            <label for="debtAmount1">Valor da Dívida:</label>
+            <input type="number" id="debtAmount1" name="debtAmount1" class="form-control" required>
+          </div>
+          <div class="col-lg-4">
+            <label for="debtRate1">Taxa de Juros (%):</label>
+            <input type="number" id="debtRate1" name="debtRate1" class="form-control" required>
+          </div>
+          <div class="col-lg-4">
+            <label for="debtTerm1">Prazo (meses):</label>
+            <input type="number" id="debtTerm1" name="debtTerm1" class="form-control" required>
+          </div>
+          <div class="col-lg-4">
+            <label for="debtPaid1">Parcelas Pagas:</label>
+            <input type="number" id="debtPaid1" name="debtPaid1" class="form-control" required>
+          </div>
+          <div class="col-lg-4">
+            <label for="debtDueDate1">Vencimento da Última Parcela Paga:</label>
+            <input type="date" id="debtDueDate1" name="debtDueDate1" class="form-control" required>
+          </div>
+          <div class="col-lg-4">
+            <label for="debtNextDueDate1">Vencimento da Próxima Parcela:</label>
+            <input type="date" id="debtNextDueDate1" name="debtNextDueDate1" class="form-control" required>
+          </div>
+          <div class="col-lg-4">
+            <label for="creditCard1">Cartão de Crédito:</label>
+            <select id="creditCard1" name="creditCard1" class="form-control">
+              <option value="não">Não</option>
+              <option value="sim">Sim</option>
+            </select>
+          </div>
+          <div class="col-lg-4">
+            <label for="creditCardInstallments1">Fatura Parcelada:</label>
+            <select id="creditCardInstallments1" name="creditCardInstallments1" class="form-control">
+              <option value="não">Não</option>
+              <option value="sim">Sim</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary mt-3" onclick="addDebt()">Adicionar Outra Dívida</button>
+      <button type="submit" class="btn btn-success mt-3">Calcular</button>
+    </form>
+    <div id="results" class="mt-4"></div>
+  </div>
+</section>
+ <!-- Debt Simulation Section -->
 
 <!-- ======= Our Services Section ======= -->
 <section id="services-list" class="services-list">
@@ -873,7 +951,7 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-
+  <script src="assets/vendor/sheet/debt-simulation.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
