@@ -38,6 +38,10 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="path/to/your/css/styles.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  
+        body {
 
   <!-- =======================================================
   * Template Name: Nova
@@ -172,6 +176,50 @@
   width: auto; /* Ajuste conforme necessário */
   height: 160px; /* Ajuste conforme necessário */
 }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .timeline-step {
+            text-align: center;
+            cursor: pointer;
+        }
+        .timeline-step.active {
+            color: #007bff;
+        }
+        .step-content {
+            display: none;
+        }
+        .step-content.active {
+            display: block;
+        }
+        .data-view {
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        iframe {
+            margin-bottom: 20px;
+        }
+        .form-column, .video-column {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .form-column {
+            width: 60%;
+        }
+        .video-column {
+            width: 38%;
+            margin-left: 2%;
+        }
+    
 </style>
 
 <!-- GLightbox CSS -->
@@ -333,138 +381,148 @@
 <!-- End Rights Section -->
 
 <!-- Debt Simulation Section -->
-<section id="debt-simulation" class="debt-simulation">
-  <div class="container" data-aos="fade-up">
-      <div class="section-header">
-          <h2>Simulação de Parcelamento de Dívidas</h2>
-          <p>Insira suas informações e veja como a Lei do Superendividamento pode ajudar você a reorganizar suas finanças.</p>
-          <p>Os dados inseridos são temporários e serão perdidos ao recarregar a página ou fechar o navegador. Você pode solicitar um resumo do plano por e-mail.</p>
-      </div>
-
-      <!-- Etapa 1: Identificação -->
-      <div id="step-1">
-          <h3>Identificação</h3>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-          <form id="debtForm" action="assets/vendor/sheet/send_email.php" method="POST">
-              <div id="identification" class="mb-4">
-                  <div class="row gy-4">
-                      <div class="col-lg-4">
-                          <label for="name">Nome:</label>
-                          <input type="text" id="name" name="name" class="form-control" required>
-                      </div>
-                      <div class="col-lg-4">
-                          <label for="email">E-mail:</label>
-                          <input type="email" id="email" name="email" class="form-control" required>
-                      </div>
-                      <div class="col-lg-4">
-                          <label for="phone">Celular:</label>
-                          <input type="text" id="phone" name="phone" class="form-control" required>
-                      </div>
-                      <div class="col-lg-4">
-                          <label for="city">Cidade:</label>
-                          <input type="text" id="city" name="city" class="form-control" required>
-                      </div>
-                      <div class="col-lg-4">
-                          <label for="state">Estado:</label>
-                          <input type="text" id="state" name="state" class="form-control" required>
-                      </div>
-                      <div class="col-lg-4">
-                          <label for="maritalStatus">Estado Civil:</label>
-                          <input type="text" id="maritalStatus" name="maritalStatus" class="form-control" required>
-                      </div>
-                      <div class="col-lg-4">
-                          <label for="profession">Profissão:</label>
-                          <input type="text" id="profession" name="profession" class="form-control" required>
-                      </div>
-                  </div>
-              </div>
-          </form>
-      </div>
-
-      <!-- Etapa 2: Fonte de Renda -->
-      <div id="step-2">
-          <h3>Fonte de Renda</h3>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-          <div id="participants" class="mb-4">
-              <h3>Participantes</h3>
-              <div class="row gy-4 participant">
-                  <div class="col-lg-4">
-                      <label for="participantName1">Nome:</label>
-                      <input type="text" id="participantName1" name="participantName1" class="form-control" required>
-                  </div>
-                  <div class="col-lg-4">
-                      <label for="participantIncome1">Renda Mensal:</label>
-                      <input type="number" id="participantIncome1" name="participantIncome1" class="form-control" required>
-                  </div>
-              </div>
-          </div>
-          <button type="button" class="btn btn-primary mt-3" onclick="addParticipant()">Adicionar Outro Participante</button>
-      </div>
-
-      <!-- Etapa 3: Despesas do Lar -->
-      <div id="step-3">
-          <h3>Despesas do Lar</h3>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-          <div class="mt-4">
-              <label for="percentage">Percentual da Renda para Pagamento (%):</label>
-              <input type="number" id="percentage" name="percentage" class="form-control" min="30" max="100" required>
-          </div>
-      </div>
-
-      <!-- Etapa 4: Dívidas -->
-      <div id="step-4">
-          <h3>Dívidas</h3>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-          <div id="debts" class="mt-4">
-              <h3>Detalhamento das Dívidas</h3>
-              <div class="row gy-4 debt">
-                  <div class="col-lg-4">
-                      <label for="debtAmount1">Valor da Dívida:</label>
-                      <input type="number" id="debtAmount1" name="debtAmount1" class="form-control" required>
-                  </div>
-                  <div class="col-lg-4">
-                      <label for="debtRate1">Taxa de Juros (%):</label>
-                      <input type="number" id="debtRate1" name="debtRate1" class="form-control" required>
-                  </div>
-                  <div class="col-lg-4">
-                      <label for="debtTerm1">Prazo (meses):</label>
-                      <input type="number" id="debtTerm1" name="debtTerm1" class="form-control" required>
-                  </div>
-                  <div class="col-lg-4">
-                      <label for="debtPaid1">Parcelas Pagas:</label>
-                      <input type="number" id="debtPaid1" name="debtPaid1" class="form-control" required>
-                  </div>
-                  <div class="col-lg-4">
-                      <label for="debtDueDate1">Vencimento da Última Parcela Paga:</label>
-                      <input type="date" id="debtDueDate1" name="debtDueDate1" class="form-control" required>
-                  </div>
-                  <div class="col-lg-4">
-                      <label for="debtNextDueDate1">Vencimento da Próxima Parcela:</label>
-                      <input type="date" id="debtNextDueDate1" name="debtNextDueDate1" class="form-control" required>
-                  </div>
-                  <div class="col-lg-4">
-                      <label for="creditCard1">Cartão de Crédito:</label>
-                      <select id="creditCard1" name="creditCard1" class="form-control">
-                          <option value="não">Não</option>
-                          <option value="sim">Sim</option>
-                      </select>
-                  </div>
-                  <div class="col-lg-4">
-                      <label for="creditCardInstallments1">Fatura Parcelada:</label>
-                      <select id="creditCardInstallments1" name="creditCardInstallments1" class="form-control">
-                          <option value="não">Não</option>
-                          <option value="sim">Sim</option>
-                      </select>
-                  </div>
-              </div>
-          </div>
-          <button type="button" class="btn btn-primary mt-3" onclick="addDebt()">Adicionar Outra Dívida</button>
-          <button type="submit" class="btn btn-success mt-3">Calcular</button>
-      </div>
-
-      <!-- Tabela de Exibição de Dados -->
-      <div id="results" class="mt-4"></div>
+<section id="debt-simulation" class="debt-simulation"><div class="container">
+  <div class="section-header">
+      <h2>Simulação de Parcelamento de Dívidas</h2>
+      <p>Insira suas informações e veja como a Lei do Superendividamento pode ajudar você a reorganizar suas finanças.</p>
+      <p>Os dados inseridos são temporários e serão perdidos ao recarregar a página ou fechar o navegador. Você pode solicitar um resumo do plano por e-mail.</p>
   </div>
+
+  <!-- Linha do Tempo -->
+  <div class="timeline">
+      <div class="timeline-step active" data-step="1">Identificação</div>
+      <div class="timeline-step" data-step="2">Fonte de Renda</div>
+      <div class="timeline-step" data-step="3">Despesas do Lar</div>
+      <div class="timeline-step" data-step="4">Dívidas</div>
+  </div>
+  <!-- Etapas do Formulário -->
+  <form id="debtForm" action="assets/vendor/sheet/send_email.php" method="POST">
+      <div id="step-1" class="step-content active">
+          <h3>Identificação</h3>
+          <div class="form-column">
+              <div class="row gy-4">
+                  <div class="col-lg-6">
+                      <label for="name">Nome:</label>
+                      <input type="text" id="name" name="name" class="form-control" required>
+                  </div>
+                  <div class="col-lg-6">
+                      <label for="email">E-mail:</label>
+                      <input type="email" id="email" name="email" class="form-control" required>
+                  </div>
+                  <div class="col-lg-6">
+                      <label for="phone">Celular:</label>
+                      <input type="text" id="phone" name="phone" class="form-control" required>
+                  </div>
+                  <div class="col-lg-6">
+                      <label for="city">Cidade:</label>
+                      <input type="text" id="city" name="city" class="form-control" required>
+                  </div>
+                  <div class="col-lg-6">
+                      <label for="state">Estado:</label>
+                      <input type="text" id="state" name="state" class="form-control" required>
+                  </div>
+                  <div class="col-lg-6">
+                      <label for="maritalStatus">Estado Civil:</label>
+                      <input type="text" id="maritalStatus" name="maritalStatus" class="form-control" required>
+                  </div>
+                  <div class="col-lg-6">
+                      <label for="profession">Profissão:</label>
+                      <input type="text" id="profession" name="profession" class="form-control" required>
+                  </div>
+              </div>
+          </div>
+          <div class="video-column">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+          </div>
+      </div>
+      <div id="step-2" class="step-content">
+          <h3>Fonte de Renda</h3>
+          <div class="form-column">
+              <div id="participants" class="mb-4">
+                  <h3>Participantes</h3>
+                  <div class="row gy-4 participant">
+                      <div class="col-lg-6">
+                          <label for="participantName1">Nome:</label>
+                          <input type="text" id="participantName1" name="participantName1" class="form-control" required>
+                      </div>
+                      <div class="col-lg-6">
+                          <label for="participantIncome1">Renda Mensal:</label>
+                          <input type="number" id="participantIncome1" name="participantIncome1" class="form-control" required>
+                      </div>
+                  </div>
+              </div>
+              <button type="button" class="btn btn-primary mt-3" onclick="addParticipant()">Adicionar Outro Participante</button>
+          </div>
+          <div class="video-column">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+          </div>
+      </div>
+      <div id="step-3" class="step-content">
+          <h3>Despesas do Lar</h3>
+          <div class="form-column">
+              <div class="mt-4">
+                  <label for="percentage">Percentual da Renda para Pagamento (%):</label>
+                  <input type="number" id="percentage" name="percentage" class="form-control" min="30" max="100" required>
+              </div>
+          </div>
+          <div class="video-column">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+          </div>
+      </div>
+      <div id="step-4" class="step-content">
+          <h3>Dívidas</h3>
+          <div class="form-column">
+              <div id="debts" class="mt-4">
+                  <h3>Detalhamento das Dívidas</h3>
+                  <div class="row gy-4 debt">
+                      <div class="col-lg-6">
+                          <label for="debtAmount1">Valor da Dívida:</label>
+                          <input type="number" id="debtAmount1" name="debtAmount1" class="form-control" required>
+                      </div>
+                      <div class="col-lg-6">
+                          <label for="debtRate1">Taxa de Juros (%):</label>
+                          <input type="number" id="debtRate1" name="debtRate1" class="form-control" required>
+                      </div>
+                      <div class="col-lg-6">
+                          <label for="debtTerm1">Prazo (meses):</label>
+                          <input type="number" id="debtTerm1" name="debtTerm1" class="form-control" required>
+                      </div>
+                      <div class="col-lg-6">
+                          <label for="debtPaid1">Parcelas Pagas:</label>
+                          <input type="number" id="debtPaid1" name="debtPaid1" class="form-control" required>
+                      </div>
+                      <div class="col-lg-6">
+                          <label for="debtDueDate1">Vencimento da Última Parcela Paga:</label>
+                          <input type="date" id="debtDueDate1" name="debtDueDate1" class="form-control" required>
+                      </div>
+                      <div class="col-lg-6">
+                          <label for="debtNextDueDate1">Vencimento da Próxima Parcela:</label>
+                          <input type="date" id="debtNextDueDate1" name="debtNextDueDate1" class="form-control" required>
+                      </div>
+                      <div class="col-lg-6">
+                          <label for="creditCard1">Cartão de Crédito:</label>
+                          <select id="creditCard1" name="creditCard1"
+                      <div class="col-lg-6">
+                          <label for="creditCardInstallments1">Fatura Parcelada:</label>
+                          <select id="creditCardInstallments1" name="creditCardInstallments${debtCount}" class="form-control">
+                            <option value="não">Não</option>
+                            <option value="sim">Sim</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+              <button type="button" class="btn btn-primary mt-3" onclick="addDebt()">Adicionar Outra Dívida</button>
+              <button type="submit" class="btn btn-success mt-3">Calcular</button>
+          </div>
+          <div class="video-column">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+          </div>
+      </div>
+  </form>
+  <!-- Tabela de Exibição de Dados -->
+  <div id="results" class="data-view mt-4"></div>
+</div>
+
 </section>
  <!-- Debt Simulation Section -->
 
@@ -1006,7 +1064,30 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/sheet/debt-simulation.js"></script>
+  
+    <!-- Script Debit Simulation -->
+<script src="assets/vendor/sheet/debt-simulation.js"></script>
+<script>
+document.querySelectorAll('.timeline-step').forEach(step => {
+    step.addEventListener('click', function() {
+        const stepNumber = this.getAttribute('data-step');
+        showStep(stepNumber);
+    });
+});
+
+function showStep(stepNumber) {
+    document.querySelectorAll('.step-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    document.querySelectorAll('.timeline-step').forEach(step => {
+        step.classList.remove('active');
+    });
+    document.getElementById(`step-${stepNumber}`).classList.add('active');
+    document.querySelector(`.timeline-step[data-step="${stepNumber}"]`).classList.add('active');
+}
+</script>
+    <!-- Script Debit Simulation -->
+    
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
