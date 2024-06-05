@@ -502,6 +502,16 @@ section {
   z-index: 3;
 }
 
+.hero2 {
+  width: 100%;
+  min-height: 100vh;
+  background: url("../img/services-header.webp") top center;
+  background-size: cover;
+  position: relative;
+  padding: 120px 0;
+  z-index: 3;
+}
+
 @media (min-width: 1034px) {
   .hero:after {
     position: absolute;
