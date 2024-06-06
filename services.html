@@ -176,10 +176,6 @@
   width: auto; /* Ajuste conforme necessário */
   height: 160px; /* Ajuste conforme necessário */
 }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
         .timeline {
             display: flex;
             justify-content: space-between;
@@ -197,6 +193,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
         }
         .timeline-step.active {
             background-color: #007bff;
@@ -205,12 +203,13 @@
         .timeline-step::after {
             content: '';
             position: absolute;
-            top: 15px;
+            top: 50%;
             left: 50%;
             width: 100%;
             height: 2px;
             background-color: #ddd;
             z-index: -1;
+            transform: translateX(-50%);
         }
         .timeline-step.active::after {
             background-color: #007bff;
@@ -232,21 +231,22 @@
             flex: 1;
             min-width: 300px;
         }
-        .video-column {
+        .instructions-column {
             flex: 1;
             min-width: 300px;
             padding-left: 20px;
+        }
+        .instructions {
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            padding: 20px;
+            margin-top: 20px;
         }
         .data-view {
             background-color: #ffffff;
             border: 1px solid #dddddd;
             padding: 20px;
             margin-top: 20px;
-        }
-        iframe {
-            width: 100%;
-            height: 315px;
-            margin-bottom: 20px;
         }
     
 </style>
@@ -288,25 +288,19 @@
 
   <main id="main">
 
-  <!-- ======= Cover Section ======= -->
-  <section id="hero" class="hero d-flex align-items-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-4">
-          <h2 data-aos="fade-up">Simule o parcelamento das suas dívidas</h2>
-          <blockquote data-aos="fade-up" data-aos-delay="100">
-            <p>Descubra conosco se seu plano pode ser aprovado.</p>
-          </blockquote>
-          <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="#about" class="btn-get-started">Acessar planilha</a>
-            <a href="https://www.youtube.com/watch?v=POmOI-c8u4E" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Assista o tutorial</span></a>
-          </div>
+       <!-- Call to Action Section -->
+       <section id="call-to-action" class="call-to-action">
+        <div class="container" data-aos="fade-up">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h3>Fale com um especialista</h3>
+                    <p>Nossa equipe de advogados especializados está pronta para ajudar você a renegociar suas dívidas, combater fraudes financeiras e proteger seus direitos.</p>
+                    <a class="cta-btn" href="https://calendly.com/advadrianohermidamaia/15">Agendar Consulta</a>
+                </div>
+            </div>
         </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section><!-- End Cover Section -->
+    </section>
+    <!-- End Call to Action Section -->
 
 <main id="main">
 
@@ -360,8 +354,8 @@
         <div class="container" data-aos="fade-up">
             <div class="row justify-content-center">
                 <div class="col-lg-6 text-center">
-                    <h3>Fale com um especialista</h3>
-                    <p>Nossa equipe de advogados especializados está pronta para ajudar você a renegociar suas dívidas, combater fraudes financeiras e proteger seus direitos.</p>
+                    <h3>"Devo não nego, pago como puder"/h3>
+                    <p>De acordo com a Lei do superendividamento, você tem o direito de pagar suas dívidas na medida que você garanta o seu sustento e da sua família.</p>
                     <a class="cta-btn" href="https://calendly.com/advadrianohermidamaia/15">Agendar Consulta</a>
                 </div>
             </div>
@@ -429,46 +423,50 @@
 
       <!-- Etapa 1 Identificação -->
 
-    <div id="step-1" class="step-content active">
-      <h3>Identificação</h3>
-      <div class="form-container">
-          <div class="form-column">
-              <div class="row gy-4">
-                  <div class="col-lg-12">
-                      <label for="name">Nome:</label>
-                      <input type="text" id="name" name="name" class="form-control" required>
-                  </div>
-                  <div class="col-lg-12">
-                      <label for="email">E-mail:</label>
-                      <input type="email" id="email" name="email" class="form-control" required>
-                  </div>
-                  <div class="col-lg-12">
-                      <label for="phone">Celular:</label>
-                      <input type="text" id="phone" name="phone" class="form-control" required>
-                  </div>
-                  <div class="col-lg-12">
-                      <label for="city">Cidade:</label>
-                      <input type="text" id="city" name="city" class="form-control" required>
-                  </div>
-                  <div class="col-lg-12">
-                      <label for="state">Estado:</label>
-                      <input type="text" id="state" name="state" class="form-control" required>
-                  </div>
-                  <div class="col-lg-12">
-                      <label for="maritalStatus">Estado Civil:</label>
-                      <input type="text" id="maritalStatus" name="maritalStatus" class="form-control" required>
-                  </div>
-                  <div class="col-lg-12">
-                      <label for="profession">Profissão:</label>
-                      <input type="text" id="profession" name="profession" class="form-control" required>
-                  </div>
-              </div>
-          </div>
-          <div class="video-column">
-              <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-          </div>
-      </div>
-  </div>
+      <div id="step-1" class="step-content active">
+        <h3>Identificação</h3>
+        <div class="form-container">
+            <div class="form-column">
+                <div class="row gy-4">
+                    <div class="col-lg-12">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="phone">Celular:</label>
+                        <input type="text" id="phone" name="phone" class="form-control" required>
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="city">Cidade:</label>
+                        <input type="text" id="city" name="city" class="form-control" required>
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="state">Estado:</label>
+                        <input type="text" id="state" name="state" class="form-control" required>
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="maritalStatus">Estado Civil:</label>
+                        <input type="text" id="maritalStatus" name="maritalStatus" class="form-control" required>
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="profession">Profissão:</label>
+                        <input type="text" id="profession" name="profession" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+            <div class="instructions-column">
+                <div class="instructions">
+                    <h4>Orientação de Preenchimento</h4>
+                    <p>Preencha todos os campos com suas informações pessoais. Certifique-se de que todos os dados estão corretos, pois serão utilizados para gerar seu plano de parcelamento de dívidas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
   
         <!-- Etapa 2 Fonte de Renda -->
         <div id="step-2" class="step-content">
@@ -490,11 +488,15 @@
                   </div>
                   <button type="button" class="btn btn-primary mt-3" onclick="addParticipant()">Adicionar Outro Participante</button>
               </div>
-              <div class="video-column">
-                  <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+              <div class="instructions-column">
+                  <div class="instructions">
+                      <h4>Orientação de Preenchimento</h4>
+                      <p>Preencha os campos com as informações de renda de todos os participantes. Adicione participantes adicionais conforme necessário.</p>
+                  </div>
               </div>
           </div>
       </div>
+      
               <!-- Etapa 3 Despesas do lar -->
 
               <div id="step-3" class="step-content">
@@ -506,11 +508,15 @@
                             <input type="number" id="percentage" name="percentage" class="form-control" min="30" max="100" required>
                         </div>
                     </div>
-                    <div class="video-column">
-                        <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                    <div class="instructions-column">
+                        <div class="instructions">
+                            <h4>Orientação de Preenchimento</h4>
+                            <p>Indique o percentual da renda que deseja comprometer com o pagamento das dívidas. O mínimo permitido é 30%.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            
  <!-- Etapa 4 Dívidas -->
 
  <div id="step-4" class="step-content">
@@ -558,16 +564,27 @@
                           <option value="sim">Sim</option>
                       </select>
                   </div>
+                  <div class="col-lg-12">
+                      <label for="contractCopy1">Possui cópia do contrato?</label>
+                      <select id="contractCopy1" name="contractCopy1" class="form-control">
+                          <option value="não">Não</option>
+                          <option value="sim">Sim</option>
+                      </select>
+                  </div>
               </div>
           </div>
           <button type="button" class="btn btn-primary mt-3" onclick="addDebt()">Adicionar Outra Dívida</button>
           <button type="submit" class="btn btn-success mt-3">Calcular</button>
       </div>
-      <div class="video-column">
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+      <div class="instructions-column">
+          <div class="instructions">
+              <h4>Orientação de Preenchimento</h4>
+              <p>Preencha todos os campos com as informações das suas dívidas. Adicione todas as dívidas que deseja incluir no plano de parcelamento. Indique se possui a cópia do contrato.</p>
+          </div>
       </div>
   </div>
 </div>
+
 
   <!-- Tabela de Exibição de Dados -->
 <div id="results" class="data-view mt-4"></div>
@@ -1118,25 +1135,29 @@
   
     <!-- Script Debit Simulation -->
     <script src="assets/vendor/sheet/debt-simulation.js"></script>
-<script>
-document.querySelectorAll('.timeline-step').forEach(step => {
-    step.addEventListener('click', function() {
-        const stepNumber = this.getAttribute('data-step');
-        showStep(stepNumber);
-    });
-});
-
-function showStep(stepNumber) {
-    document.querySelectorAll('.step-content').forEach(content => {
-        content.classList.remove('active');
-    });
+    <script>
     document.querySelectorAll('.timeline-step').forEach(step => {
-        step.classList.remove('active');
+        step.addEventListener('click', function() {
+            const stepNumber = this.getAttribute('data-step');
+            showStep(stepNumber);
+        });
     });
-    document.getElementById(`step-${stepNumber}`).classList.add('active');
-    document.querySelector(`.timeline-step[data-step="${stepNumber}"]`).classList.add('active');
-}
-</script>
+    
+    function showStep(stepNumber) {
+        document.querySelectorAll('.step-content').forEach(content => {
+            content.classList.remove('active');
+        });
+        document.querySelectorAll('.timeline-step').forEach(step => {
+            step.classList.remove('active');
+        });
+        document.getElementById(`step-${stepNumber}`).classList.add('active');
+        document.querySelector(`.timeline-step[data-step="${stepNumber}"]`).classList.add('active');
+    }
+    
+    function addDebt() {
+        // Função para adicionar mais dívidas
+    }
+    </script>
     <!-- Script Debit Simulation -->
 
   <!-- Template Main JS File -->
