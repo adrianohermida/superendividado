@@ -198,6 +198,11 @@
             background-color: #007bff;
             color: #fff;
         }
+        .timeline-step.locked {
+            background-color: #bbb;
+            color: #fff;
+            cursor: not-allowed;
+        }
         .timeline-step::after {
             content: '';
             position: absolute;
@@ -212,6 +217,9 @@
         .timeline-step.active::after {
             background-color: #007bff;
         }
+        .timeline-step.locked::after {
+            background-color: #bbb;
+        }
         .timeline-step:last-child::after {
             display: none;
         }
@@ -224,6 +232,11 @@
         .form-container {
             display: flex;
             flex-wrap: wrap;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
         }
         .form-column {
             flex: 1;
@@ -235,16 +248,25 @@
             padding-left: 20px;
         }
         .instructions {
-            background-color: #ffffff;
-            border: 1px solid #dddddd;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
             padding: 20px;
             margin-top: 20px;
+            border-radius: 8px;
         }
         .data-view {
             background-color: #ffffff;
             border: 1px solid #dddddd;
             padding: 20px;
             margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .button-group {
+            margin-top: 20px;
+        }
+        .button-group button {
+            margin-right: 10px;
         }
     
 </style>
@@ -424,6 +446,13 @@
                         <label for="profession">Profissão:</label>
                         <input type="text" id="profession" name="profession" class="form-control" required>
                     </div>
+                    <div class="col-lg-12">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">Aceito os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a></label>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="btn btn-primary" onclick="nextStep(2)">Próximo</button>
                 </div>
             </div>
             <div class="instructions-column">
@@ -437,33 +466,38 @@
     
   
         <!-- Etapa 2 Fonte de Renda -->
-        <div id="step-2" class="step-content">
-          <h3>Fonte de Renda</h3>
-          <div class="form-container">
-              <div class="form-column">
-                  <div id="participants" class="mb-4">
-                      <h3>Participantes</h3>
-                      <div class="row gy-4 participant">
-                          <div class="col-lg-12">
-                              <label for="participantName1">Nome:</label>
-                              <input type="text" id="participantName1" name="participantName1" class="form-control" required>
-                          </div>
-                          <div class="col-lg-12">
-                              <label for="participantIncome1">Renda Mensal:</label>
-                              <input type="number" id="participantIncome1" name="participantIncome1" class="form-control" required>
-                          </div>
-                      </div>
-                  </div>
-                  <button type="button" class="btn btn-primary mt-3" onclick="addParticipant()">Adicionar Outro Participante</button>
-              </div>
-              <div class="instructions-column">
-                  <div class="instructions">
-                      <h4>Orientação de Preenchimento</h4>
-                      <p>Preencha os campos com as informações de renda de todos os participantes. Adicione participantes adicionais conforme necessário.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
+
+<div id="step-2" class="step-content">
+    <h3>Fonte de Renda</h3>
+    <div class="form-container">
+        <div class="form-column">
+            <div id="participants" class="mb-4">
+                <h3>Participantes</h3>
+                <div class="row gy-4 participant">
+                    <div class="col-lg-12">
+                        <label for="participantName1">Nome:</label>
+                        <input type="text" id="participantName1" name="participantName1" class="form-control" required>
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="participantIncome1">Renda Mensal:</label>
+                        <input type="number" id="participantIncome1" name="participantIncome1" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary mt-3" onclick="addParticipant()">Adicionar Outro Participante</button>
+            <div class="button-group">
+                <button type="button" class="btn btn-secondary" onclick="previousStep(1)">Voltar</button>
+                <button type="button" class="btn btn-primary" onclick="nextStep(3)">Próximo</button>
+            </div>
+        </div>
+        <div class="instructions-column">
+            <div class="instructions">
+                <h4>Orientação de Preenchimento</h4>
+                <p>Preencha os campos com as informações de renda de todos os participantes. Adicione participantes adicionais conforme necessário.</p>
+            </div>
+        </div>
+    </div>
+</div>
       
               <!-- Etapa 3 Despesas do lar -->
 
@@ -475,6 +509,10 @@
                             <label for="percentage">Percentual da Renda para Pagamento (%):</label>
                             <input type="number" id="percentage" name="percentage" class="form-control" min="30" max="100" required>
                         </div>
+                        <div class="button-group">
+                            <button type="button" class="btn btn-secondary" onclick="previousStep(2)">Voltar</button>
+                            <button type="button" class="btn btn-primary" onclick="nextStep(4)">Próximo</button>
+                        </div>
                     </div>
                     <div class="instructions-column">
                         <div class="instructions">
@@ -484,6 +522,7 @@
                     </div>
                 </div>
             </div>
+            
             
  <!-- Etapa 4 Dívidas -->
 
@@ -542,7 +581,10 @@
               </div>
           </div>
           <button type="button" class="btn btn-primary mt-3" onclick="addDebt()">Adicionar Outra Dívida</button>
-          <button type="submit" class="btn btn-success mt-3">Calcular</button>
+          <div class="button-group">
+              <button type="button" class="btn btn-secondary" onclick="previousStep(3)">Voltar</button>
+              <button type="submit" class="btn btn-success">Calcular</button>
+          </div>
       </div>
       <div class="instructions-column">
           <div class="instructions">
@@ -552,7 +594,6 @@
       </div>
   </div>
 </div>
-
 
   <!-- Tabela de Exibição de Dados -->
 <div id="results" class="data-view mt-4"></div>
@@ -1107,7 +1148,9 @@
     document.querySelectorAll('.timeline-step').forEach(step => {
         step.addEventListener('click', function() {
             const stepNumber = this.getAttribute('data-step');
-            showStep(stepNumber);
+            if (!this.classList.contains('locked')) {
+                showStep(stepNumber);
+            }
         });
     });
     
@@ -1122,9 +1165,40 @@
         document.querySelector(`.timeline-step[data-step="${stepNumber}"]`).classList.add('active');
     }
     
-    function addDebt() {
-        // Função para adicionar mais dívidas
+    function nextStep(nextStepNumber) {
+        const currentStep = document.querySelector('.step-content.active');
+        const currentStepNumber = parseInt(currentStep.id.split('-')[1]);
+        if (validateStep(currentStepNumber)) {
+            showStep(nextStepNumber);
+            unlockStep(nextStepNumber);
+        }
     }
+    
+    function previousStep(previousStepNumber) {
+        showStep(previousStepNumber);
+    }
+    
+    function unlockStep(stepNumber) {
+        document.querySelector(`.timeline-step[data-step="${stepNumber}"]`).classList.remove('locked');
+    }
+    
+    function validateStep(stepNumber) {
+        const step = document.getElementById(`step-${stepNumber}`);
+        const inputs = step.querySelectorAll('input[required], select[required]');
+        for (let input of inputs) {
+            if (!input.checkValidity()) {
+                input.reportValidity();
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.timeline-step:not(.active)').forEach(step => {
+            step.classList.add('locked');
+        });
+    });
     </script>
     <!-- Script Debit Simulation -->
 
