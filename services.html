@@ -721,21 +721,19 @@
                               </div>
                               <div class="col-md-6">
                                   <label for="creditCard1">Cartão de Crédito:</label>
-                                  <select id="creditCard1" name="creditCard1" class="form-control">
+                                  <select id="creditCard1" name="creditCard1" class="form-control" onchange="toggleCreditCardDetails(this)">
                                       <option value="não">Não</option>
                                       <option value="sim">Sim</option>
                                   </select>
                               </div>
-                              <div class="col-md-6">
-                                  <label for="creditCardInstallments1">Fatura Parcelada:</label>
-                                  <select id="creditCardInstallments1" name="creditCardInstallments1" class="form-control">
+                              <div class="col-md-6" id="creditCardDetails1" style="display:none;">
+                                  <label for="previousInstallments1">Possui Parcelamentos Anteriores:</label>
+                                  <select id="previousInstallments1" name="previousInstallments1" class="form-control">
                                       <option value="não">Não</option>
                                       <option value="sim">Sim</option>
                                   </select>
-                              </div>
-                              <div class="col-md-6">
-                                  <label for="contractCopy1">Possui cópia do contrato?</label>
-                                  <select id="contractCopy1" name="contractCopy1" class="form-control">
+                                  <label for="minimumPayment1">Pagamento Mínimo Anterior:</label>
+                                  <select id="minimumPayment1" name="minimumPayment1" class="form-control">
                                       <option value="não">Não</option>
                                       <option value="sim">Sim</option>
                                   </select>
@@ -766,7 +764,6 @@
   </div>
 </section>
 <!-- Debt Simulation Section -->
-
 
 
 <!-- ======= Our Services Section ======= -->

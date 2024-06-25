@@ -56,3 +56,130 @@ function sendEmail() {
       console.log(data);
   });
 }
+
+function addParticipant() {
+  const participantsContainer = document.getElementById('participants');
+  const newIndex = participantsContainer.querySelectorAll('.participant').length + 1;
+
+  const newParticipant = document.createElement('div');
+  newParticipant.classList.add('row', 'gy-4', 'participant');
+  newParticipant.innerHTML = `
+      <div class="col-lg-6">
+          <label for="participantName${newIndex}">Nome:</label>
+          <input type="text" id="participantName${newIndex}" name="participantName${newIndex}" class="form-control" required>
+      </div>
+      <div class="col-lg-6">
+          <label for="participantIncome${newIndex}">Renda Mensal:</label>
+          <input type="number" id="participantIncome${newIndex}" name="participantIncome${newIndex}" class="form-control" required>
+      </div>
+      <div class="col-lg-12">
+          <button type="button" class="btn btn-danger" onclick="removeParticipant(this)">Excluir Participante</button>
+      </div>
+  `;
+  participantsContainer.appendChild(newParticipant);
+}
+
+function removeParticipant(button) {
+  button.closest('.participant').remove();
+}
+
+function addExpense() {
+  const expensesContainer = document.getElementById('expenses');
+  const newIndex = expensesContainer.querySelectorAll('.expense').length + 1;
+
+  const newExpense = document.createElement('div');
+  newExpense.classList.add('row', 'gy-4', 'expense');
+  newExpense.innerHTML = `
+      <div class="col-lg-6">
+          <label for="expenseName${newIndex}">Nome da Despesa:</label>
+          <input type="text" id="expenseName${newIndex}" name="expenseName${newIndex}" class="form-control" required>
+      </div>
+      <div class="col-lg-6">
+          <label for="expenseValue${newIndex}">Valor:</label>
+          <input type="number" id="expenseValue${newIndex}" name="expenseValue${newIndex}" class="form-control" required>
+      </div>
+      <div class="col-lg-12">
+          <button type="button" class="btn btn-danger" onclick="removeExpense(this)">Excluir Despesa</button>
+      </div>
+  `;
+  expensesContainer.appendChild(newExpense);
+}
+
+function removeExpense(button) {
+  button.closest('.expense').remove();
+}
+
+function addDebt() {
+  const debtsContainer = document.getElementById('debts');
+  const newIndex = debtsContainer.querySelectorAll('.debt').length + 1;
+
+  const newDebt = document.createElement('div');
+  newDebt.classList.add('row', 'gy-4', 'debt');
+  newDebt.innerHTML = `
+      <div class="col-lg-6">
+          <label for="debtName${newIndex}">Nome do Credor:</label>
+          <input type="text" id="debtName${newIndex}" name="debtName${newIndex}" class="form-control" required>
+      </div>
+      <div class="col-lg-6">
+          <label for="debtAmount${newIndex}">Valor da Dívida:</label>
+          <input type="number" id="debtAmount${newIndex}" name="debtAmount${newIndex}" class="form-control" required>
+      </div>
+      <div class="col-lg-6">
+          <label for="debtRate${newIndex}">Taxa de Juros (%):</label>
+          <input type="number" id="debtRate${newIndex}" name="debtRate${newIndex}" class="form-control" required>
+      </div>
+      <div class="col-lg-6">
+          <label for="debtTerm${newIndex}">Prazo (meses):</label>
+          <input type="number" id="debtTerm${newIndex}" name="debtTerm${newIndex}" class="form-control" required>
+      </div>
+      <div class="col-lg-6">
+          <label for="debtPaid${newIndex}">Parcelas Pagas:</label>
+          <input type="number" id="debtPaid${newIndex}" name="debtPaid${newIndex}" class="form-control">
+      </div>
+      <div class="col-lg-6">
+          <label for="debtDueDate${newIndex}">Vencimento da Última Parcela Paga:</label>
+          <input type="date" id="debtDueDate${newIndex}" name="debtDueDate${newIndex}" class="form-control">
+      </div>
+      <div class="col-lg-6">
+          <label for="debtNextDueDate${newIndex}">Vencimento da Próxima Parcela:</label>
+          <input type="date" id="debtNextDueDate${newIndex}" name="debtNextDueDate${newIndex}" class="form-control">
+      </div>
+      <div class="col-lg-6">
+          <label for="creditCard${newIndex}">Cartão de Crédito:</label>
+          <select id="creditCard${newIndex}" name="creditCard${newIndex}" class="form-control" onchange="toggleCreditCardDetails(this)">
+              <option value="não">Não</option>
+              <option value="sim">Sim</option>
+          </select>
+      </div>
+      <div class="col-lg-6" id="creditCardDetails${newIndex}" style="display:none;">
+          <label for="previousInstallments${newIndex}">Possui Parcelamentos Anteriores:</label>
+          <select id="previousInstallments${newIndex}" name="previousInstallments${newIndex}" class="form-control">
+              <option value="não">Não</option>
+              <option value="sim">Sim</option>
+          </select>
+          <label for="minimumPayment${newIndex}">Pagamento Mínimo Anterior:</label>
+          <select id="minimumPayment${newIndex}" name="minimumPayment${newIndex}" class="form-control">
+              <option value="não">Não</option>
+              <option value="sim">Sim</option>
+          </select>
+      </div>
+      <div class="col-lg-12">
+          <button type="button" class="btn btn-danger" onclick="removeDebt(this)">Excluir Dívida</button>
+      </div>
+  `;
+  debtsContainer.appendChild(newDebt);
+}
+
+function removeDebt(button) {
+  button.closest('.debt').remove();
+}
+
+function toggleCreditCardDetails(select) {
+  const detailsId = `creditCardDetails${select.id.replace('creditCard', '')}`;
+  const detailsContainer = document.getElementById(detailsId);
+  if (select.value === 'sim') {
+      detailsContainer.style.display = 'block';
+  } else {
+      detailsContainer.style.display = 'none';
+  }
+}
