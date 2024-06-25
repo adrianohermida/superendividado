@@ -49,261 +49,131 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   /* CSS Personalizado */
-  <style>
-  /* Estilos comuns */
-  .container {
-    padding: 60px 0;
-    text-align: center;
-  }
-  
-  .section-header h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .section-header p {
-    font-size: 16px;
-    margin-bottom: 40px;
-  }
-  
-  .item {
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    background: #fff;
-    border-radius: 6px;
-    margin-bottom: 30px;
-  }
-  
-  .item img {
-    width: 100%;
-    border-radius: 6px;
-    object-fit: cover;
-  }
-  
-  .item h3 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 5px;
-  }
-  
-  .item h4 {
-    font-size: 14px;
-    color: #999;
-    margin-bottom: 15px;
-  }
-  
-  .item p {
-    font-style: italic;
-    margin: 0;
-  }
-  
-  /* Estilos da seção de depoimentos */
-  .testimonials {
-    background: #f7f8fa;
-  }
-  
-  .testimonials .profile {
-    margin-top: 20px;
-  }
-  
-  .testimonials .profile img {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-  }
-  
-  /* Estilos da seção de mídia */
-  .media-section {
-    background: #fff;
-  }
-  
-  .media-section .media-item img {
-    height: 120px;
-  }
-  
-  @media (max-width: 768px) {
-    .row {
-      display: none;
-    }
-    .swiper-container {
-      display: block;
-    }
-  }
-  
-  @media (min-width: 769px) {
-    .swiper-container {
-      display: block;
-    }
-  
-    .swiper-slide {
-      width: 33.33%;
-    }
-  
-    .media-section .row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    .media-section .swiper-container {
-      display: none;
-    }
-  }
-  
-  /* Estilos da seção de funcionalidades */
-  .features .phone-wrap {
-    text-align: center;
-  }
-  
-  .features .phone-wrap .responsive-img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  @media (max-width: 768px) {
-    .features .phone-wrap .responsive-img {
-      max-width: 60%;
-    }
-  }
-  
-  /* Estilos da linha do tempo */
-  .timeline {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    position: relative;
-  }
-  
-  .timeline-step {
-    text-align: center;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
-    background-color: #ddd;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .timeline-step.active {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  .timeline-step.locked {
-    background-color: #bbb;
-    color: #fff;
-    cursor: not-allowed;
-  }
-  
-  .timeline-step::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 2px;
-    background-color: #ddd;
-    z-index: -1;
-    transform: translateX(-50%);
-  }
-  
-  .timeline-step.active::after {
-    background-color: #007bff;
-  }
-  
-  .timeline-step.locked::after {
-    background-color: #bbb;
-  }
-  
-  .timeline-step:last-child::after {
-    display: none;
-  }
-  
-  /* Estilos do conteúdo das etapas */
-  .step-content {
-    display: none;
-  }
-  
-  .step-content.active {
-    display: block;
-  }
-  
-  .form-container {
-    display: flex;
-    flex-wrap: wrap;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #fff;
-  }
-  
-  .form-column, .instructions-column {
-    flex: 1;
-    min-width: 300px;
-  }
-  
-  .instructions-column {
-    padding-left: 20px;
-  }
-  
-  .instructions {
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-  }
-  
-  .data-view {
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .button-group {
-    margin-top: 20px;
-  }
-  
-  .button-group button {
-    margin-right: 10px;
-  }
-  
-  .logo-img {
-    width: auto;
-    height: 160px;
-  }
-  /* Container flexível */
+<style>
+/* Estilos comuns */
 .container {
   padding: 60px 0;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-/* Layout flexível para itens */
+.section-header h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.section-header p {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
 .item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  background: #fff;
+  border-radius: 6px;
+  margin-bottom: 30px;
 }
 
-/* Layout da linha do tempo */
+.item img {
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.item h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.item h4 {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 15px;
+}
+
+.item p {
+  font-style: italic;
+  margin: 0;
+}
+
+/* Estilos da seção de depoimentos */
+.testimonials {
+  background: #f7f8fa;
+}
+
+.testimonials .profile {
+  margin-top: 20px;
+}
+
+.testimonials .profile img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+/* Estilos da seção de mídia */
+.media-section {
+  background: #fff;
+}
+
+.media-section .media-item img {
+  height: 120px;
+}
+
+@media (max-width: 768px) {
+  .row {
+    display: none;
+  }
+  .swiper-container {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .swiper-container {
+    display: block;
+  }
+
+  .swiper-slide {
+    width: 33.33%;
+  }
+
+  .media-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .media-section .swiper-container {
+    display: none;
+  }
+}
+
+/* Estilos da seção de funcionalidades */
+.features .phone-wrap {
+  text-align: center;
+}
+
+.features .phone-wrap .responsive-img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .features .phone-wrap .responsive-img {
+    max-width: 60%;
+  }
+}
+
+/* Estilos da linha do tempo */
 .timeline {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
-  flex-wrap: wrap;
+  position: relative;
+  padding: 0 10px;
 }
 
 .timeline-step {
@@ -312,61 +182,115 @@
   padding: 10px;
   border-radius: 50%;
   background-color: #ddd;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  position: relative;
 }
 
-@media (max-width: 768px) {
-  .timeline-step {
-    width: 24%;
-    margin-bottom: 10px;
-  }
+.timeline-step.active {
+  background-color: #007bff;
+  color: #fff;
+  transform: scale(1.1);
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .timeline-step {
-    width: 22%;
-    margin-bottom: 10px;
-  }
+.timeline-step.locked {
+  background-color: #bbb;
+  color: #fff;
+  cursor: not-allowed;
 }
 
-/* Layout do conteúdo das etapas */
+.timeline-step::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% + 20px);
+  height: 2px;
+  background-color: #ddd;
+  z-index: -1;
+  transform: translateX(-50%);
+}
+
+.timeline-step.active::after {
+  background-color: #007bff;
+}
+
+.timeline-step.locked::after {
+  background-color: #bbb;
+}
+
+.timeline-step:last-child::after {
+  display: none;
+}
+
+.timeline-step i {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+/* Estilos do conteúdo das etapas */
+.step-content {
+  display: none;
+}
+
+.step-content.active {
+  display: block;
+}
+
 .form-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-@media (min-width: 769px) {
-  .form-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Layout das colunas */
-.form-column, .instructions-column {
-  min-width: 300px;
-  padding: 20px;
-}
-
-/* Melhorias nos botões */
-.button-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.form-column, .instructions-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.instructions-column {
+  padding-left: 20px;
+}
+
+.instructions {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+.data-view {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button-group {
+  margin-top: 20px;
 }
 
 .button-group button {
-  flex: 1;
-  min-width: 120px;
+  margin-right: 10px;
 }
-  </style>
-  
+
+.logo-img {
+  width: auto;
+  height: 160px;
+}
+</style>
 
 <!-- GLightbox CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
@@ -1287,21 +1211,19 @@
     <!-- Script Debit Simulation -->
 <script src="assets/vendor/sheet/debt-simulation.js"></script>
 <script>
+// Caminho: assets/vendor/sheet/debt-simulation.js
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializa as etapas bloqueadas e eventos
     initializeSteps();
     initializeEvents();
 });
 
 function initializeSteps() {
-    // Bloqueia todas as etapas, exceto a ativa
     document.querySelectorAll('.timeline-step:not(.active)').forEach(step => {
         step.classList.add('locked');
     });
 }
 
 function initializeEvents() {
-    // Adiciona eventos aos passos da linha do tempo
     document.querySelectorAll('.timeline-step').forEach(step => {
         step.addEventListener('click', function() {
             const stepNumber = this.getAttribute('data-step');
@@ -1313,7 +1235,6 @@ function initializeEvents() {
 }
 
 function showStep(stepNumber) {
-    // Exibe a etapa selecionada
     document.querySelectorAll('.step-content').forEach(content => {
         content.classList.remove('active');
     });
@@ -1325,7 +1246,6 @@ function showStep(stepNumber) {
 }
 
 function nextStep(nextStepNumber) {
-    // Valida a etapa atual antes de prosseguir para a próxima
     const currentStep = document.querySelector('.step-content.active');
     const currentStepNumber = parseInt(currentStep.id.split('-')[1]);
     if (validateStep(currentStepNumber)) {
@@ -1335,17 +1255,14 @@ function nextStep(nextStepNumber) {
 }
 
 function previousStep(previousStepNumber) {
-    // Retrocede para a etapa anterior
     showStep(previousStepNumber);
 }
 
 function unlockStep(stepNumber) {
-    // Desbloqueia a etapa
     document.querySelector(`.timeline-step[data-step="${stepNumber}"]`).classList.remove('locked');
 }
 
 function validateStep(stepNumber) {
-    // Valida os campos obrigatórios da etapa
     const step = document.getElementById(`step-${stepNumber}`);
     const inputs = step.querySelectorAll('input[required], select[required]');
     for (let input of inputs) {
