@@ -49,253 +49,305 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   /* CSS Personalizado */
-<style>
-/* Estilos comuns */
-.container {
-  padding: 60px 0;
-  text-align: center;
-}
-
-.section-header h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.section-header p {
-  font-size: 16px;
-  margin-bottom: 40px;
-}
-
-.item {
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  background: #fff;
-  border-radius: 6px;
-  margin-bottom: 30px;
-}
-
-.item img {
-  width: 100%;
-  border-radius: 6px;
-  object-fit: cover;
-}
-
-.item h3 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.item h4 {
-  font-size: 14px;
-  color: #999;
-  margin-bottom: 15px;
-}
-
-.item p {
-  font-style: italic;
-  margin: 0;
-}
-
-/* Estilos da seção de depoimentos */
-.testimonials {
-  background: #f7f8fa;
-}
-
-.testimonials .profile {
-  margin-top: 20px;
-}
-
-.testimonials .profile img {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-
-/* Estilos da seção de mídia */
-.media-section {
-  background: #fff;
-}
-
-.media-section .media-item img {
-  height: 120px;
-}
-
-@media (max-width: 768px) {
-  .row {
+  <style>
+  /* Estilos comuns */
+  .container {
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .section-header h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .section-header p {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  
+  .item {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background: #fff;
+    border-radius: 6px;
+    margin-bottom: 30px;
+  }
+  
+  .item img {
+    width: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+  
+  .item h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  
+  .item h4 {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 15px;
+  }
+  
+  .item p {
+    font-style: italic;
+    margin: 0;
+  }
+  
+  /* Estilos da seção de depoimentos */
+  .testimonials {
+    background: #f7f8fa;
+  }
+  
+  .testimonials .profile {
+    margin-top: 20px;
+  }
+  
+  .testimonials .profile img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos da seção de mídia */
+  .media-section {
+    background: #fff;
+  }
+  
+  .media-section .media-item img {
+    height: 120px;
+  }
+  
+  @media (max-width: 768px) {
+    .row {
+      display: none;
+    }
+    .swiper-container {
+      display: block;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .swiper-container {
+      display: block;
+    }
+  
+    .swiper-slide {
+      width: 33.33%;
+    }
+  
+    .media-section .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .media-section .swiper-container {
+      display: none;
+    }
+  }
+  
+  /* Estilos da seção de funcionalidades */
+  .features .phone-wrap {
+    text-align: center;
+  }
+  
+  .features .phone-wrap .responsive-img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .features .phone-wrap .responsive-img {
+      max-width: 60%;
+    }
+  }
+  
+  /* Estilos da linha do tempo */
+  .timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+    padding: 0 10px;
+  }
+  
+  .timeline-step {
+    text-align: center;
+    cursor: pointer;
+    width: 80px; /* Largura suficiente para incluir o número e a palavra abaixo */
+    position: relative;
+  }
+  
+  .timeline-step .step-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 0 auto 10px; /* Centraliza o círculo e adiciona espaço abaixo para a palavra */
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  }
+  
+  .timeline-step.active .step-circle {
+    background-color: #007bff;
+    color: #fff;
+    transform: scale(1.1);
+  }
+  
+  .timeline-step.locked .step-circle {
+    background-color: #bbb;
+    color: #fff;
+    cursor: not-allowed;
+  }
+  
+  .timeline-step::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100% + 20px);
+    height: 2px;
+    background-color: #ddd;
+    z-index: -1;
+    transform: translateX(-50%);
+  }
+  
+  .timeline-step.active::after {
+    background-color: #007bff;
+  }
+  
+  .timeline-step.locked::after {
+    background-color: #bbb;
+  }
+  
+  .timeline-step:last-child::after {
     display: none;
   }
-  .swiper-container {
+  
+  .timeline-step span {
+    display: block;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  /* Estilos do conteúdo das etapas */
+  .step-content {
+    display: none;
+  }
+  
+  .step-content.active {
     display: block;
   }
-}
-
-@media (min-width: 769px) {
-  .swiper-container {
-    display: block;
-  }
-
-  .swiper-slide {
-    width: 33.33%;
-  }
-
-  .media-section .row {
+  
+  .form-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
   }
-
-  .media-section .swiper-container {
-    display: none;
+  
+  .form-column, .instructions-column {
+    flex: 1;
+    min-width: 300px;
   }
-}
-
-/* Estilos da seção de funcionalidades */
-.features .phone-wrap {
-  text-align: center;
-}
-
-.features .phone-wrap .responsive-img {
-  max-width: 100%;
-  height: auto;
-}
-
-@media (max-width: 768px) {
-  .features .phone-wrap .responsive-img {
-    max-width: 60%;
+  
+  .instructions-column {
+    padding-left: 20px;
   }
-}
-
-/* Estilos da linha do tempo */
-.timeline {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-  position: relative;
-  padding: 0 10px;
-}
-
-.timeline-step {
-  text-align: center;
-  cursor: pointer;
-  width: 80px; /* Largura suficiente para incluir o número e a palavra abaixo */
-  position: relative;
-}
-
-.timeline-step .step-circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #ddd;
-  margin: 0 auto 10px; /* Centraliza o círculo e adiciona espaço abaixo para a palavra */
-  font-weight: bold;
-  transition: background-color 0.3s, color 0.3s, transform 0.3s;
-}
-
-.timeline-step.active .step-circle {
-  background-color: #007bff;
-  color: #fff;
-  transform: scale(1.1);
-}
-
-.timeline-step.locked .step-circle {
-  background-color: #bbb;
-  color: #fff;
-  cursor: not-allowed;
-}
-
-.timeline-step::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: calc(100% + 20px);
-  height: 2px;
-  background-color: #ddd;
-  z-index: -1;
-  transform: translateX(-50%);
-}
-
-.timeline-step.active::after {
-  background-color: #007bff;
-}
-
-.timeline-step.locked::after {
-  background-color: #bbb;
-}
-
-.timeline-step:last-child::after {
-  display: none;
-}
-
-.timeline-step span {
-  display: block;
-  font-size: 14px;
-  color: #333;
-}
-
-/* Estilos do conteúdo das etapas */
-.step-content {
-  display: none;
-}
-
-.step-content.active {
-  display: block;
-}
-
-.form-container {
-  display: flex;
-  flex-wrap: wrap;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  border-radius: 8px;
-  background-color: #fff;
-}
-
-.form-column, .instructions-column {
-  flex: 1;
-  min-width: 300px;
-}
-
-.instructions-column {
-  padding-left: 20px;
-}
-
-.instructions {
-  background-color: #f8f9fa;
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 8px;
-}
-
-.data-view {
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.button-group {
-  margin-top: 20px;
-}
-
-.button-group button {
-  margin-right: 10px;
-}
-
-.logo-img {
-  width: auto;
-  height: 160px;
-}
-</style>
+  
+  .instructions {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+  }
+  
+  .data-view {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button-group {
+    margin-top: 20px;
+  }
+  
+  .button-group button {
+    margin-right: 10px;
+  }
+  
+  .logo-img {
+    width: auto;
+    height: 160px;
+  }
+  
+  /* Estilos personalizados para a etapa de Fonte de Renda */
+  .participant {
+    display: flex;
+    align-items: center;
+  }
+  
+  .participant .col-lg-6 {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .participant .col-lg-12 {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+  
+  /* Estilos personalizados para a etapa de Despesas do Lar */
+  .expense {
+    display: flex;
+    align-items: center;
+  }
+  
+  .expense .col-lg-6 {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .expense .col-lg-12 {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+  
+  /* Estilos personalizados para a etapa de Dívidas */
+  .debt {
+    display: flex;
+    align-items: center;
+  }
+  
+  .debt .col-lg-6 {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .debt .col-lg-12 {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+  </style>
+ 
 
 <!-- GLightbox CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
@@ -471,204 +523,219 @@
   </div>
 </div>
 
-    <!-- Etapas do Formulário -->
-    <form id="debtForm" action="assets/vendor/sheet/send_email.php" method="POST">
+<!-- Etapas do Formulário -->
+<form id="debtForm" action="assets/vendor/sheet/send_email.php" method="POST">
 
-      <!-- Etapa 1 Identificação -->
-      <div id="step-1" class="step-content active">
+    <!-- Etapa 1 Identificação -->
+    <div id="step-1" class="step-content active">
         <h3>Identificação</h3>
         <div class="form-container">
-          <div class="form-column">
-            <div class="row gy-4">
-              <div class="col-lg-12">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" class="form-control" required>
-              </div>
-              <div class="col-lg-12">
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" class="form-control" required>
-              </div>
-              <div class="col-lg-12">
-                <label for="phone">Celular:</label>
-                <input type="text" id="phone" name="phone" class="form-control" required>
-              </div>
-              <div class="col-lg-12">
-                <label for="city">Cidade:</label>
-                <input type="text" id="city" name="city" class="form-control" required>
-              </div>
-              <div class="col-lg-12">
-                <label for="state">Estado:</label>
-                <input type="text" id="state" name="state" class="form-control" required>
-              </div>
-              <div class="col-lg-12">
-                <label for="maritalStatus">Estado Civil:</label>
-                <input type="text" id="maritalStatus" name="maritalStatus" class="form-control" required>
-              </div>
-              <div class="col-lg-12">
-                <label for="profession">Profissão:</label>
-                <input type="text" id="profession" name="profession" class="form-control" required>
-              </div>
-              <div class="col-lg-12">
-                <input type="checkbox" id="terms" name="terms" required>
-                <label for="terms">Aceito os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a></label>
-              </div>
+            <div class="form-column">
+                <div class="row gy-4">
+                    <div class="col-lg-12">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="phone">Celular:</label>
+                        <input type="text" id="phone" name="phone" class="form-control" required>
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="city">Cidade:</label>
+                        <input type="text" id="city" name="city" class="form-control" required>
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="state">Estado:</label>
+                        <select id="state" name="state" class="form-control" required>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <!-- Add all states here -->
+                            <option value="TO">TO</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-12">
+                        <label for="profession">Profissão:</label>
+                        <select id="profession" name="profession" class="form-control" required>
+                            <option value="Empregado CLT">Empregado CLT</option>
+                            <option value="Funcionário Público">Funcionário Público</option>
+                            <option value="Autônomo">Autônomo</option>
+                            <option value="Militar">Militar</option>
+                            <option value="Empresário">Empresário</option>
+                            <option value="Aposentado">Aposentado</option>
+                            <option value="Desempregado">Desempregado</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-12">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">Aceito os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a></label>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="btn btn-primary" onclick="nextStep(2)">Próximo</button>
+                </div>
             </div>
-            <div class="button-group">
-              <button type="button" class="btn btn-primary" onclick="nextStep(2)">
-                <i class="fa fa-arrow-right"></i> Próximo
-              </button>
+            <div class="instructions-column">
+                <div class="instructions">
+                    <h4>Orientação de Preenchimento</h4>
+                    <p>Preencha todos os campos com suas informações pessoais. Certifique-se de que todos os dados estão corretos, pois serão utilizados para gerar seu plano de parcelamento de dívidas.</p>
+                </div>
             </div>
-          </div>
-          <div class="instructions-column">
-            <div class="instructions">
-              <h4>Orientação de Preenchimento</h4>
-              <p>Preencha todos os campos com suas informações pessoais. Certifique-se de que todos os dados estão corretos, pois serão utilizados para gerar seu plano de parcelamento de dívidas.</p>
-            </div>
-          </div>
         </div>
-      </div>
-    
-      <!-- Etapa 2 Fonte de Renda -->
-      <div id="step-2" class="step-content">
+    </div>
+
+    <!-- Etapa 2 Fonte de Renda -->
+    <div id="step-2" class="step-content">
         <h3>Fonte de Renda</h3>
         <div class="form-container">
-          <div class="form-column">
-            <div id="participants" class="mb-4">
-              <h3>Participantes</h3>
-              <div class="row gy-4 participant">
-                <div class="col-lg-12">
-                  <label for="participantName1">Nome:</label>
-                  <input type="text" id="participantName1" name="participantName1" class="form-control" required>
+            <div class="form-column">
+                <div id="participants" class="mb-4">
+                    <h3>Participantes</h3>
+                    <div class="row gy-4 participant">
+                        <div class="col-lg-6">
+                            <label for="participantName1">Nome:</label>
+                            <input type="text" id="participantName1" name="participantName1" class="form-control" required>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="participantIncome1">Renda Mensal:</label>
+                            <input type="number" id="participantIncome1" name="participantIncome1" class="form-control" required>
+                        </div>
+                        <div class="col-lg-12">
+                            <button type="button" class="btn btn-danger" onclick="removeParticipant(this)">Excluir</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-12">
-                  <label for="participantIncome1">Renda Mensal:</label>
-                  <input type="number" id="participantIncome1" name="participantIncome1" class="form-control" required>
+                <button type="button" class="btn btn-primary mt-3" onclick="addParticipant()">Adicionar Outro Participante</button>
+                <div class="button-group">
+                    <button type="button" class="btn btn-secondary" onclick="previousStep(1)">Voltar</button>
+                    <button type="button" class="btn btn-primary" onclick="nextStep(3)">Próximo</button>
                 </div>
-              </div>
             </div>
-            <button type="button" class="btn btn-primary mt-3" onclick="addParticipant()">Adicionar Outro Participante</button>
-            <div class="button-group">
-              <button type="button" class="btn btn-secondary" onclick="previousStep(1)">
-                <i class="fa fa-arrow-left"></i> Voltar
-              </button>
-              <button type="button" class="btn btn-primary" onclick="nextStep(3)">
-                <i class="fa fa-arrow-right"></i> Próximo
-              </button>
+            <div class="instructions-column">
+                <div class="instructions">
+                    <h4>Orientação de Preenchimento</h4>
+                    <p>Preencha os campos com as informações de renda de todos os participantes. Adicione participantes adicionais conforme necessário.</p>
+                </div>
             </div>
-          </div>
-          <div class="instructions-column">
-            <div class="instructions">
-              <h4>Orientação de Preenchimento</h4>
-              <p>Preencha os campos com as informações de renda de todos os participantes. Adicione participantes adicionais conforme necessário.</p>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
-      <!-- Etapa 3 Despesas do lar -->
-      <div id="step-3" class="step-content">
+    <!-- Etapa 3 Despesas do Lar -->
+    <div id="step-3" class="step-content">
         <h3>Despesas do Lar</h3>
         <div class="form-container">
-          <div class="form-column">
-            <div class="mt-4">
-              <label for="percentage">Percentual da Renda para Pagamento (%):</label>
-              <input type="number" id="percentage" name="percentage" class="form-control" min="30" max="100" required>
+            <div class="form-column">
+                <div id="expenses" class="mt-4">
+                    <h3>Despesas Necessárias e Mínimo Existencial</h3>
+                    <div class="row gy-4 expense">
+                        <div class="col-lg-6">
+                            <label for="expenseName1">Descrição:</label>
+                            <input type="text" id="expenseName1" name="expenseName1" class="form-control" required>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="expenseAmount1">Valor:</label>
+                            <input type="number" id="expenseAmount1" name="expenseAmount1" class="form-control" required>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="expenseCategory1">Categoria:</label>
+                            <select id="expenseCategory1" name="expenseCategory1" class="form-control" required>
+                                <option value="Moradia">Moradia</option>
+                                <option value="Alimentação">Alimentação</option>
+                                <option value="Saúde">Saúde</option>
+                                <option value="Educação">Educação</option>
+                                <option value="Transporte">Transporte</option>
+                                <option value="Vestuário">Vestuário</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-6">
+                            <button type="button" class="btn btn-danger" onclick="removeExpense(this)">Excluir</button>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary mt-3" onclick="addExpense()">Adicionar Outra Despesa</button>
+                <div class="button-group">
+                    <button type="button" class="btn btn-secondary" onclick="previousStep(2)">Voltar</button>
+                    <button type="button" class="btn btn-primary" onclick="nextStep(4)">Próximo</button>
+                </div>
             </div>
-            <div class="button-group">
-              <button type="button" class="btn btn-secondary" onclick="previousStep(2)">
-                <i class="fa fa-arrow-left"></i> Voltar
-              </button>
-              <button type="button" class="btn btn-primary" onclick="nextStep(4)">
-                <i class="fa fa-arrow-right"></i> Próximo
-              </button>
+            <div class="instructions-column">
+                <div class="instructions">
+                    <h4>Orientação de Preenchimento</h4>
+                    <p>Preencha os campos com as informações das suas despesas. Adicione todas as despesas que deseja incluir no plano de parcelamento. Indique a categoria da despesa.</p>
+                </div>
             </div>
-          </div>
-          <div class="instructions-column">
-            <div class="instructions">
-              <h4>Orientação de Preenchimento</h4>
-              <p>Indique o percentual da renda que deseja comprometer com o pagamento das dívidas. O mínimo permitido é 30%.</p>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
-      <!-- Etapa 4 Dívidas -->
-      <div id="step-4" class="step-content">
+    <!-- Etapa 4 Dívidas -->
+    <div id="step-4" class="step-content">
         <h3>Dívidas</h3>
         <div class="form-container">
-          <div class="form-column">
-            <div id="debts" class="mt-4">
-              <h3>Detalhamento das Dívidas</h3>
-              <div class="row gy-4 debt">
-                <div class="col-lg-12">
-                  <label for="debtAmount1">Valor da Dívida:</label>
-                  <input type="number" id="debtAmount1" name="debtAmount1" class="form-control" required>
+            <div class="form-column">
+                <div id="debts" class="mt-4">
+                    <h3>Detalhamento das Dívidas</h3>
+                    <div class="row gy-4 debt">
+                        <div class="col-lg-6">
+                            <label for="creditorName1">Nome do Credor:</label>
+                            <input type="text" id="creditorName1" name="creditorName1" class="form-control" required>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="debtAmount1">Valor da Dívida:</label>
+                            <input type="number" id="debtAmount1" name="debtAmount1" class="form-control" required>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="debtDate1">Data do Empréstimo:</label>
+                            <input type="date" id="debtDate1" name="debtDate1" class="form-control" required>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="debtDueDate1">Data de Vencimento:</label>
+                            <input type="date" id="debtDueDate1" name="debtDueDate1" class="form-control" required>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="creditCard1">Cartão de Crédito:</label>
+                            <select id="creditCard1" name="creditCard1" class="form-control">
+                                <option value="não">Não</option>
+                                <option value="sim">Sim</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-6" id="creditCardDetails1" style="display:none;">
+                            <label for="previousInstallments1">Possui Parcelamentos Anteriores:</label>
+                            <select id="previousInstallments1" name="previousInstallments1" class="form-control">
+                                <option value="não">Não</option>
+                                <option value="sim">Sim</option>
+                            </select>
+                            <label for="minimumPayment1">Pagamento Mínimo Anterior:</label>
+                            <select id="minimumPayment1" name="minimumPayment1" class="form-control">
+                                <option value="não">Não</option>
+                                <option value="sim">Sim</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-6">
+                            <button type="button" class="btn btn-danger" onclick="removeDebt(this)">Excluir</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-12">
-                  <label for="debtRate1">Taxa de Juros (%):</label>
-                  <input type="number" id="debtRate1" name="debtRate1" class="form-control" required>
+                <button type="button" class="btn btn-primary mt-3" onclick="addDebt()">Adicionar Outra Dívida</button>
+                <div class="button-group">
+                    <button type="button" class="btn btn-secondary" onclick="previousStep(3)">Voltar</button>
+                    <button type="submit" class="btn btn-success">Calcular</button>
                 </div>
-                <div class="col-lg-12">
-                  <label for="debtTerm1">Prazo (meses):</label>
-                  <input type="number" id="debtTerm1" name="debtTerm1" class="form-control" required>
-                </div>
-                <div class="col-lg-12">
-                  <label for="debtPaid1">Parcelas Pagas:</label>
-                  <input type="number" id="debtPaid1" name="debtPaid1" class="form-control" required>
-                </div>
-                <div class="col-lg-12">
-                  <label for="debtDueDate1">Vencimento da Última Parcela Paga:</label>
-                  <input type="date" id="debtDueDate1" name="debtDueDate1" class="form-control" required>
-                </div>
-                <div class="col-lg-12">
-                  <label for="debtNextDueDate1">Vencimento da Próxima Parcela:</label>
-                  <input type="date" id="debtNextDueDate1" name="debtNextDueDate1" class="form-control" required>
-                </div>
-                <div class="col-lg-12">
-                  <label for="creditCard1">Cartão de Crédito:</label>
-                  <select id="creditCard1" name="creditCard1" class="form-control">
-                    <option value="não">Não</option>
-                    <option value="sim">Sim</option>
-                  </select>
-                </div>
-                <div class="col-lg-12">
-                  <label for="creditCardInstallments1">Fatura Parcelada:</label>
-                  <select id="creditCardInstallments1" name="creditCardInstallments1" class="form-control">
-                    <option value="não">Não</option>
-                    <option value="sim">Sim</option>
-                  </select>
-                </div>
-                <div class="col-lg-12">
-                  <label for="contractCopy1">Possui cópia do contrato?</label>
-                  <select id="contractCopy1" name="contractCopy1" class="form-control">
-                    <option value="não">Não</option>
-                    <option value="sim">Sim</option>
-                  </select>
-                </div>
-              </div>
             </div>
-            <button type="button" class="btn btn-primary mt-3" onclick="addDebt()">Adicionar Outra Dívida</button>
-            <div class="button-group">
-              <button type="button" class="btn btn-secondary" onclick="previousStep(3)">
-                <i class="fa fa-arrow-left"></i> Voltar
-              </button>
-              <button type="submit" class="btn btn-success">
-                <i class="fa fa-check"></i> Calcular
-              </button>
+            <div class="instructions-column">
+                <div class="instructions">
+                    <h4>Orientação de Preenchimento</h4>
+                    <p>Preencha todos os campos com as informações das suas dívidas. Adicione todas as dívidas que deseja incluir no plano de parcelamento. Indique se possui a cópia do contrato.</p>
+                </div>
             </div>
-          </div>
-          <div class="instructions-column">
-            <div class="instructions">
-              <h4>Orientação de Preenchimento</h4>
-              <p>Preencha todos os campos com as informações das suas dívidas. Adicione todas as dívidas que deseja incluir no plano de parcelamento. Indique se possui a cópia do contrato.</p>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
-      <!-- Tabela de Exibição de Dados -->
-      <div id="results" class="data-view mt-4"></div>
-    </form>
+    <!-- Tabela de Exibição de Dados -->
+    <div id="results" class="data-view mt-4"></div>
+</form>
   </div>
 </section>
 <!-- Debt Simulation Section -->
@@ -1213,13 +1280,16 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   
-    <!-- Script Debit Simulation -->
+<!-- Script Debit Simulation -->
 <script src="assets/vendor/sheet/debt-simulation.js"></script>
 <script>
 // Caminho: assets/vendor/sheet/debt-simulation.js
 document.addEventListener('DOMContentLoaded', function() {
     initializeSteps();
     initializeEvents();
+    document.querySelectorAll('select[name^="creditCard"]').forEach(select => {
+        select.addEventListener('change', toggleCreditCardDetails);
+    });
 });
 
 function initializeSteps() {
@@ -1277,6 +1347,132 @@ function validateStep(stepNumber) {
         }
     }
     return true;
+}
+
+function addParticipant() {
+    const participantsContainer = document.getElementById('participants');
+    const newIndex = participantsContainer.querySelectorAll('.participant').length + 1;
+
+    const newParticipant = document.createElement('div');
+    newParticipant.classList.add('row', 'gy-4', 'participant');
+    newParticipant.innerHTML = `
+        <div class="col-lg-6">
+            <label for="participantName${newIndex}">Nome:</label>
+            <input type="text" id="participantName${newIndex}" name="participantName${newIndex}" class="form-control" required>
+        </div>
+        <div class="col-lg-6">
+            <label for="participantIncome${newIndex}">Renda Mensal:</label>
+            <input type="number" id="participantIncome${newIndex}" name="participantIncome${newIndex}" class="form-control" required>
+        </div>
+        <div class="col-lg-12">
+            <button type="button" class="btn btn-danger" onclick="removeParticipant(this)">Excluir</button>
+        </div>
+    `;
+    participantsContainer.appendChild(newParticipant);
+}
+
+function removeParticipant(button) {
+    button.closest('.participant').remove();
+}
+
+function addExpense() {
+    const expensesContainer = document.getElementById('expenses');
+    const newIndex = expensesContainer.querySelectorAll('.expense').length + 1;
+
+    const newExpense = document.createElement('div');
+    newExpense.classList.add('row', 'gy-4', 'expense');
+    newExpense.innerHTML = `
+        <div class="col-lg-6">
+            <label for="expenseName${newIndex}">Descrição:</label>
+            <input type="text" id="expenseName${newIndex}" name="expenseName${newIndex}" class="form-control" required>
+        </div>
+        <div class="col-lg-6">
+            <label for="expenseAmount${newIndex}">Valor:</label>
+            <input type="number" id="expenseAmount${newIndex}" name="expenseAmount${newIndex}" class="form-control" required>
+        </div>
+        <div class="col-lg-6">
+            <label for="expenseCategory${newIndex}">Categoria:</label>
+            <select id="expenseCategory${newIndex}" name="expenseCategory${newIndex}" class="form-control" required>
+                <option value="Moradia">Moradia</option>
+                <option value="Alimentação">Alimentação</option>
+                <option value="Saúde">Saúde</option>
+                <option value="Educação">Educação</option>
+                <option value="Transporte">Transporte</option>
+                <option value="Vestuário">Vestuário</option>
+            </select>
+        </div>
+        <div class="col-lg-6">
+            <button type="button" class="btn btn-danger" onclick="removeExpense(this)">Excluir</button>
+        </div>
+    `;
+    expensesContainer.appendChild(newExpense);
+}
+
+function removeExpense(button) {
+    button.closest('.expense').remove();
+}
+
+function addDebt() {
+    const debtsContainer = document.getElementById('debts');
+    const newIndex = debtsContainer.querySelectorAll('.debt').length + 1;
+
+    const newDebt = document.createElement('div');
+    newDebt.classList.add('row', 'gy-4', 'debt');
+    newDebt.innerHTML = `
+        <div class="col-lg-6">
+            <label for="creditorName${newIndex}">Nome do Credor:</label>
+            <input type="text" id="creditorName${newIndex}" name="creditorName${newIndex}" class="form-control" required>
+        </div>
+        <div class="col-lg-6">
+            <label for="debtAmount${newIndex}">Valor da Dívida:</label>
+            <input type="number" id="debtAmount${newIndex}" name="debtAmount${newIndex}" class="form-control" required>
+        </div>
+        <div class="col-lg-6">
+            <label for="debtDate${newIndex}">Data do Empréstimo:</label>
+            <input type="date" id="debtDate${newIndex}" name="debtDate${newIndex}" class="form-control" required>
+        </div>
+        <div class="col-lg-6">
+            <label for="debtDueDate${newIndex}">Data de Vencimento:</label>
+            <input type="date" id="debtDueDate${newIndex}" name="debtDueDate${newIndex}" class="form-control" required>
+        </div>
+        <div class="col-lg-6">
+            <label for="creditCard${newIndex}">Cartão de Crédito:</label>
+            <select id="creditCard${newIndex}" name="creditCard${newIndex}" class="form-control" onchange="toggleCreditCardDetails(this)">
+                <option value="não">Não</option>
+                <option value="sim">Sim</option>
+            </select>
+        </div>
+        <div class="col-lg-6" id="creditCardDetails${newIndex}" style="display:none;">
+            <label for="previousInstallments${newIndex}">Possui Parcelamentos Anteriores:</label>
+            <select id="previousInstallments${newIndex}" name="previousInstallments${newIndex}" class="form-control">
+                <option value="não">Não</option>
+                <option value="sim">Sim</option>
+            </select>
+            <label for="minimumPayment${newIndex}">Pagamento Mínimo Anterior:</label>
+            <select id="minimumPayment${newIndex}" name="minimumPayment${newIndex}" class="form-control">
+                <option value="não">Não</option>
+                <option value="sim">Sim</option>
+            </select>
+        </div>
+        <div class="col-lg-12">
+            <button type="button" class="btn btn-danger" onclick="removeDebt(this)">Excluir</button>
+        </div>
+    `;
+    debtsContainer.appendChild(newDebt);
+}
+
+function removeDebt(button) {
+    button.closest('.debt').remove();
+}
+
+function toggleCreditCardDetails(select) {
+    const detailsId = `creditCardDetails${select.id.replace('creditCard', '')}`;
+    const detailsContainer = document.getElementById(detailsId);
+    if (select.value === 'sim') {
+        detailsContainer.style.display = 'block';
+    } else {
+        detailsContainer.style.display = 'none';
+    }
 }
 </script>
 <!-- Script Debit Simulation -->
