@@ -179,26 +179,30 @@
 .timeline-step {
   text-align: center;
   cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  background-color: #ddd;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  width: 80px; /* Largura suficiente para incluir o número e a palavra abaixo */
   position: relative;
 }
 
-.timeline-step.active {
+.timeline-step .step-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin: 0 auto 10px; /* Centraliza o círculo e adiciona espaço abaixo para a palavra */
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.timeline-step.active .step-circle {
   background-color: #007bff;
   color: #fff;
   transform: scale(1.1);
 }
 
-.timeline-step.locked {
+.timeline-step.locked .step-circle {
   background-color: #bbb;
   color: #fff;
   cursor: not-allowed;
@@ -228,9 +232,10 @@
   display: none;
 }
 
-.timeline-step i {
-  font-size: 18px;
-  margin-right: 5px;
+.timeline-step span {
+  display: block;
+  font-size: 14px;
+  color: #333;
 }
 
 /* Estilos do conteúdo das etapas */
@@ -446,26 +451,26 @@
       <p>Os dados inseridos são temporários e serão perdidos ao recarregar a página ou fechar o navegador. Você pode solicitar um resumo do plano por e-mail.</p>
     </div>
 
-    <!-- Linha do Tempo -->
-    <div class="timeline">
-      <div class="timeline-step active" data-step="1">
-        <i class="fa fa-id-card"></i>
-        <span>Identificação</span>
-      </div>
-      <div class="timeline-step" data-step="2">
-        <i class="fa fa-money-bill"></i>
-        <span>Fonte de Renda</span>
-      </div>
-      <div class="timeline-step" data-step="3">
-        <i class="fa fa-home"></i>
-        <span>Despesas do Lar</span>
-      </div>
-      <div class="timeline-step" data-step="4">
-        <i class="fa fa-credit-card"></i>
-        <span>Dívidas</span>
-      </div>
-    </div>
-  
+<!-- Linha do Tempo -->
+<div class="timeline">
+  <div class="timeline-step active" data-step="1">
+    <div class="step-circle">1</div>
+    <span>Identificação</span>
+  </div>
+  <div class="timeline-step" data-step="2">
+    <div class="step-circle">2</div>
+    <span>Fonte de Renda</span>
+  </div>
+  <div class="timeline-step" data-step="3">
+    <div class="step-circle">3</div>
+    <span>Despesas do Lar</span>
+  </div>
+  <div class="timeline-step" data-step="4">
+    <div class="step-circle">4</div>
+    <span>Dívidas</span>
+  </div>
+</div>
+
     <!-- Etapas do Formulário -->
     <form id="debtForm" action="assets/vendor/sheet/send_email.php" method="POST">
 
