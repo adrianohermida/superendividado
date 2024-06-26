@@ -355,6 +355,64 @@
     padding: 20px;
   }
 }
+/* Mobile Navigation */
+.mobile-nav-toggle {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 9998;
+  }
+
+  .navbar {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9997;
+    overflow-y: auto;
+    transition: 0.3s;
+    padding: 20px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+  }
+
+  .navbar ul li {
+    margin: 15px 0;
+  }
+
+  .navbar ul li a {
+    font-size: 20px;
+  }
+
+  .navbar.navbar-mobile {
+    display: flex;
+  }
+
+  .mobile-nav-toggle.bi-list {
+    font-size: 32px;
+    cursor: pointer;
+  }
+
+  .mobile-nav-toggle.bi-x {
+    font-size: 32px;
+    cursor: pointer;
+  }
+}
   </style>
  
 
@@ -1430,6 +1488,46 @@ function toggleCreditCardDetails(select) {
 }
 </script>
 <!-- Script Debit Simulation -->
+
+<!-- Script Menu -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const select = (el, all = false) => {
+      el = el.trim()
+      if (all) {
+        return [...document.querySelectorAll(el)]
+      } else {
+        return document.querySelector(el)
+      }
+    }
+
+    const on = (type, el, listener, all = false) => {
+      let selectEl = select(el, all)
+      if (selectEl) {
+        if (all) {
+          selectEl.forEach(e => e.addEventListener(type, listener))
+        } else {
+          selectEl.addEventListener(type, listener)
+        }
+      }
+    }
+
+    on('click', '.mobile-nav-toggle', function(e) {
+      select('#navbar').classList.toggle('navbar-mobile')
+      this.classList.toggle('bi-list')
+      this.classList.toggle('bi-x')
+    })
+
+    on('click', '.navbar .dropdown > a', function(e) {
+      if (select('#navbar').classList.contains('navbar-mobile')) {
+        e.preventDefault()
+        this.nextElementSibling.classList.toggle('dropdown-active')
+      }
+    }, true)
+  })
+</script>
+
 
 <!-- Setmore -->
 <script id="setmore_script" type="text/javascript" src="https://storage.googleapis.com/fullintegration-live/webComponentAppListing/Container/setmoreIframeLive.js"></script>
