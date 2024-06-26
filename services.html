@@ -33,7 +33,7 @@
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
@@ -1215,37 +1215,29 @@
   <div id="preloader"></div>
   
   <!-- Swiper Initialization Media-->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var mediaSwiper = new Swiper('.media-slider', {
-        slidesPerView: 1,
-        spaceBetween: 10,
+      var swiper = new Swiper('.slides-1', {
+        speed: 600,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        },
+        slidesPerView: 'auto',
         pagination: {
           el: '.swiper-pagination',
-          clickable: true,
+          type: 'bullets',
+          clickable: true
         },
         navigation: {
           nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 1,
-            spaceBetween: 30,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-        },
+          prevEl: '.swiper-button-prev'
+        }
       });
     });
-  </script>
-  
+  </script>  
 
   <!-- Swiper Initialization Testimonials -->
 
