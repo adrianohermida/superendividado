@@ -345,6 +345,16 @@
     justify-content: flex-end;
     padding: 10px;
   }
+  /* Responsividade para a seção "Why Choose Us" */
+@media (max-width: 768px) {
+  .img-bg {
+    background-size: cover;
+    height: 300px;
+  }
+  .slides {
+    padding: 20px;
+  }
+}
   </style>
  
 
@@ -359,16 +369,12 @@
 <!-- ======= Header ======= -->
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
     <a href="index.html" class="logo d-flex align-items-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
       <img src="assets/img/logo.png" alt="Logo" class="logo-img" style="margin-right: 10px;">
       <h1 class="d-flex align-items-center">Hermida Maia Advocacia</h1>
     </a>
-
     <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
     <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-
     <nav id="navbar" class="navbar">
       <ul>
         <li><a href="#hero" class="active">Inicio</a></li>
@@ -379,9 +385,9 @@
         <li><a href="https://app.astrea.net.br/">Login</a></li>
       </ul>
     </nav><!-- .navbar -->
-
   </div>
 </header><!-- End Header -->
+
 
   <main id="main">
 
