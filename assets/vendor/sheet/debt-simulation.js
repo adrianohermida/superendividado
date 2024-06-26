@@ -68,7 +68,6 @@ function calculateDebt() {
         totalIncome += income;
     });
 
-    const percentage = parseFloat(document.getElementById('percentage').value) / 100;
     const debts = document.querySelectorAll('.debt');
 
     let totalDebt = 0;
@@ -87,11 +86,12 @@ function calculateDebt() {
         monthlyPayments.push(amortized);
     });
 
-    const monthlyPayment = totalIncome * percentage;
+    const percentage = totalIncome > 0 ? (totalDebt / totalIncome) * 100 : 0;
+
     const resultHTML = `
         <h3>Resultado:</h3>
         <p>Saldo Devedor Amortizado: R$ ${totalDebt.toFixed(2)}</p>
-        <p>Parcela Mensal Estimada: R$ ${monthlyPayment.toFixed(2)}</p>
+        <p>Parcela Mensal Estimada: R$ ${(totalDebt / 12).toFixed(2)}</p>
         <h4>Detalhamento das Parcelas Mensais:</h4>
         <ul>
             ${monthlyPayments.map((payment, index) => `<li>Dívida ${index + 1}: R$ ${payment.toFixed(2)}</li>`).join('')}
@@ -126,8 +126,12 @@ function addParticipant() {
             <input type="text" id="participantName${newIndex}" name="participantName${newIndex}" class="form-control" required>
         </div>
         <div class="col-lg-6">
-            <label for="participantIncome${newIndex}">Renda Mensal:</label>
+            <label for="participantIncome${newIndex}">Renda Mensal (R$):</label>
             <input type="number" id="participantIncome${newIndex}" name="participantIncome${newIndex}" class="form-control" required>
+        </div>
+        <div class="col-lg-6">
+            <label for="incomeSource${newIndex}">Pagador:</label>
+            <input type="text" id="incomeSource${newIndex}" name="incomeSource${newIndex}" class="form-control" required>
         </div>
         <div class="col-lg-12">
             <button type="button" class="btn btn-danger" onclick="removeParticipant(this)">Excluir Participante</button>
@@ -152,7 +156,7 @@ function addExpense() {
             <input type="text" id="expenseName${newIndex}" name="expenseName${newIndex}" class="form-control" required>
         </div>
         <div class="col-lg-6">
-            <label for="expenseValue${newIndex}">Valor:</label>
+            <label for="expenseValue${newIndex}">Valor (R$):</label>
             <input type="number" id="expenseValue${newIndex}" name="expenseValue${newIndex}" class="form-control" required>
         </div>
         <div class="col-lg-12">
@@ -178,7 +182,7 @@ function addDebt() {
             <input type="text" id="debtName${newIndex}" name="debtName${newIndex}" class="form-control" required>
         </div>
         <div class="col-lg-6">
-            <label for="debtAmount${newIndex}">Valor da Dívida:</label>
+            <label for="debtAmount${newIndex}">Valor da Dívida (R$):</label>
             <input type="number" id="debtAmount${newIndex}" name="debtAmount${newIndex}" class="form-control" required>
         </div>
         <div class="col-lg-6">

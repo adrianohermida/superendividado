@@ -495,6 +495,7 @@
 <!-- End Rights Section -->
 
 <!-- Debt Simulation Section -->
+ <!--
 <section id="debt-simulation" class="debt-simulation">
   <div class="container">
       <div class="section-header">
@@ -502,115 +503,110 @@
           <p>Insira suas informações e veja como a Lei do Superendividamento pode ajudar você a reorganizar suas finanças.</p>
           <p>Os dados inseridos são temporários e serão perdidos ao recarregar a página ou fechar o navegador. Você pode solicitar um resumo do plano por e-mail.</p>
       </div>
-
-      <!-- Linha do Tempo -->
-      <div class="timeline">
+        <div class="timeline">
           <div class="timeline-step active" data-step="1">Identificação</div>
           <div class="timeline-step" data-step="2">Fonte de Renda</div>
           <div class="timeline-step" data-step="3">Despesas do Lar</div>
           <div class="timeline-step" data-step="4">Dívidas</div>
       </div>
-
-      <!-- Etapas do Formulário -->
       <form id="debtForm" action="assets/vendor/sheet/send_email.php" method="POST">
-          <!-- Etapa 1 Identificação -->
-          <div id="step-1" class="step-content active">
+           <div id="step-1" class="step-content active">
               <h3>Identificação</h3>
               <div class="form-container">
-                  <div class="row gy-4">
-                      <div class="col-md-8">
-                          <label for="name">Nome:</label>
-                          <input type="text" id="name" name="name" class="form-control" required>
+                  <div class="form-column">
+                      <div class="row gy-4">
+                          <div class="col-lg-6">
+                              <label for="name">Nome:</label>
+                              <input type="text" id="name" name="name" class="form-control" required>
+                          </div>
+                          <div class="col-lg-6">
+                              <label for="dob">Data de Nascimento:</label>
+                              <input type="date" id="dob" name="dob" class="form-control" required>
+                          </div>
+                          <div class="col-lg-6">
+                              <label for="maritalStatus">Estado Civil:</label>
+                              <select id="maritalStatus" name="maritalStatus" class="form-control" required>
+                                  <option value="Solteiro(a)">Solteiro(a)</option>
+                                  <option value="Casado(a)">Casado(a)</option>
+                                  <option value="Divorciado(a)">Divorciado(a)</option>
+                                  <option value="Viúvo(a)">Viúvo(a)</option>
+                                  <option value="Separado(a)">Separado(a)</option>
+                                  <option value="União Estável">União Estável</option>
+                              </select>
+                          </div>
+                          <div class="col-lg-6">
+                              <label for="profession">Profissão:</label>
+                              <select id="profession" name="profession" class="form-control" required>
+                                  <option value="Empregado CLT">Empregado CLT</option>
+                                  <option value="Funcionário Público">Funcionário Público</option>
+                                  <option value="Autônomo">Autônomo</option>
+                                  <option value="Militar">Militar</option>
+                                  <option value="Empresário">Empresário</option>
+                                  <option value="Aposentado">Aposentado</option>
+                                  <option value="Desempregado">Desempregado</option>
+                              </select>
+                          </div>
+                          <div class="col-lg-6">
+                              <label for="city">Cidade:</label>
+                              <input type="text" id="city" name="city" class="form-control" required>
+                          </div>
+                          <div class="col-lg-6">
+                              <label for="state">Estado:</label>
+                              <select id="state" name="state" class="form-control" required>
+                                  <option value="AC">AC</option>
+                                  <option value="AL">AL</option>
+                                  <option value="AM">AM</option>
+                                  <option value="AP">AP</option>
+                                  <option value="BA">BA</option>
+                                  <option value="CE">CE</option>
+                                  <option value="DF">DF</option>
+                                  <option value="ES">ES</option>
+                                  <option value="GO">GO</option>
+                                  <option value="MA">MA</option>
+                                  <option value="MG">MG</option>
+                                  <option value="MS">MS</option>
+                                  <option value="MT">MT</option>
+                                  <option value="PA">PA</option>
+                                  <option value="PB">PB</option>
+                                  <option value="PE">PE</option>
+                                  <option value="PI">PI</option>
+                                  <option value="PR">PR</option>
+                                  <option value="RJ">RJ</option>
+                                  <option value="RN">RN</option>
+                                  <option value="RO">RO</option>
+                                  <option value="RR">RR</option>
+                                  <option value="RS">RS</option>
+                                  <option value="SC">SC</option>
+                                  <option value="SE">SE</option>
+                                  <option value="SP">SP</option>
+                                  <option value="TO">TO</option>
+                              </select>
+                          </div>
+                          <div class="col-lg-6">
+                              <label for="phone">Celular:</label>
+                              <input type="text" id="phone" name="phone" class="form-control" required>
+                          </div>
+                          <div class="col-lg-6">
+                              <label for="email">E-mail:</label>
+                              <input type="email" id="email" name="email" class="form-control" required>
+                          </div>
+                          <div class="col-lg-12">
+                              <input type="checkbox" id="terms" name="terms" required>
+                              <label for="terms">Aceito os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a></label>
+                          </div>
                       </div>
-                      <div class="col-md-4">
-                          <label for="birthDate">Data Nasc.:</label>
-                          <input type="date" id="birthDate" name="birthDate" class="form-control" required>
-                      </div>
-                      <div class="col-md-6">
-                          <label for="maritalStatus">Estado Civil:</label>
-                          <select id="maritalStatus" name="maritalStatus" class="form-control" required>
-                              <option value="Solteiro(a)">Solteiro(a)</option>
-                              <option value="Casado(a)">Casado(a)</option>
-                              <option value="Divorciado(a)">Divorciado(a)</option>
-                              <option value="Viúvo(a)">Viúvo(a)</option>
-                              <option value="Separado(a)">Separado(a)</option>
-                              <option value="União Estável">União Estável</option>
-                          </select>
-                      </div>
-                      <div class="col-md-6">
-                          <label for="profession">Profissão:</label>
-                          <select id="profession" name="profession" class="form-control" required>
-                              <option value="Empregado CLT">Empregado CLT</option>
-                              <option value="Funcionário Público">Funcionário Público</option>
-                              <option value="Autônomo">Autônomo</option>
-                              <option value="Militar">Militar</option>
-                              <option value="Empresário">Empresário</option>
-                              <option value="Aposentado">Aposentado</option>
-                              <option value="Desempregado">Desempregado</option>
-                          </select>
-                      </div>
-                      <div class="col-md-6">
-                          <label for="city">Cidade:</label>
-                          <input type="text" id="city" name="city" class="form-control" required>
-                      </div>
-                      <div class="col-md-6">
-                          <label for="state">Estado:</label>
-                          <select id="state" name="state" class="form-control" required>
-                              <option value="AC">AC</option>
-                              <option value="AL">AL</option>
-                              <option value="AM">AM</option>
-                              <option value="AP">AP</option>
-                              <option value="BA">BA</option>
-                              <option value="CE">CE</option>
-                              <option value="DF">DF</option>
-                              <option value="ES">ES</option>
-                              <option value="GO">GO</option>
-                              <option value="MA">MA</option>
-                              <option value="MG">MG</option>
-                              <option value="MS">MS</option>
-                              <option value="MT">MT</option>
-                              <option value="PA">PA</option>
-                              <option value="PB">PB</option>
-                              <option value="PE">PE</option>
-                              <option value="PI">PI</option>
-                              <option value="PR">PR</option>
-                              <option value="RJ">RJ</option>
-                              <option value="RN">RN</option>
-                              <option value="RO">RO</option>
-                              <option value="RR">RR</option>
-                              <option value="RS">RS</option>
-                              <option value="SC">SC</option>
-                              <option value="SE">SE</option>
-                              <option value="SP">SP</option>
-                              <option value="TO">TO</option>
-                          </select>
-                      </div>
-                      <div class="col-md-6">
-                          <label for="phone">Celular:</label>
-                          <input type="text" id="phone" name="phone" class="form-control" required>
-                      </div>
-                      <div class="col-md-6">
-                          <label for="email">E-mail:</label>
-                          <input type="email" id="email" name="email" class="form-control" required>
-                      </div>
-                      <div class="col-12">
-                          <input type="checkbox" id="terms" name="terms" required>
-                          <label for="terms">Aceito os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a></label>
+                      <div class="button-group">
+                          <button type="button" class="btn btn-primary" onclick="nextStep(2)">Próximo</button>
                       </div>
                   </div>
-                  <div class="button-group">
-                      <button type="button" class="btn btn-primary" onclick="nextStep(2)">Próximo</button>
-                  </div>
-              </div>
-              <div class="instructions-column">
-                  <div class="instructions">
-                      <h4>Orientação de Preenchimento</h4>
-                      <p>Preencha todos os campos com suas informações pessoais. Certifique-se de que todos os dados estão corretos, pois serão utilizados para gerar seu plano de parcelamento de dívidas.</p>
+                  <div class="instructions-column">
+                      <div class="instructions">
+                          <h4>Orientação de Preenchimento</h4>
+                          <p>Preencha todos os campos com suas informações pessoais. Certifique-se de que todos os dados estão corretos, pois serão utilizados para gerar seu plano de parcelamento de dívidas.</p>
+                      </div>
                   </div>
               </div>
           </div>
-
-          <!-- Etapa 2 Fonte de Renda -->
           <div id="step-2" class="step-content">
               <h3>Fonte de Renda</h3>
               <div class="form-container">
@@ -620,13 +616,17 @@
                           <div class="row gy-4 participant">
                               <div class="col-md-6">
                                   <label for="participantName1">Nome:</label>
-                                  <input type="text" id="participantName1" name="participantName1" class="form-control" required>
+                                  <input type="text" id="participantName1" name="participantName1" class="form-control" required readonly>
                               </div>
                               <div class="col-md-6">
-                                  <label for="participantIncome1">Renda Mensal:</label>
+                                  <label for="participantIncome1">Renda Mensal (R$):</label>
                                   <input type="number" id="participantIncome1" name="participantIncome1" class="form-control" required>
                               </div>
-                              <div class="col-12">
+                              <div class="col-md-6">
+                                  <label for="incomeSource1">Pagador:</label>
+                                  <input type="text" id="incomeSource1" name="incomeSource1" class="form-control" required>
+                              </div>
+                              <div class="col-12" style="display: none;">
                                   <button type="button" class="btn btn-danger" onclick="removeParticipant(this)">Excluir Participante</button>
                               </div>
                           </div>
@@ -645,8 +645,6 @@
                   </div>
               </div>
           </div>
-
-          <!-- Etapa 3 Despesas do Lar -->
           <div id="step-3" class="step-content">
               <h3>Despesas do Lar</h3>
               <div class="form-container">
@@ -659,7 +657,7 @@
                                   <input type="text" id="expenseName1" name="expenseName1" class="form-control" required>
                               </div>
                               <div class="col-md-6">
-                                  <label for="expenseValue1">Valor:</label>
+                                  <label for="expenseValue1">Valor (R$):</label>
                                   <input type="number" id="expenseValue1" name="expenseValue1" class="form-control" required>
                               </div>
                               <div class="col-12">
@@ -681,8 +679,6 @@
                   </div>
               </div>
           </div>
-
-          <!-- Etapa 4 Dívidas -->
           <div id="step-4" class="step-content">
               <h3>Dívidas</h3>
               <div class="form-container">
@@ -695,7 +691,7 @@
                                   <input type="text" id="debtName1" name="debtName1" class="form-control" required>
                               </div>
                               <div class="col-md-6">
-                                  <label for="debtAmount1">Valor da Dívida:</label>
+                                  <label for="debtAmount1">Valor da Dívida (R$):</label>
                                   <input type="number" id="debtAmount1" name="debtAmount1" class="form-control" required>
                               </div>
                               <div class="col-md-6">
@@ -756,14 +752,12 @@
                   </div>
               </div>
           </div>
-
-          <!-- Tabela de Exibição de Dados -->
           <div id="results" class="data-view mt-4"></div>
       </form>
   </div>
 </section>
+-->
 <!-- Debt Simulation Section -->
-
 
 
 <!-- ======= Our Services Section ======= -->
