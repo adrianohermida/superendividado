@@ -226,6 +226,32 @@
 .footer-contact a:hover {
   text-decoration: underline; /* Adiciona sublinhado no hover para melhor UX */
 }
+/* Header Styles */
+.header {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.header .navbar ul {
+  display: flex;
+  align-items: center;
+}
+
+.header .navbar ul li {
+  margin: 0 15px;
+}
+
+.header .navbar ul li a {
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.header .navbar ul li a:hover,
+.header .navbar ul li a.active {
+  color: #2aa5df;
+}
+
 /* Overlay Styles */
 .popup-overlay {
   display: none;
@@ -242,13 +268,25 @@
 
 .popup-content {
   background: #fff;
-  padding: 20px;
+  padding: 30px;
   border-radius: 15px;
   position: relative;
   width: 90%;
   max-width: 800px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .popup-content h1 {
@@ -274,7 +312,7 @@
 /* Mosaic Button Styles */
 .mosaic-buttons {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 15px;
   margin-bottom: 20px;
 }
@@ -282,47 +320,51 @@
 .mosaic-btn {
   background: #2aa5df;
   color: #fff;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 14px;
   transition: background 0.3s, transform 0.3s;
-  padding: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .mosaic-btn i {
-  font-size: 20px;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .mosaic-btn span {
-  margin-top: 5px;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .mosaic-btn:hover {
   background: #1f8bb4;
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 20px 0;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .mosaic-btn {
-    width: 60px;
-    height: 60px;
-    font-size: 10px;
+    font-size: 12px;
+    padding: 15px;
   }
 
   .mosaic-btn i {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .mosaic-btn span {
-    font-size: 8px;
+    font-size: 10px;
   }
 }
 </style>
@@ -358,7 +400,6 @@
         <li><a href="https://app.astrea.net.br/">Login</a></li>
       </ul>
     </nav><!-- .navbar -->
-
 <!-- ======= Header ======= -->
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -411,6 +452,7 @@
         </a>
       </div>
     </div>
+    <hr>
     <div class="mosaic-section">
       <h2>Recursos Úteis</h2>
       <div class="mosaic-buttons">
@@ -432,6 +474,7 @@
         </a>
       </div>
     </div>
+    <hr>
     <div class="mosaic-section">
       <h2>Exclusivo para Assinantes</h2>
       <div class="mosaic-buttons">
