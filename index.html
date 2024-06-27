@@ -226,6 +226,69 @@
 .footer-contact a:hover {
   text-decoration: underline; /* Adiciona sublinhado no hover para melhor UX */
 }
+/* Overlay Styles */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Mosaic Button Styles */
+.mosaic-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.mosaic-btn {
+  background: #2aa5df;
+  color: #fff;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.mosaic-btn i {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.mosaic-btn:hover {
+  background: #1f8bb4;
+}
 </style>
 
 <!-- GLightbox CSS -->
@@ -237,6 +300,32 @@
 <body class="page-index">
 
 <!-- ======= Header ======= -->
+<!--
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+    <a href="index.html" class="logo d-flex align-items-center">
+      <img src="assets/img/logo.png" alt="Logo" class="logo-img" style="margin-right: 10px;">
+      <h1 class="d-flex align-items-center">Hermida Maia Advocacia</h1>
+    </a>
+
+    <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+    <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a href="#hero" class="active">Inicio</a></li>
+        <li><a href="#why-us">Sobre nós</a></li>
+        <li><a href="#services-list">Serviços</a></li>
+        <li><a href="https://hermidamaia.jusbrasil.com.br/publicacoes">Blog</a></li>
+        <li><a href="https://hmdesk.freshdesk.com/support/tickets/new">Contato</a></li>
+        <li><a href="https://app.astrea.net.br/">Login</a></li>
+      </ul>
+    </nav><!-- .navbar -->
+<!-- ======= Header ======= -->
+    
+  </div>
+ <!-- ======= Header ======= -->
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
@@ -256,12 +345,62 @@
         <li><a href="#services-list">Serviços</a></li>
         <li><a href="https://hermidamaia.jusbrasil.com.br/publicacoes">Blog</a></li>
         <li><a href="https://hmdesk.freshdesk.com/support/tickets/new">Contato</a></li>
-        <li><a href="https://app.astrea.net.br/">Login</a></li>
+        <li><a href="javascript:void(0);" id="loginButton">Login</a></li>
       </ul>
     </nav><!-- .navbar -->
 
   </div>
 </header><!-- End Header -->
+
+<!-- Popup Overlay -->
+<div id="popupOverlay" class="popup-overlay">
+  <div class="popup-content">
+    <span class="close-btn" id="closePopup">&times;</span>
+    <div class="mosaic-buttons">
+      <a href="https://hmdesk.freshdesk.com/support/login" class="mosaic-btn">
+        <i class="bi bi-box-arrow-in-right"></i>
+        <span>Entrar</span>
+      </a>
+      <a href="https://hmdesk.freshdesk.com/support/signup" class="mosaic-btn">
+        <i class="bi bi-pencil-square"></i>
+        <span>Registrar</span>
+      </a>
+      <a href="https://hmdesk.freshdesk.com/support/solutions" class="mosaic-btn">
+        <i class="bi bi-book"></i>
+        <span>Base de conhecimento</span>
+      </a>
+      <a href="https://hmdesk.freshdesk.com/support/tickets/new" class="mosaic-btn">
+        <i class="bi bi-ticket"></i>
+        <span>Enviar um ticket</span>
+      </a>
+      <a href="https://hmdesk.freshdesk.com/support/tickets" class="mosaic-btn">
+        <i class="bi bi-card-list"></i>
+        <span>Todos os tickets</span>
+      </a>
+      <a href="https://hermidamaiaadv.setmore.com/beta" class="mosaic-btn">
+        <i class="bi bi-calendar2-check"></i>
+        <span>Reserva de horário</span>
+      </a>
+      <a href="https://financeiro.hermidamaia.adv.br/p/login/eVa5og2B39i37MA144" class="mosaic-btn">
+        <i class="bi bi-receipt"></i>
+        <span>Faturas</span>
+      </a>
+      <a href="https://teleport.video/hermida-maia-advocacia/adrianohermida" class="mosaic-btn">
+        <i class="bi bi-camera-video"></i>
+        <span>Sala Virtual</span>
+      </a>
+      <a href="https://comunica.pje.jus.br/consulta" class="mosaic-btn">
+        <i class="bi bi-chat-dots"></i>
+        <span>Comunicações Processuais</span>
+      </a>
+      <a href="https://app.astrea.net.br/" class="mosaic-btn">
+        <i class="bi bi-person-circle"></i>
+        <span>Portal do Cliente</span>
+      </a>
+    </div>
+  </div>
+</div>
+
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center">
@@ -579,7 +718,7 @@
             <div class="col-md-6">
               <h4>Transparência na palma da sua mão</h4>
               <p>Nosso escritório online oferece conteúdo exclusivo, controle de atendimentos e facilidade de contato. Com acesso a informações detalhadas sobre seus direitos e processos, você pode acompanhar cada etapa do seu caso com facilidade e rapidez.</p>
-              <a href="#about" class="btn-get-started">Conecte-se conosco</a>
+              <a href="https://hmdesk.freshdesk.com/support/signup" class="btn-get-started">Conecte-se conosco</a>
             </div>
           </div>
         </div>
@@ -818,7 +957,7 @@
               <li><i class="bi bi-dash"></i> <a href="https://teleport.video/hermida-maia-advocacia/adrianohermida">Sala Virtual</a></li>
               <li><i class="bi bi-dash"></i> <a href="https://comunica.pje.jus.br/consulta">Comunicações Processuais</a></li>
               <li><i class="bi bi-dash"></i> <a href="https://assinaturadigital.iti.gov.br/">Validador de assinaturas</a></li>
-              <li><i class="bi bi-dash"></i> <a href="https://hmdesk.freshdesk.com/support/home">Central de Ajuda</a></li>
+              <li><i class="bi bi-dash"></i> <a href="https://hmdesk.freshdesk.com/support/home">Base de Conhecimento</a></li>
               <li><i class="bi bi-dash"></i> <a href="https://hmdesk.freshdesk.com/support/tickets/new">Abrir Chamado</a></li>
             </ul>
           </div>
@@ -885,7 +1024,23 @@
     });
   </script>
   
-
+<script>  // JavaScript to handle popup display
+  document.getElementById('loginButton').addEventListener('click', function() {
+    document.getElementById('popupOverlay').style.display = 'flex';
+  });
+  
+  document.getElementById('closePopup').addEventListener('click', function() {
+    document.getElementById('popupOverlay').style.display = 'none';
+  });
+  
+  document.addEventListener('click', function(event) {
+    var isClickInsidePopup = document.getElementById('popupOverlay').contains(event.target);
+    var isClickOnLoginButton = document.getElementById('loginButton').contains(event.target);
+  
+    if (!isClickInsidePopup && !isClickOnLoginButton) {
+      document.getElementById('popupOverlay').style.display = 'none';
+    }
+  });</script>
   <!-- Swiper Initialization Testimonials -->
 
 <script>
@@ -944,6 +1099,7 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+
   <link rel="stylesheet" href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
 <!--
 <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=555131810323">
@@ -975,6 +1131,7 @@ var sample_properties = {
 };
 fwcrm.set(sample_properties);
 </script>
+
 
 
 </body>
