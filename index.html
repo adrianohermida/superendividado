@@ -172,6 +172,20 @@
   width: 80px; /* Ajuste conforme necessário */
   height: 80px; /* Ajuste conforme necessário */
 }
+.call-to-action .cta-btn {
+  font-family: var(--font-default);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  color: #fff;
+  background: #2aa5df;
+  text-decoration: none; /* Adicione isso para remover o sublinhado */
+}
 .footer-legal {
   background: #f8f9fa; /* ou a cor de fundo do seu rodapé */
   padding: 10px 0; /* Ajuste o padding conforme necessário */
@@ -196,6 +210,21 @@
 .footer-legal a {
   color: #007bff; /* Ajuste a cor do link conforme necessário */
   text-decoration: none;
+}
+.footer-buttons {
+  display: flex;
+  justify-content: center; /* Alinha os botões ao centro */
+  gap: 10px; /* Espaçamento entre os botões */
+  margin-top: 10px;
+}
+
+.footer-contact a {
+  color: #2aa5df; /* Cor do link para combinar com o estilo dos botões */
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+.footer-contact a:hover {
+  text-decoration: underline; /* Adiciona sublinhado no hover para melhor UX */
 }
 </style>
 
@@ -797,13 +826,13 @@
             <p>Disponibilizamos de canais de atendimentos integrados para dúvidas, informações e suporte disponíveis de segunda a sexta, das 9h00 às 17h00, horário de Brasília.</p>
             <strong>Telefone:</strong> +55 51 3181-0323<br>
             <strong>Email:</strong> sac@hermidamaia.adv.br<br>
-            <br>
+            <strong>Canal do WhatsApp (Exclusivo para Assinantes):</strong> <a href="https://wa.me/555131810323" target="_blank">Enviar mensagem</a><br>
             
             <div class="footer-buttons">
-                <a href="https://hmdesk.freshdesk.com/support/home" class="cta-btn">Central de Ajuda</a>
-                <a href="https://hmdesk.freshdesk.com/support/tickets/new" class="cta-btn">Abrir Chamado</a>
+                <a href="link_para_central_de_ajuda" class="cta-btn">Central de Ajuda</a>
+                <a href="link_para_abrir_chamado" class="cta-btn">Abrir Chamado</a>
             </div>
-        </div>
+        </div>       
         
 
         </div>
