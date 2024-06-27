@@ -107,10 +107,9 @@
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
-      </ul>
-    </nav>
   </div>
 </header>
+
 <!-- Mobile Navigation Toggle -->
 <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
 <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
@@ -801,6 +800,26 @@
   
   
   <div id="preloader"></div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.toggle-dropdown').forEach(function(el) {
+        el.addEventListener('click', function(e) {
+          if (e.target.parentElement.nextElementSibling.style.display === 'block') {
+            e.target.parentElement.nextElementSibling.style.display = 'none';
+          } else {
+            e.target.parentElement.nextElementSibling.style.display = 'block';
+          }
+        });
+      });
+  
+      document.querySelector('.mobile-nav-toggle').addEventListener('click', function(e) {
+        document.body.classList.toggle('mobile-nav-active');
+        this.classList.toggle('bi-list');
+        this.classList.toggle('bi-x');
+      });
+    });
+  </script>
   
   <!-- Swiper Initialization Media-->
   <script>
