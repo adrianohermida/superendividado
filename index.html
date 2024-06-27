@@ -273,9 +273,8 @@
 
 /* Mosaic Button Styles */
 .mosaic-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   gap: 15px;
   margin-bottom: 20px;
 }
@@ -298,7 +297,11 @@
 
 .mosaic-btn i {
   font-size: 20px;
-  margin-bottom: 5px;
+}
+
+.mosaic-btn span {
+  margin-top: 5px;
+  font-size: 10px;
 }
 
 .mosaic-btn:hover {
@@ -316,6 +319,10 @@
 
   .mosaic-btn i {
     font-size: 16px;
+  }
+
+  .mosaic-btn span {
+    font-size: 8px;
   }
 }
 </style>
@@ -351,97 +358,95 @@
         <li><a href="https://app.astrea.net.br/">Login</a></li>
       </ul>
     </nav><!-- .navbar -->
+
 <!-- ======= Header ======= -->
-    
-  </div><!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo.png" alt="Logo" class="logo-img" style="margin-right: 10px;">
-        <h1 class="d-flex align-items-center">Hermida Maia Advocacia</h1>
-      </a>
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="#hero" class="active">Início</a></li>
-          <li><a href="#why-us">Sobre Nós</a></li>
-          <li><a href="#services-list">Serviços</a></li>
-          <li><a href="https://hermidamaia.jusbrasil.com.br/publicacoes">Blog</a></li>
-          <li><a href="https://hmdesk.freshdesk.com/support/tickets/new">Contato</a></li>
-          <li><a href="javascript:void(0);" id="loginButton">Login</a></li>
-        </ul>
-      </nav><!-- .navbar -->
-    </div>
-  </header><!-- End Header -->
-  
-  <!-- Popup Overlay -->
-  <div id="popupOverlay" class="popup-overlay">
-    <div class="popup-content">
-      <span class="close-btn" id="closePopup">&times;</span>
-      <h1>Escritório Online</h1>
-      <div class="mosaic-section">
-        <h2>Central de Ajuda</h2>
-        <div class="mosaic-buttons">
-          <a href="https://hmdesk.freshdesk.com/support/login" class="mosaic-btn">
-            <i class="bi bi-box-arrow-in-right"></i>
-            <span>Entrar</span>
-          </a>
-          <a href="https://hmdesk.freshdesk.com/support/signup" class="mosaic-btn">
-            <i class="bi bi-pencil-square"></i>
-            <span>Registrar</span>
-          </a>
-          <a href="https://hmdesk.freshdesk.com/support/solutions" class="mosaic-btn">
-            <i class="bi bi-book"></i>
-            <span>Base de Conhecimento</span>
-          </a>
-          <a href="https://hmdesk.freshdesk.com/support/tickets/new" class="mosaic-btn">
-            <i class="bi bi-ticket"></i>
-            <span>Enviar Ticket</span>
-          </a>
-          <a href="https://hmdesk.freshdesk.com/support/tickets" class="mosaic-btn">
-            <i class="bi bi-card-list"></i>
-            <span>Todos os Tickets</span>
-          </a>
-        </div>
-      </div>
-      <div class="mosaic-section">
-        <h2>Recursos Úteis</h2>
-        <div class="mosaic-buttons">
-          <a href="https://hermidamaiaadv.setmore.com/beta" class="mosaic-btn">
-            <i class="bi bi-calendar2-check"></i>
-            <span>Reserva de Horário</span>
-          </a>
-          <a href="https://financeiro.hermidamaia.adv.br/p/login/eVa5og2B39i37MA144" class="mosaic-btn">
-            <i class="bi bi-receipt"></i>
-            <span>Faturas</span>
-          </a>
-          <a href="https://teleport.video/hermida-maia-advocacia/adrianohermida" class="mosaic-btn">
-            <i class="bi bi-camera-video"></i>
-            <span>Sala Virtual</span>
-          </a>
-          <a href="https://comunica.pje.jus.br/consulta" class="mosaic-btn">
-            <i class="bi bi-chat-dots"></i>
-            <span>Comunicações Processuais</span>
-          </a>
-        </div>
-      </div>
-      <div class="mosaic-section">
-        <h2>Exclusivo para Assinantes</h2>
-        <div class="mosaic-buttons">
-          <a href="https://app.astrea.net.br/" class="mosaic-btn">
-            <i class="bi bi-person-circle"></i>
-            <span>Portal do Cliente</span>
-          </a>
-          <a href="https://wa.me/555131810323" class="mosaic-btn">
-            <i class="bi bi-whatsapp"></i>
-            <span>Canal do WhatsApp</span>
-          </a>
-        </div>
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+    <a href="index.html" class="logo d-flex align-items-center">
+      <img src="assets/img/logo.png" alt="Logo" class="logo-img" style="margin-right: 10px;">
+      <h1 class="d-flex align-items-center">Hermida Maia Advocacia</h1>
+    </a>
+    <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+    <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a href="#hero" class="active">Início</a></li>
+        <li><a href="#why-us">Sobre Nós</a></li>
+        <li><a href="#services-list">Serviços</a></li>
+        <li><a href="https://hermidamaia.jusbrasil.com.br/publicacoes">Blog</a></li>
+        <li><a href="https://hmdesk.freshdesk.com/support/tickets/new">Contato</a></li>
+        <li><a href="javascript:void(0);" id="loginButton">Login</a></li>
+      </ul>
+    </nav><!-- .navbar -->
+  </div>
+</header><!-- End Header -->
+
+<!-- Popup Overlay -->
+<div id="popupOverlay" class="popup-overlay">
+  <div class="popup-content">
+    <span class="close-btn" id="closePopup">&times;</span>
+    <h1>Escritório Online</h1>
+    <div class="mosaic-section">
+      <h2>Central de Ajuda</h2>
+      <div class="mosaic-buttons">
+        <a href="https://hmdesk.freshdesk.com/support/login" class="mosaic-btn">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Entrar</span>
+        </a>
+        <a href="https://hmdesk.freshdesk.com/support/signup" class="mosaic-btn">
+          <i class="bi bi-pencil-square"></i>
+          <span>Registrar</span>
+        </a>
+        <a href="https://hmdesk.freshdesk.com/support/solutions" class="mosaic-btn">
+          <i class="bi bi-book"></i>
+          <span>Base de Conhecimento</span>
+        </a>
+        <a href="https://hmdesk.freshdesk.com/support/tickets/new" class="mosaic-btn">
+          <i class="bi bi-ticket"></i>
+          <span>Enviar Ticket</span>
+        </a>
+        <a href="https://hmdesk.freshdesk.com/support/tickets" class="mosaic-btn">
+          <i class="bi bi-card-list"></i>
+          <span>Todos os Tickets</span>
+        </a>
       </div>
     </div>
-  </div>  
+    <div class="mosaic-section">
+      <h2>Recursos Úteis</h2>
+      <div class="mosaic-buttons">
+        <a href="https://hermidamaiaadv.setmore.com/beta" class="mosaic-btn">
+          <i class="bi bi-calendar2-check"></i>
+          <span>Reserva de Horário</span>
+        </a>
+        <a href="https://financeiro.hermidamaia.adv.br/p/login/eVa5og2B39i37MA144" class="mosaic-btn">
+          <i class="bi bi-receipt"></i>
+          <span>Faturas</span>
+        </a>
+        <a href="https://teleport.video/hermida-maia-advocacia/adrianohermida" class="mosaic-btn">
+          <i class="bi bi-camera-video"></i>
+          <span>Sala Virtual</span>
+        </a>
+        <a href="https://comunica.pje.jus.br/consulta" class="mosaic-btn">
+          <i class="bi bi-chat-dots"></i>
+          <span>Comunicações Processuais</span>
+        </a>
+      </div>
+    </div>
+    <div class="mosaic-section">
+      <h2>Exclusivo para Assinantes</h2>
+      <div class="mosaic-buttons">
+        <a href="https://app.astrea.net.br/" class="mosaic-btn">
+          <i class="bi bi-person-circle"></i>
+          <span>Portal do Cliente</span>
+        </a>
+        <a href="https://wa.me/555131810323" class="mosaic-btn">
+          <i class="bi bi-whatsapp"></i>
+          <span>Canal do WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Popup Overlay -->
 
 
