@@ -83,18 +83,20 @@
   </div>
 </header>
 
-<!-- Popup Overlay -->
-<div id="popupOverlay" class="popup-overlay">
+<!-- Mobile Navigation Toggle -->
+<i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+<i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+<!-- Popup Menu HTML -->
+<div id="login-popup" class="popup-overlay">
   <div class="popup-content">
-    <span class="close-btn" id="closePopup">&times;</span>
     <h1>Escritório Online</h1>
     <div class="main-options">
-      <button class="main-option" data-submenu="helpCenter">Central de Ajuda</button>
-      <button class="main-option" data-submenu="usefulResources">Recursos Úteis</button>
-      <button class="main-option" data-submenu="subscribers">Assinantes</button>
+      <button class="main-option" onclick="toggleSubmenu('help')">Central de Ajuda</button>
+      <button class="main-option" onclick="toggleSubmenu('resources')">Recursos Úteis</button>
+      <button class="main-option" onclick="toggleSubmenu('subscribers')">Assinantes</button>
     </div>
-    <div id="helpCenter" class="submenu">
-      <h2>Central de Ajuda</h2>
+    <div id="submenu-help" class="submenu">
       <div class="submenu-buttons">
         <a href="https://hmdesk.freshdesk.com/support/login" class="submenu-btn">
           <i class="bi bi-box-arrow-in-right"></i>
@@ -105,24 +107,23 @@
           <span>Base de Conhecimento</span>
         </a>
         <a href="https://hmdesk.freshdesk.com/support/tickets/new" class="submenu-btn">
-          <i class="bi bi-ticket"></i>
+          <i class="bi bi-file-earmark-plus"></i>
           <span>Enviar Ticket</span>
         </a>
         <a href="https://hmdesk.freshdesk.com/support/tickets" class="submenu-btn">
-          <i class="bi bi-card-list"></i>
+          <i class="bi bi-card-checklist"></i>
           <span>Todos os Tickets</span>
         </a>
       </div>
-      <p class="register-text">
+      <div class="register-text">
         Você é um usuário novo? <a href="https://hmdesk.freshdesk.com/support/signup">Registre-se aqui</a>
-      </p>
+      </div>
     </div>
-    <div id="usefulResources" class="submenu">
-      <h2>Recursos Úteis</h2>
+    <div id="submenu-resources" class="submenu">
       <div class="submenu-buttons">
         <a href="https://hermidamaiaadv.setmore.com/beta" class="submenu-btn">
-          <i class="bi bi-calendar2-check"></i>
-          <span>Reserva de Horário</span>
+          <i class="bi bi-calendar"></i>
+          <span>Reserva de horário</span>
         </a>
         <a href="https://financeiro.hermidamaia.adv.br/p/login/eVa5og2B39i37MA144" class="submenu-btn">
           <i class="bi bi-receipt"></i>
@@ -133,16 +134,15 @@
           <span>Sala Virtual</span>
         </a>
         <a href="https://comunica.pje.jus.br/consulta" class="submenu-btn">
-          <i class="bi bi-chat-dots"></i>
+          <i class="bi bi-envelope"></i>
           <span>Comunicações Processuais</span>
         </a>
       </div>
     </div>
-    <div id="subscribers" class="submenu">
-      <h2>Exclusivo para Assinantes</h2>
+    <div id="submenu-subscribers" class="submenu">
       <div class="submenu-buttons">
         <a href="https://app.astrea.net.br/" class="submenu-btn">
-          <i class="bi bi-person-circle"></i>
+          <i class="bi bi-person"></i>
           <span>Portal do Cliente</span>
         </a>
         <a href="https://wa.me/555131810323" class="submenu-btn">
@@ -153,7 +153,16 @@
     </div>
   </div>
 </div>
-<!-- Popup Overlay -->
+
+<script>
+  function toggleSubmenu(menuId) {
+    document.querySelectorAll('.submenu').forEach(submenu => {
+      submenu.style.display = 'none';
+    });
+    document.getElementById(`submenu-${menuId}`).style.display = 'block';
+  }
+</script>
+
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center">
