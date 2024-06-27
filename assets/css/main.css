@@ -236,6 +236,9 @@ section {
   transition: all 0.5s;
   z-index: 997;
   padding: 24px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
 }
 
 @media (max-width: 1200px) {
@@ -260,6 +263,26 @@ section {
   color: #fff;
   font-family: var(--font-secondary);
   margin: 0;
+}
+
+.header .navbar ul {
+  display: flex;
+  align-items: center;
+}
+
+.header .navbar ul li {
+  margin: 0 15px;
+}
+
+.header .navbar ul li a {
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.header .navbar ul li a:hover,
+.header .navbar ul li a.active {
+  color: #2aa5df;
 }
 
 /*--------------------------------------------------------------
