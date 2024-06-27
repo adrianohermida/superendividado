@@ -111,7 +111,9 @@
   .testimonials-swiper .swiper-slide {
     width: 33.33%; /* Mostrar até 3 itens na versão desktop */
   }
-}/* Custom styles for the media section */
+}
+
+/* Custom styles for the media section */
 .media-section {
   padding: 60px 0;
   background: #fff;
@@ -152,6 +154,7 @@
     display: none;
   }
 }
+
 /* Custom styles for the features section */
 .features .phone-wrap {
   text-align: center;
@@ -168,10 +171,12 @@
     height: auto;
   }
 }
+
 .logo-img {
   width: 80px; /* Ajuste conforme necessário */
   height: 80px; /* Ajuste conforme necessário */
 }
+
 .call-to-action .cta-btn {
   font-family: var(--font-default);
   font-weight: 500;
@@ -186,6 +191,7 @@
   background: #2aa5df;
   text-decoration: none; /* Adicione isso para remover o sublinhado */
 }
+
 .footer-legal {
   background: #f8f9fa; /* ou a cor de fundo do seu rodapé */
   padding: 10px 0; /* Ajuste o padding conforme necessário */
@@ -211,6 +217,7 @@
   color: #007bff; /* Ajuste a cor do link conforme necessário */
   text-decoration: none;
 }
+
 .footer-buttons {
   display: flex;
   justify-content: center; /* Alinha os botões ao centro */
@@ -226,6 +233,7 @@
 .footer-contact a:hover {
   text-decoration: underline; /* Adiciona sublinhado no hover para melhor UX */
 }
+
 /* Header Styles */
 .header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -252,7 +260,7 @@
   color: #2aa5df;
 }
 
-/* Overlay Styles */
+/* Menu Popup Styles */
 .popup-overlay {
   display: none;
   position: fixed;
@@ -295,29 +303,40 @@
   color: #333;
 }
 
-.popup-content h2 {
-  margin: 20px 0 10px;
-  font-size: 18px;
-  color: #333;
+.main-options {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
+.main-option {
+  background: #2aa5df;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
   cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  font-size: 16px;
 }
 
-/* Mosaic Button Styles */
-.mosaic-buttons {
+.main-option:hover {
+  background: #1f8bb4;
+  transform: scale(1.05);
+}
+
+.submenu {
+  display: none;
+}
+
+.submenu-buttons {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 15px;
   margin-bottom: 20px;
 }
 
-.mosaic-btn {
+.submenu-btn {
   background: #2aa5df;
   color: #fff;
   border-radius: 10px;
@@ -332,39 +351,92 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.mosaic-btn i {
+.submenu-btn i {
   font-size: 24px;
   margin-bottom: 10px;
 }
 
-.mosaic-btn span {
+.submenu-btn span {
   font-size: 12px;
 }
 
-.mosaic-btn:hover {
+.submenu-btn:hover {
   background: #1f8bb4;
   transform: scale(1.05);
 }
 
-hr {
-  border: 0;
-  border-top: 1px solid #eee;
-  margin: 20px 0;
-}
-
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  .mosaic-btn {
+  .submenu-btn {
     font-size: 12px;
     padding: 15px;
   }
 
-  .mosaic-btn i {
+  .submenu-btn i {
     font-size: 20px;
   }
 
-  .mosaic-btn span {
+  .submenu-btn span {
     font-size: 10px;
+  }
+}
+
+/* Mobile Navigation */
+.mobile-nav-toggle {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 9998;
+  }
+
+  .navbar {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9997;
+    overflow-y: auto;
+    transition: 0.3s;
+    padding: 20px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+  }
+
+  .navbar ul li {
+    margin: 15px 0;
+  }
+
+  .navbar ul li a {
+    font-size: 20px;
+  }
+
+  .navbar.navbar-mobile {
+    display: flex;
+  }
+
+  .mobile-nav-toggle.bi-list {
+    font-size: 32px;
+    cursor: pointer;
+  }
+
+  .mobile-nav-toggle.bi-x {
+    font-size: 32px;
+    cursor: pointer;
   }
 }
 </style>
@@ -427,62 +499,65 @@ hr {
   <div class="popup-content">
     <span class="close-btn" id="closePopup">&times;</span>
     <h1>Escritório Online</h1>
-    <div class="mosaic-section">
+    <div class="main-options">
+      <button class="main-option" data-submenu="helpCenter">Central de Ajuda</button>
+      <button class="main-option" data-submenu="usefulResources">Recursos Úteis</button>
+      <button class="main-option" data-submenu="subscribers">Assinantes</button>
+    </div>
+    <div id="helpCenter" class="submenu">
       <h2>Central de Ajuda</h2>
-      <div class="mosaic-buttons">
-        <a href="https://hmdesk.freshdesk.com/support/login" class="mosaic-btn">
+      <div class="submenu-buttons">
+        <a href="https://hmdesk.freshdesk.com/support/login" class="submenu-btn">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Entrar</span>
         </a>
-        <a href="https://hmdesk.freshdesk.com/support/signup" class="mosaic-btn">
+        <a href="https://hmdesk.freshdesk.com/support/signup" class="submenu-btn">
           <i class="bi bi-pencil-square"></i>
           <span>Registrar</span>
         </a>
-        <a href="https://hmdesk.freshdesk.com/support/solutions" class="mosaic-btn">
+        <a href="https://hmdesk.freshdesk.com/support/solutions" class="submenu-btn">
           <i class="bi bi-book"></i>
           <span>Base de Conhecimento</span>
         </a>
-        <a href="https://hmdesk.freshdesk.com/support/tickets/new" class="mosaic-btn">
+        <a href="https://hmdesk.freshdesk.com/support/tickets/new" class="submenu-btn">
           <i class="bi bi-ticket"></i>
           <span>Enviar Ticket</span>
         </a>
-        <a href="https://hmdesk.freshdesk.com/support/tickets" class="mosaic-btn">
+        <a href="https://hmdesk.freshdesk.com/support/tickets" class="submenu-btn">
           <i class="bi bi-card-list"></i>
           <span>Todos os Tickets</span>
         </a>
       </div>
     </div>
-    <hr>
-    <div class="mosaic-section">
+    <div id="usefulResources" class="submenu">
       <h2>Recursos Úteis</h2>
-      <div class="mosaic-buttons">
-        <a href="https://hermidamaiaadv.setmore.com/beta" class="mosaic-btn">
+      <div class="submenu-buttons">
+        <a href="https://hermidamaiaadv.setmore.com/beta" class="submenu-btn">
           <i class="bi bi-calendar2-check"></i>
           <span>Reserva de Horário</span>
         </a>
-        <a href="https://financeiro.hermidamaia.adv.br/p/login/eVa5og2B39i37MA144" class="mosaic-btn">
+        <a href="https://financeiro.hermidamaia.adv.br/p/login/eVa5og2B39i37MA144" class="submenu-btn">
           <i class="bi bi-receipt"></i>
           <span>Faturas</span>
         </a>
-        <a href="https://teleport.video/hermida-maia-advocacia/adrianohermida" class="mosaic-btn">
+        <a href="https://teleport.video/hermida-maia-advocacia/adrianohermida" class="submenu-btn">
           <i class="bi bi-camera-video"></i>
           <span>Sala Virtual</span>
         </a>
-        <a href="https://comunica.pje.jus.br/consulta" class="mosaic-btn">
+        <a href="https://comunica.pje.jus.br/consulta" class="submenu-btn">
           <i class="bi bi-chat-dots"></i>
           <span>Comunicações Processuais</span>
         </a>
       </div>
     </div>
-    <hr>
-    <div class="mosaic-section">
+    <div id="subscribers" class="submenu">
       <h2>Exclusivo para Assinantes</h2>
-      <div class="mosaic-buttons">
-        <a href="https://app.astrea.net.br/" class="mosaic-btn">
+      <div class="submenu-buttons">
+        <a href="https://app.astrea.net.br/" class="submenu-btn">
           <i class="bi bi-person-circle"></i>
           <span>Portal do Cliente</span>
         </a>
-        <a href="https://wa.me/555131810323" class="mosaic-btn">
+        <a href="https://wa.me/555131810323" class="submenu-btn">
           <i class="bi bi-whatsapp"></i>
           <span>Canal do WhatsApp</span>
         </a>
@@ -1131,6 +1206,16 @@ hr {
     if (!isClickInsidePopup && !isClickOnLoginButton) {
       document.getElementById('popupOverlay').style.display = 'none';
     }
+  });
+  
+  // JavaScript to handle submenu display
+  document.querySelectorAll('.main-option').forEach(button => {
+    button.addEventListener('click', function() {
+      document.querySelectorAll('.submenu').forEach(submenu => {
+        submenu.style.display = 'none';
+      });
+      document.getElementById(this.dataset.submenu).style.display = 'block';
+    });
   });  
   </script>
   <!-- Swiper Initialization Testimonials -->
