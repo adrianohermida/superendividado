@@ -82,7 +82,6 @@
     </nav>
   </div>
 </header>
-
 <!-- Mobile Navigation Toggle -->
 <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
 <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
@@ -90,11 +89,12 @@
 <!-- Popup Menu HTML -->
 <div id="login-popup" class="popup-overlay">
   <div class="popup-content">
+    <span class="close-btn" id="closePopup">&times;</span>
     <h1>Escritório Online</h1>
     <div class="main-options">
-      <button class="main-option" onclick="toggleSubmenu('help')">Central de Ajuda</button>
-      <button class="main-option" onclick="toggleSubmenu('resources')">Recursos Úteis</button>
-      <button class="main-option" onclick="toggleSubmenu('subscribers')">Assinantes</button>
+      <button class="main-option" data-submenu="help">Central de Ajuda</button>
+      <button class="main-option" data-submenu="resources">Recursos Úteis</button>
+      <button class="main-option" data-submenu="subscribers">Assinantes</button>
     </div>
     <div id="submenu-help" class="submenu">
       <div class="submenu-buttons">
@@ -155,12 +155,31 @@
 </div>
 
 <script>
-  function toggleSubmenu(menuId) {
-    document.querySelectorAll('.submenu').forEach(submenu => {
-      submenu.style.display = 'none';
+  document.getElementById('loginButton').addEventListener('click', function() {
+    document.getElementById('login-popup').style.display = 'flex';
+  });
+
+  document.getElementById('closePopup').addEventListener('click', function() {
+    document.getElementById('login-popup').style.display = 'none';
+  });
+
+  document.addEventListener('click', function(event) {
+    var isClickInsidePopup = document.getElementById('login-popup').contains(event.target);
+    var isClickOnLoginButton = document.getElementById('loginButton').contains(event.target);
+
+    if (!isClickInsidePopup && !isClickOnLoginButton) {
+      document.getElementById('login-popup').style.display = 'none';
+    }
+  });
+
+  document.querySelectorAll('.main-option').forEach(button => {
+    button.addEventListener('click', function() {
+      document.querySelectorAll('.submenu').forEach(submenu => {
+        submenu.style.display = 'none';
+      });
+      document.getElementById(`submenu-${this.getAttribute('data-submenu')}`).style.display = 'block';
     });
-    document.getElementById(`submenu-${menuId}`).style.display = 'block';
-  }
+  });
 </script>
 
 
@@ -785,35 +804,7 @@
       });
     });
   </script>
-  
-<script>// JavaScript to handle popup display
-  document.getElementById('loginButton').addEventListener('click', function() {
-    document.getElementById('popupOverlay').style.display = 'flex';
-  });
-  
-  document.getElementById('closePopup').addEventListener('click', function() {
-    document.getElementById('popupOverlay').style.display = 'none';
-  });
-  
-  document.addEventListener('click', function(event) {
-    var isClickInsidePopup = document.getElementById('popupOverlay').contains(event.target);
-    var isClickOnLoginButton = document.getElementById('loginButton').contains(event.target);
-  
-    if (!isClickInsidePopup && !isClickOnLoginButton) {
-      document.getElementById('popupOverlay').style.display = 'none';
-    }
-  });
-  
-  // JavaScript to handle submenu display
-  document.querySelectorAll('.main-option').forEach(button => {
-    button.addEventListener('click', function() {
-      document.querySelectorAll('.submenu').forEach(submenu => {
-        submenu.style.display = 'none';
-      });
-      document.getElementById(this.dataset.submenu).style.display = 'block';
-    });
-  });  
-  </script>
+
   <!-- Swiper Initialization Testimonials -->
 
 <script>
