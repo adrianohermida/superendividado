@@ -17,42 +17,41 @@
   --nav-font: "Raleway",  sans-serif;
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+/* Global Colors - Aplicadas em todo o site */
+:root {
+  --background-color: #f2f5ed;          /* Cor de fundo geral */
+  --surface-color: #173d34;             /* Cor de superfícies internas, cartões, blocos */
+  --default-color: #2c2c2c;             /* Cor de texto padrão (parágrafos) */
+  --heading-color: #173d34;             /* Cor de títulos */
+  --accent-color: #00d969;              /* Cor de destaque para botões e links */
+  --contrast-color: #ffffff;            /* Cor para texto sobre superfícies escuras */
+  --nav-color: #1d3d34;                 /* Cor de links do menu (desktop) */
+  --nav-hover-color: #00d969;           /* Cor ao passar o mouse sobre links do menu */
+  --nav-mobile-background-color: #ffffff;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #1d3d34;
+  --nav-dropdown-hover-color: #00d969;
+  scroll-behavior: smooth;
+}
+
+/* Presets por tema visual */
+.light-background {
   --background-color: #f2f5ed;
-  --surface-color: #173d34;
+  --surface-color: #ffffff;
   --default-color: #2c2c2c;
   --heading-color: #173d34;
-  --accent-color: #00d969;
-  --contrast-color: #ffffff;
-}
-
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
-:root {
-  --nav-color: rgba(255, 255, 255, 0.6);  /* The default color of the main navmenu links */
-  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #56b8e6; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
-}
-
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
-
-.light-background {
-  --background-color: #f6fcfe;
-  --surface-color: #ffffff;
+  --contrast-color: #173d34;
 }
 
 .dark-background {
-  --background-color: #17283b;
+  --background-color: #173d34;
+  --surface-color: #1d3d34;
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --surface-color: #254160;
   --contrast-color: #ffffff;
 }
 
-/* Smooth scroll */
+  /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
 }
