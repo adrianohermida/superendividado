@@ -296,6 +296,7 @@ header.header.scrolled {
   .navmenu .dropdown ul {
     margin: 0;
     padding: 10px 0;
+    color: #1d3d34;
     background: #ffffff;
     display: block;
     position: absolute;
