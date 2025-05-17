@@ -46,10 +46,12 @@
   color: #1d3d34;                    /* Cor dos links */
   padding: 10px 20px;
   display: block;
+  text-transform: none;
   transition: color 0.3s ease;
 }
 
 .navbar .dropdown ul li a:hover,
+    color: #00d969 !important;
 .navbar .dropdown ul li a:focus {
   color: #00d969;                   /* Hover/Ativo em verde institucional */
 }
