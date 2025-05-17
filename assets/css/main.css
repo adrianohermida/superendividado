@@ -296,7 +296,7 @@ header.header.scrolled {
   .navmenu .dropdown ul {
     margin: 0;
     padding: 10px 0;
-    background: #ffffff; /* Fundo branco do dropdown */
+    background: #ffffff;
     display: block;
     position: absolute;
     visibility: hidden;
@@ -313,22 +313,19 @@ header.header.scrolled {
     min-width: 200px;
   }
 
-  .navmenu .dropdown ul a {
+  .navmenu .dropdown ul li a {
+    color: #1d3d34;
     padding: 10px 20px;
     font-size: 15px;
+    display: block;
     text-transform: none;
-    color: #1d3d34; /* Texto escuro sobre fundo branco */
     transition: color 0.3s ease;
   }
 
-  .navmenu .dropdown ul a i {
-    font-size: 12px;
-  }
-
-  .navmenu .dropdown ul a:hover,
+  .navmenu .dropdown ul li a:hover,
   .navmenu .dropdown ul .active:hover,
   .navmenu .dropdown ul li:hover > a {
-    color: #00d969; /* Hover em verde institucional */
+    color: #00d969 !important;
   }
 
   .navmenu .dropdown:hover > ul {
