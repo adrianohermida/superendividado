@@ -454,7 +454,7 @@ h6 {
 }
 
 .footer .social-links a {
-  color: var(--default-color);
+  color: var(--background-color);
   background-color: var(--accent-color);
   display: flex;
   align-items: center;
@@ -746,7 +746,7 @@ section,
 .hero:before {
   position: absolute;
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 40%);
+  background: color-mix(in srgb, var(--surface-color, transparent 40%);
   inset: 0;
   z-index: 2;
 }
