@@ -12,25 +12,9 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --background-color: #f2f5ed;
-  --surface-color: #e1e4dc;
-  --default-color: #2c2c2c;
-  --heading-color: #173d34;
-  --accent-color: #00d969;
-  --contrast-color: #ffffff;
-}
-
-{
-  --background-color: #173d34;
-  --surface-color: #f2f5ed;
-}
-
-{
-  --background-color: #173d34;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --surface-color: #173d34;
-  --contrast-color: #ffffff;
+  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Montserrat",  sans-serif;
+  --nav-font: "Raleway",  sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -57,13 +41,13 @@
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
-{
+.light-background {
   --background-color: #173d34;
   --surface-color: #f2f5ed;
 }
 
-{
-  --background-color: #173d34;
+.dark-background {
+  --background-color:#173d34;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #173d34;
@@ -796,35 +780,22 @@ section,
   margin: 40px 0;
 }
 
-.hero 
-
-.btn-get-started {
-  color: #ffffff;
-  background-color: #00d969;
+.hero .btn-get-started {
+  color: var(--background-color);
+  background: var(--default-color);
   font-family: var(--heading-font);
   font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 0.6px;
-  padding: 14px 36px;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  border: none;
-  box-shadow: 0 4px 12px rgba(0, 217, 105, 0.25);
+  font-size: 14px;
+  letter-spacing: 1px;
   display: inline-block;
-  text-align: center;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: 0.5s;
 }
 
-
-
-.hero 
-
-.btn-get-started:hover {
-  background-color: #00bf5b;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 191, 91, 0.3);
+.hero .btn-get-started:hover {
+  background: color-mix(in srgb, var(--accent-color) 90%, white 15%);
 }
-
-
 
 .hero .btn-watch-video {
   font-size: 16px;
@@ -1048,35 +1019,23 @@ section,
   color: var(--default-color);
 }
 
-.call-to-action 
-
-.cta-btn {
-  background-color: #00d969;
-  color: #ffffff;
+.call-to-action .cta-btn {
+  background: var(--accent-color);
+  color: var(--contrast-color);
   font-family: var(--heading-font);
-  font-weight: 600;
-  font-size: 17px;
-  letter-spacing: 0.7px;
-  padding: 16px 42px;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  border: none;
-  box-shadow: 0 4px 14px rgba(0, 217, 105, 0.3);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
   display: inline-block;
-  text-align: center;
+  padding: 12px 40px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
 }
 
-
-
-.call-to-action 
-
-.cta-btn:hover {
-  background-color: #00bf5b;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 191, 91, 0.4);
+.call-to-action .cta-btn:hover {
+  background: color-mix(in srgb, var(--accent-color) 90%, black 15%);
 }
-
-
 
 /*--------------------------------------------------------------
 # Features Section
@@ -1142,35 +1101,22 @@ section,
   font-size: 15px;
 }
 
-.features .details 
-
-.btn-get-started {
-  color: #ffffff;
-  background-color: #00d969;
+.features .details .btn-get-started {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
   font-family: var(--heading-font);
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 0.6px;
-  padding: 14px 36px;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  border: none;
-  box-shadow: 0 4px 12px rgba(0, 217, 105, 0.25);
   display: inline-block;
-  text-align: center;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding: 10px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
 }
 
-
-
-.features .details 
-
-.btn-get-started:hover {
-  background-color: #00bf5b;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 191, 91, 0.3);
+.features .details .btn-get-started:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
-
-
 
 /*--------------------------------------------------------------
 # Recent Posts Section
