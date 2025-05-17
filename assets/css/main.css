@@ -1,7 +1,7 @@
 /**
 * Template Name: Nova
 * Template URL: https://bootstrapmade.com/nova-bootstrap-business-template/
-* Updated: Jun 27 2024 with Bootstrap v5.3.3
+* Updated: Aug 07 2024 with Bootstrap v5.3.3
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
@@ -12,60 +12,43 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --background-color: #f2f5ed;
-  --surface-color: #e1e4dc;
-  --default-color: #2c2c2c;
-  --heading-color: #173d34;
-  --accent-color: #00d969;
-  --contrast-color: #ffffff;
-}
-
-{
-  --background-color: #173d34;
-  --surface-color: #f2f5ed;
-}
-
-{
-  --background-color: #173d34;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --surface-color: #173d34;
-  --contrast-color: #ffffff;
+  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Montserrat",  sans-serif;
+  --nav-font: "Raleway",  sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #f2f5ed; /* Background color for the entire website, including individual sections */
-  --default-color: #173d34; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #173d34; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #173d34; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #f2f5ed; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #173d34; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-
-
+  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --default-color: #2b180d; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #1b2f45; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #56b8e6; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #1d3d34;
-  --nav-hover-color: #00d969;
-  --nav-mobile-background-color: #ffffff;
-  --nav-dropdown-background-color: #ffffff;
-  --nav-dropdown-color: #1d3d34;
-  --nav-dropdown-hover-color: #00d969;}
+  --nav-color: rgba(255, 255, 255, 0.6);  /* The default color of the main navmenu links */
+  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #56b8e6; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
-{
-  --background-color: #173d34;
-  --surface-color: #f2f5ed;
+.light-background {
+  --background-color: #f6fcfe;
+  --surface-color: #ffffff;
 }
 
-{
-  --background-color: #173d34;
+.dark-background {
+  --background-color: #17283b;
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --surface-color: #173d34;
+  --surface-color: #254160;
   --contrast-color: #ffffff;
 }
 
@@ -323,6 +306,7 @@ h6 {
 
   .navmenu ul {
     display: none;
+    list-style: none;
     position: absolute;
     inset: 60px 20px 20px 20px;
     padding: 10px 0;
@@ -436,7 +420,7 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--surface-color);
+  background-color: var(--background-color);
   font-size: 14px;
   position: relative;
 }
@@ -456,7 +440,7 @@ h6 {
 }
 
 .footer .footer-about .logo span {
-  color: var(--default-color);
+  color: var(--heading-color);
   font-size: 30px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -469,8 +453,8 @@ h6 {
 }
 
 .footer .social-links a {
-  color: var(--background-color);
-  background-color: var(--surface-color);
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -483,7 +467,7 @@ h6 {
 }
 
 .footer .social-links a:hover {
-  color: var(--default-color);
+  color: var(--contrast-color);
   background-color: color-mix(in srgb, var(--accent-color) 90%, black 15%);
 }
 
@@ -795,35 +779,22 @@ section,
   margin: 40px 0;
 }
 
-.hero 
-
-.btn-get-started {
-  color: #ffffff;
-  background-color: #00d969;
+.hero .btn-get-started {
+  color: var(--contrast-color);
+  background: var(--accent-color);
   font-family: var(--heading-font);
   font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 0.6px;
-  padding: 14px 36px;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  border: none;
-  box-shadow: 0 4px 12px rgba(0, 217, 105, 0.25);
+  font-size: 14px;
+  letter-spacing: 1px;
   display: inline-block;
-  text-align: center;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: 0.5s;
 }
 
-
-
-.hero 
-
-.btn-get-started:hover {
-  background-color: #00bf5b;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 191, 91, 0.3);
+.hero .btn-get-started:hover {
+  background: color-mix(in srgb, var(--accent-color) 90%, white 15%);
 }
-
-
 
 .hero .btn-watch-video {
   font-size: 16px;
@@ -880,7 +851,7 @@ section,
 }
 
 .why-us .slides {
-  background-color: color-mix(in srgb, var(--surface-color), transparent 0%);
+  background-color: color-mix(in srgb, var(--default-color), transparent 97%);
 }
 
 .why-us h3 {
@@ -891,7 +862,7 @@ section,
 .why-us h4 {
   font-size: 18px;
   font-weight: 300;
-  color: color-mix(in srgb, var(--default-color), transparent 0%);
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
 .why-us .swiper {
@@ -906,7 +877,7 @@ section,
 .why-us .swiper-button-prev:after,
 .why-us .swiper-button-next:after {
   font-size: 24px;
-  color: color-mix(in srgb, var(--default-color), transparent 0%);
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
 }
 
 .why-us .swiper-button-prev {
@@ -923,7 +894,7 @@ section,
 }
 
 .why-us .swiper-pagination .swiper-pagination-bullet {
-  background-color: color-mix(in srgb, var(--default-color), transparent 0%);
+  background-color: color-mix(in srgb, var(--default-color), transparent 50%);
 }
 
 .why-us .swiper-pagination .swiper-pagination-bullet-active {
@@ -1047,35 +1018,23 @@ section,
   color: var(--default-color);
 }
 
-.call-to-action 
-
-.cta-btn {
-  background-color: #00d969;
-  color: #ffffff;
+.call-to-action .cta-btn {
+  background: var(--accent-color);
+  color: var(--contrast-color);
   font-family: var(--heading-font);
-  font-weight: 600;
-  font-size: 17px;
-  letter-spacing: 0.7px;
-  padding: 16px 42px;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  border: none;
-  box-shadow: 0 4px 14px rgba(0, 217, 105, 0.3);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
   display: inline-block;
-  text-align: center;
+  padding: 12px 40px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
 }
 
-
-
-.call-to-action 
-
-.cta-btn:hover {
-  background-color: #00bf5b;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 191, 91, 0.4);
+.call-to-action .cta-btn:hover {
+  background: color-mix(in srgb, var(--accent-color) 90%, black 15%);
 }
-
-
 
 /*--------------------------------------------------------------
 # Features Section
@@ -1141,35 +1100,22 @@ section,
   font-size: 15px;
 }
 
-.features .details 
-
-.btn-get-started {
-  color: #ffffff;
-  background-color: #00d969;
+.features .details .btn-get-started {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
   font-family: var(--heading-font);
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 0.6px;
-  padding: 14px 36px;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  border: none;
-  box-shadow: 0 4px 12px rgba(0, 217, 105, 0.25);
   display: inline-block;
-  text-align: center;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 1px;
+  padding: 10px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
 }
 
-
-
-.features .details 
-
-.btn-get-started:hover {
-  background-color: #00bf5b;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 191, 91, 0.3);
+.features .details .btn-get-started:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
-
-
 
 /*--------------------------------------------------------------
 # Recent Posts Section
