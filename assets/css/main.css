@@ -171,6 +171,16 @@ h6 {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
 }
 
+.header.header {
+  background-color: transparent;
+  transition: background-color 0.4s ease-in-out, backdrop-filter 0.4s ease-in-out;
+}
+
+.header.header.scrolled {
+  background-color: rgba(29, 61, 52, 0.85);
+  backdrop-filter: blur(6px);
+}
+
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
