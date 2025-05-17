@@ -852,7 +852,7 @@ section,
 }
 
 .why-us .slides {
-  background-color: color-mix(in srgb, var(--default-color), transparent 0%);
+  background-color: color-mix(in srgb, var(--surface-color), transparent 0%);
 }
 
 .why-us h3 {
