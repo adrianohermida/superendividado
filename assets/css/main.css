@@ -62,7 +62,7 @@ body.mobile-nav-active #navbar {
 }
 
 .navbar ul li a {
-  color: #ffffff;                     /* Texto branco para contraste */
+  color: #1d3d34;                     /* Texto branco para contraste */
   font-size: 18px;
   padding: 12px;
   display: block;
