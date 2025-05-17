@@ -570,6 +570,22 @@
   });
 </script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.swiper.init-swiper').forEach(function (swiperEl) {
+      const configScript = swiperEl.querySelector('.swiper-config');
+      if (!configScript) return;
+
+      try {
+        const config = JSON.parse(configScript.textContent);
+        new Swiper(swiperEl, config);
+      } catch (err) {
+        console.error('Erro ao inicializar o Swiper:', err);
+      }
+    });
+  });
+</script>
+
 </body>
 
 </html>
