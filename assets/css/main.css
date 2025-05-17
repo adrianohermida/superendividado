@@ -455,7 +455,7 @@ h6 {
 
 .footer .social-links a {
   color: var(--background-color);
-  background-color: var(--accent-color);
+  background-color: var(--surface-color);
   display: flex;
   align-items: center;
   justify-content: center;
