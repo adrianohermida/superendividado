@@ -441,7 +441,7 @@ h6 {
 }
 
 .footer .footer-about .logo span {
-  color: var(--heading-color);
+  color: var(--default-color);
   font-size: 30px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -454,7 +454,7 @@ h6 {
 }
 
 .footer .social-links a {
-  color: var(--contrast-color);
+  color: var(--default-color);
   background-color: var(--accent-color);
   display: flex;
   align-items: center;
@@ -468,7 +468,7 @@ h6 {
 }
 
 .footer .social-links a:hover {
-  color: var(--contrast-color);
+  color: var(--default-color);
   background-color: color-mix(in srgb, var(--accent-color) 90%, black 15%);
 }
 
