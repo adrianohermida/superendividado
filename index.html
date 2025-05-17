@@ -141,7 +141,7 @@
                   "autoplay": {
                     "delay": 5000
                   },
-                  "slidesPerView": 1,
+                  "slidesPerView": "auto",
                   "centeredSlides": true,
                   "pagination": {
                     "el": ".swiper-pagination",
@@ -559,13 +559,14 @@
 <script>
   document.querySelectorAll('.swiper.init-swiper').forEach((swiperEl) => {
     const configEl = swiperEl.querySelector('.swiper-config');
-    let config = {};
-    try {
-      config = JSON.parse(configEl.textContent);
-    } catch (e) {
-      console.error('Erro ao ler config JSON do swiper:', e);
+    if (configEl) {
+      try {
+        const config = JSON.parse(configEl.textContent);
+        new Swiper(swiperEl, config);
+      } catch (error) {
+        console.error("Erro ao interpretar o swiper-config:", error);
+      }
     }
-    new Swiper(swiperEl, config);
   });
 </script>
 
