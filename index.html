@@ -555,6 +555,20 @@
   });
 </script>
 
+<!-- Inicialização manual do Swiper com base na configuração em JSON -->
+<script>
+  document.querySelectorAll('.swiper.init-swiper').forEach((swiperEl) => {
+    const configEl = swiperEl.querySelector('.swiper-config');
+    let config = {};
+    try {
+      config = JSON.parse(configEl.textContent);
+    } catch (e) {
+      console.error('Erro ao ler config JSON do swiper:', e);
+    }
+    new Swiper(swiperEl, config);
+  });
+</script>
+
 </body>
 
 </html>
