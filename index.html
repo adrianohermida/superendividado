@@ -103,33 +103,60 @@
       </a>
 
       <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html" class="active">Home<br></a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+  <li class="nav-item">
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="/">Início</a>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="sobreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Sobre
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="sobreDropdown">
+      <li><a class="dropdown-item" href="/sobre">O Escritório</a></li>
+      <li><a class="dropdown-item" href="/dr-adriano-hermida">Dr. Adriano Hermida Maia</a></li>
+      <li><a class="dropdown-item" href="/equipe">Equipe Jurídica</a></li>
+    </ul>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="atuacaoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Áreas de Atuação
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="atuacaoDropdown">
+      <li><a class="dropdown-item" href="/superendividamento">Superendividamento</a></li>
+      <li><a class="dropdown-item" href="/defesa-do-consumidor">Defesa do Consumidor</a></li>
+      <li><a class="dropdown-item" href="/negociacao-de-dividas">Negociação de Dívidas</a></li>
+      <li><a class="dropdown-item" href="/acoes-de-cobranca">Ações de Cobrança</a></li>
+    </ul>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="https://hermidamaia.freshdesk.com/support/home" target="_blank">Portal do Cliente</a>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="recursosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Recursos
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="recursosDropdown">
+      <li><a class="dropdown-item" href="https://hermidamaia.freshdesk.com/support/solutions" target="_blank">Central de Ajuda</a></li>
+      <li><a class="dropdown-item" href="https://hermidamaia.freshdesk.com/support/tickets/new" target="_blank">Abrir Chamado</a></li>
+      <li><a class="dropdown-item" href="/faturas">Faturas e Pagamentos</a></li>
+      <li><a class="dropdown-item" href="/podcast">Podcast Superendividado</a></li>
+    </ul>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="/contato">Contato</a>
+  </li>
+
+</ul>
+    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
     </div>
