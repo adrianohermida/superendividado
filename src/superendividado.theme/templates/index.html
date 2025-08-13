@@ -14,7 +14,7 @@
 <!-- Open Graph para compartilhamento social -->
 <meta property="og:title" content="Hermida Maia Advocacia – Defesa do Devedor e Superendividamento">
 <meta property="og:description" content="Especialistas em defesa do consumidor endividado, com atuação nacional e atendimento digital. Consultoria jurídica com base na Lei nº 14.181/2021.">
-<meta property="og:image" content="https://hermidamaia.adv.br/assets/img/og-image.jpg">
+<meta property="og:image" content="{{ get_asset_url('assets/img/logo.png') }}">
 <meta property="og:url" content="https://hermidamaia.adv.br/">
 <meta property="og:type" content="website">
 
@@ -24,9 +24,9 @@
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Hermida Maia Advocacia",
-  "image": "https://hermidamaia.adv.br/assets/img/og-image.jpg",
+  "image": "{{ get_asset_url('assets/img/logo.png') }}",
   "url": "https://hermidamaia.adv.br/",
-  "logo": "https://hermidamaia.adv.br/assets/img/logo.png",
+  "logo": "{{ get_asset_url('assets/img/logo.png') }}",
   "description": "Escritório de advocacia especializado na defesa do devedor e superendividamento, com atendimento digital e atuação nacional.",
   "address": {
     "@type": "PostalAddress",
@@ -49,8 +49,8 @@
 </script>
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{{ get_asset_url('assets/img/favicon.png') }}" rel="icon">
+  <link href="{{ get_asset_url('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -58,14 +58,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="{{ get_asset_url('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ get_asset_url('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ get_asset_url('assets/vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ get_asset_url('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ get_asset_url('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="{{ get_asset_url('assets/css/main.css') }}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Nova
@@ -90,6 +90,7 @@
   }
 </style>
 
+  {{ standard_header_includes }}
 </head>
 
 <body class="index-page">
@@ -98,7 +99,7 @@
   <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
+        <img src="{{ get_asset_url('assets/img/logo.png') }}" alt="">
         <h1 class="sitename">Hermida Maia Advocacia</h1>
       </a>
 
@@ -137,7 +138,7 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+      <img src="{{ get_asset_url('assets/img/hero-bg.jpg') }}" alt="" data-aos="fade-in">
 
       <div class="container">
         <div class="row">
@@ -164,7 +165,7 @@
         <div class="row g-0">
 
           <div class="col-xl-5 img-bg" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/why-us-bg.jpg" alt="">
+            <img src="{{ get_asset_url('assets/img/why-us-bg.jpg') }}" alt="">
           </div>
 
           <div class="col-xl-7 slides position-relative" data-aos="fade-up" data-aos-delay="200">
@@ -315,7 +316,7 @@
     <!-- Call To Action Section -->
     <section id="call-to-action" class="call-to-action section dark-background">
 
-      <img src="assets/img/cta-bg.jpg" alt="">
+      <img src="{{ get_asset_url('assets/img/cta-bg.jpg') }}" alt="">
 
       <div class="container">
         <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
@@ -402,7 +403,7 @@
 
       <div class="col-lg-5 position-relative" data-aos="zoom-out" data-aos-delay="200">
         <div class="phone-wrap">
-          <img src="assets/img/iphone.png" alt="Imagem de celular ilustrativo" class="img-fluid">
+          <img src="{{ get_asset_url('assets/img/iphone.png') }}" alt="Imagem de celular ilustrativo" class="img-fluid">
         </div>
       </div>
     </div>
@@ -446,7 +447,7 @@
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-1.webp" class="img-fluid" alt=""></div>
+              <div class="post-img"><img src="{{ get_asset_url('assets/img/blog/blog-1.webp') }}" class="img-fluid" alt=""></div>
               <div class="meta">
                 <span class="post-date">17 de Abril de 2024</span>
                 <span class="post-author"> / Dr. Adriano Hermida Maia</span>
@@ -459,7 +460,7 @@
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-2.webp" class="img-fluid" alt=""></div>
+              <div class="post-img"><img src="{{ get_asset_url('assets/img/blog/blog-2.webp') }}" class="img-fluid" alt=""></div>
               <div class="meta">
                 <span class="post-date">05 de março de 2024.</span>
                 <span class="post-author"> /Dr. Adriano Hermida Maia</span>
@@ -472,7 +473,7 @@
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-3.webp" class="img-fluid" alt=""></div>
+              <div class="post-img"><img src="{{ get_asset_url('assets/img/blog/blog-3.webp') }}" class="img-fluid" alt=""></div>
               <div class="meta">
                 <span class="post-date">17 de janeiro de 2024</span>
                 <span class="post-author"> / Dr. Adriano Hermida Maia</span>
@@ -485,7 +486,7 @@
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-4.webp" class="img-fluid" alt=""></div>
+              <div class="post-img"><img src="{{ get_asset_url('assets/img/blog/blog-4.webp') }}" class="img-fluid" alt=""></div>
               <div class="meta">
                 <span class="post-date">03 de maio de 2023</span>
                 <span class="post-author"> / Dr. Adriano Hermida Maia</span>
@@ -575,16 +576,16 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="{{ get_asset_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ get_asset_url('assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ get_asset_url('assets/vendor/aos/aos.js') }}"></script>
+  <script src="{{ get_asset_url('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ get_asset_url('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ get_asset_url('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+  <script src="{{ get_asset_url('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{{ get_asset_url('assets/js/main.js') }}"></script>
 
 <script>
   window.addEventListener('scroll', function () {
@@ -593,21 +594,6 @@
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
-    }
-  });
-</script>
-
-<!-- Inicialização manual do Swiper com base na configuração em JSON -->
-<script>
-  document.querySelectorAll('.swiper.init-swiper').forEach((swiperEl) => {
-    const configEl = swiperEl.querySelector('.swiper-config');
-    if (configEl) {
-      try {
-        const config = JSON.parse(configEl.textContent);
-        new Swiper(swiperEl, config);
-      } catch (error) {
-        console.error("Erro ao interpretar o swiper-config:", error);
-      }
     }
   });
 </script>
@@ -639,6 +625,7 @@ chat='false'>
   </svg>
 </a>
 
+  {{ standard_footer_includes }}
 </body>
 
 </html>
