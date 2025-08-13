@@ -1,0 +1,59 @@
+/* CSS personalizado com identidade Hermida Maia */
+
+
+:root {
+  --default-font: "Roboto", sans-serif;
+  --heading-font: "Montserrat", sans-serif;
+  --nav-font: "Raleway", sans-serif;
+
+  /* Cores institucionais */
+  --background-color: #f2f5ed;
+  --surface-color: #ffffff;
+  --default-color: #1d3d34;
+  --heading-color: #1d3d34;
+  --accent-color: #00d969;
+  --contrast-color: #ffffff;
+
+  /* Menu */
+  --nav-color: #1d3d34;
+  --nav-hover-color: #00d969;
+  --nav-mobile-background-color: #ffffff;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #1d3d34;
+  --nav-dropdown-hover-color: #00d969;
+
+  scroll-behavior: smooth;
+}
+
+
+/* Botões CTA customizados */
+
+.btn-cta, .btn-get-started, .cta-btn {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 217, 105, 0.3);
+}
+
+.btn-cta:hover, .btn-get-started:hover, .cta-btn:hover {
+  background-color: #00bf5b;
+  transform: translateY(-2px);
+}
+
+
+/* Rodapé institucional */
+
+.footer {
+  background-color: #1d3d34;
+  color: #f2f5ed;
+}
+
+.footer .footer-links ul a:hover {
+  color: #00d969;
+}
+
